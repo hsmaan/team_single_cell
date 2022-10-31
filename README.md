@@ -8,7 +8,7 @@
 
 ### Instructions:
 
-#### Data
+#### Data:
 
 The data will be available on the Vector cluster, but if you'd like access sooner, please just ping the Slack and I can add the download instructions here. It's not recommended to analyze the data on a personal computer.
 
