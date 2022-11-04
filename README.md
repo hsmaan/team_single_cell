@@ -19,9 +19,12 @@ To set up the environment for analyzing single-cell data and method development,
 Once miniconda is set up, install the environment in the following manner:
 
 ```
+conda install mamba -n base -c conda-forge 
 cd envs
-conda env create -f env.yaml
+mamba env create -f env.yaml
 ```
+
+We'll use mamba to install and manage environments as it's much a better solver.
 
 The environment can be activated in an interactive session or a shell script:
 
@@ -30,3 +33,7 @@ conda activate single_cell_env
 ```
 
 This environment contains all of the libraries that are necessary to get started on analyzing both the unimodal (RNA) and multi-modal single-cell sequencing data. Please start with the RNA data, going from experiment 5, then 7 and 8. 
+
+#### Jupyter notebooks 
+
+TBD
