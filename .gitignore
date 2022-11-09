@@ -2,3 +2,4 @@ data
 *.pdf
 *.png
 *.jpeg
+notebooks/.ipynb_checkpoints
