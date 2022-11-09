@@ -46,5 +46,5 @@ python -m ipykernel install --user --name "single_cell_env" --display-name "sing
 Now you should be able to launch jupyter notebooks and use the single_cell_env kernel:
 
 ```
-
+jupyter-notebook
 ```
