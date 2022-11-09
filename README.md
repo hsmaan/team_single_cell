@@ -36,4 +36,15 @@ This environment contains all of the libraries that are necessary to get started
 
 #### Jupyter notebooks 
 
-TBD
+Jupyter is installed in the single_cell_env environment. To use this conda environment with jupyter, add the kernelspec to your jupyter path with the following:
+
+```
+conda activate single_cell_env 
+python -m ipykernel install --user --name "single_cell_env" --display-name "single_cell_env"
+```
+
+Now you should be able to launch jupyter notebooks and use the single_cell_env kernel:
+
+```
+
+```
