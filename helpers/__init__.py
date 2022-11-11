@@ -1,1 +1,1 @@
-from eval_embeddings import EvalEmbeddings
+from .eval_embeddings import EvalEmbeddings

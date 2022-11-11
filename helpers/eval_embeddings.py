@@ -6,14 +6,13 @@ import sklearn
 
 # Create class to perform evaluation of embeddings for both
 # cell-type and batch labels 
-
-class EvalEmbeddings():
+class EvalEmbeddings:
     def __init__(self, adata):
-        self.adata = adata.copy()
+        self.adata = adata
         self.celltype = adata.obs['cell_type'].values
         self.batch = adata.obs['batch'].values
 
-    def evaluate(embeddings, leiden_res=1):
+    def evaluate(self, embeddings, leiden_res=1):
         # First cluster the embeddings using Leiden clustering
         # Add the embeddings to the adata object
         self.adata.obsm['X_custom'] = embeddings
@@ -23,6 +22,9 @@ class EvalEmbeddings():
         
         # Cluster the embeddings using Leiden clustering
         sc.tl.leiden(self.adata, resolution=leiden_res, key_added='leiden_custom')
+        
+        # Get the UMAP representation of the data 
+        sc.tl.umap(self.adata)
         
         # Evaluate the clustering compared to the cell-type using 
         # ARI, AMI, Homogeneity, and Completeness
@@ -70,18 +72,20 @@ class EvalEmbeddings():
         
         # Get the average of the cell-type and batch metrics
         celltype_avg = np.mean(
-            celltype_ari, celltype_ami, celltype_homogeneity, celltype_complete
+            np.array([celltype_ari, celltype_ami, celltype_homogeneity, celltype_complete])
         )
         batch_avg = np.mean(
-            batch_ari, batch_ami, batch_homogeneity, batch_complete
+            np.array([batch_ari, batch_ami, batch_homogeneity, batch_complete])
         )
-        total_score = 0.6 * celltype_avg + 0.4 * batch_avg
+        total_score = (0.6 * celltype_avg) + (0.4 * batch_avg)
         
         return total_score, res_df
         
-    def plot():
+    def plot(self):
         # Plot the embeddings colored by cluster, cell-type, and batch
-        sc.pl.umap(self.adata, color=['leiden_custom', 'cell_type', 'batch'])
+        sc.pl.umap(self.adata, color = 'cell_type')
+        sc.pl.umap(self.adata, color = 'batch')
+        sc.pl.umap(self.adata, color = 'leiden_custom')
         
         
         
