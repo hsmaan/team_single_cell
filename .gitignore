@@ -3,3 +3,4 @@ data
 *.png
 *.jpeg
 notebooks/.ipynb_checkpoints
+__pycache__
