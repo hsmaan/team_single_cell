@@ -1,63 +1,66 @@
-import numpy as np
+import torch
+import random
 from torch.utils.data import DataLoader
-from torch.utils.data.dataloader import default_collate
-from torch.utils.data.sampler import SubsetRandomSampler
+import scanpy as sc
+
+from datasets.anndatadataset import AnnDataDataset 
+#from anndatadataset import AnnDataDataset
 
 
 class BaseDataLoader(DataLoader):
     """
     Base class for all data loaders
     """
-    def __init__(self, first_modality_data, second_modality_data, batch_size, shuffle, validation_split, num_workers, collate_fn=default_collate):
-        # I am not sure if we should implement batch_size and shuffle parameters here or
-        # implement them in the sampler
-        self.validation_split = validation_split
-        self.shuffle = shuffle
+    def __init__(self, dataset, batch_size=1):
+        super().__init__(dataset=dataset, batch_size=batch_size)
+        if isinstance(dataset, AnnDataDataset):
+            self.batch_counts = dataset.get_batch_counts()
+            self.batch_indices = dataset.get_batch_indices()
+            self.batch_iter = self._create_class_iter()
 
-        self.batch_idx = 0
-        self.n_samples = len(dataset)
+    def _create_class_iter(self):
+        for label, indices in self.batch_indices.items():
+            index_len = indices.shape[0]
+            index_perm = torch.randperm(index_len)
+            self.batch_indices[label] = indices[index_perm]
+        
+        class_indices_copy = self.batch_indices.copy()
+        class_counts_copy = self.batch_counts.copy()
+        
+        while len(class_counts_copy) >=1:
+            label, indices = random.choice(list(class_indices_copy.items()))
+            if len(indices) < self.batch_size:
+                class_counts_copy.pop(label)
+                class_indices_copy.pop(label)
+                continue
+            yield label, indices[:self.batch_size]
+            class_indices_copy[label] = indices[self.batch_size:]
 
-        self.sampler, self.valid_sampler = self._split_sampler(self.validation_split)
+    def __iter__(self):
+        labels = list(self.batch_indices.keys())
+        random.shuffle(labels)
+        self.batch_indices = {label:self.batch_indices[label] for label in labels}
+        self.batch_counts = {label:self.batch_counts[label] for label in labels}
+        self.batch_iter = self._create_class_iter()
+        return self
 
-        self.init_kwargs = {
-            'dataset': dataset,
-            'batch_size': batch_size,
-            'shuffle': self.shuffle,
-            'collate_fn': collate_fn,
-            'num_workers': num_workers
-        }
-        super().__init__(sampler=self.sampler, **self.init_kwargs)
+    def __next__(self):
+        try:
+            _, indices = next(self.batch_iter)
+            return self.dataset[indices]
+        except StopIteration:
+            raise StopIteration
 
-    def _split_sampler(self, split):
-        if split == 0.0:
-            return None, None
+    def __len__(self):
+        return sum(count for _, count in self.batch_counts)
 
-        idx_full = np.arange(self.n_samples)
-
-        np.random.seed(0)
-        np.random.shuffle(idx_full)
-
-        if isinstance(split, int):
-            assert split > 0
-            assert split < self.n_samples, "validation set size is configured to be larger than entire dataset."
-            len_valid = split
-        else:
-            len_valid = int(self.n_samples * split)
-
-        valid_idx = idx_full[0:len_valid]
-        train_idx = np.delete(idx_full, np.arange(0, len_valid))
-
-        train_sampler = SubsetRandomSampler(train_idx) # I think it should be changed
-        valid_sampler = SubsetRandomSampler(valid_idx)
-
-        # turn off shuffle option which is mutually exclusive with sampler
-        self.shuffle = False
-        self.n_samples = len(train_idx)
-
-        return train_sampler, valid_sampler
-
-    def split_validation(self):
-        if self.valid_sampler is None:
-            return None
-        else:
-            return DataLoader(sampler=self.valid_sampler, **self.init_kwargs)
+if __name__ == '__main__':
+    cite = sc.read_h5ad("data/multimodal/GSE194122_openproblems_neurips2021_cite_BMMC_processed.h5ad")
+    ds = AnnDataDataset(cite)
+    ds_loader = BaseDataLoader(ds, batch_size=10)
+    i = 0
+    for batch in ds_loader:
+        print(batch)
+        i += 1
+        if i == 5:
+            break
