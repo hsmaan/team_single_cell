@@ -1,26 +1,41 @@
 import torch
 import scanpy as sc
 from base import BaseDataLoader
-
-
-#class MnistDataLoader(BaseDataLoader):
-    #"""
-    #MNIST data loading demo using BaseDataLoader
-    #"""
-    #def __init__(self, data_dir, batch_size, shuffle=True, validation_split=0.0, num_workers=1, training=True):
-        #trsfm = transforms.Compose([
-            #transforms.ToTensor(),
-            #transforms.Normalize((0.1307,), (0.3081,))
-        #])
-        #self.data_dir = data_dir
-        #self.dataset = datasets.MNIST(self.data_dir, train=training, download=True, transform=trsfm)
-        #super().__init__(self.dataset, batch_size, shuffle, validation_split, num_workers)
+from datasets.anndatadataset import AnnDataDataset
+#from base_data_loader import BaseDataLoader
+#from anndatadataset import AnnDataDataset
 
 class GexAtacDataLoader(BaseDataLoader):
-    def __init__(self, directory, batch_size=1) -> None:
-        gex_atac = sc.read_h5ad(directory)
-        gex_atac_tensor = torch.from_numpy(gex_atac.X.todense())
-        super().__init__(gex_atac_tensor, batch_size)
+    def __init__(self, dataset:AnnDataDataset, gex_dim, atac_dim, batch_size=1) -> None:
+        expected_dim = gex_dim + atac_dim
+        true_dim = dataset.shape(dim=1)  
+        try:
+            assert expected_dim == true_dim
+        except AssertionError:
+            print("AssertionError: Dimensions do not match: {} != {}".format((gex_dim+atac_dim), dataset.shape(dim=1)))
+            if abs(expected_dim - true_dim) > 2:
+                exit()
+
+        self.gex_dim = gex_dim
+        self.atac_dim = atac_dim
+        
+        super().__init__(dataset=dataset, batch_size=batch_size)
 
 class GexAdtDataLoader(BaseDataLoader):
-    pass
+    def __init__(self, dataset:AnnDataDataset, gex_dim, adt_dim, batch_size=1) -> None:
+        expected_dim = gex_dim + adt_dim
+        true_dim = dataset.shape(dim=1)  
+        try:
+            assert expected_dim == true_dim
+        except AssertionError:
+            print("AssertionError: Dimensions do not match: {} != {}".format((gex_dim+adt_dim), dataset.shape(dim=1)))
+            if abs(expected_dim - true_dim) > 2:
+                exit()
+
+        self.gex_dim = gex_dim
+        self.adt_dim = adt_dim
+        
+        super().__init__(dataset=dataset, batch_size=batch_size)
+
+if __name__ == "__main__":
+    assert (1 == 0)

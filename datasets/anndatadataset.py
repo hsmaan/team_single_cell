@@ -1,5 +1,4 @@
 import torch
-from torch.utils.data import Dataset
 from anndata import AnnData
 import scanpy as sc
 from sklearn import preprocessing
@@ -11,6 +10,8 @@ class AnnDataDataset(BaseDataset):
     def __init__(self, dataset:AnnData) -> None:
         self.X = torch.from_numpy(dataset.X.todense())
         self.y = torch.from_numpy(self._get_nparr_of_batches(dataset.obs["batch"]))
+        # Think about some other data that we need to save from AnnData object
+
         super().__init__(self.X, self.y)
     
     def _get_nparr_of_batches(self, obs_batches):
