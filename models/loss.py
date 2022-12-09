@@ -20,15 +20,16 @@ def gex_atac_loss(output, target, gex_dim, atac_dim, gex_weight=10, atac_weight=
 
 def gex_adt_loss(output, target, gex_dim, adt_dim, gex_weight=5, adt_weight=5):
     # GEX loss 
-    mse = nn.MSELoss()
+    gex_mse = nn.MSELoss()
     gex_true = target[:, 0:gex_dim]
     gex_pred = output[:, 0:gex_dim]
-    gex_loss = mse(gex_pred, gex_true)
+    gex_loss = gex_mse(gex_pred, gex_true)
     
     # ADT loss 
+    adt_mse = nn.MSELoss()
     adt_true = target[:, gex_dim:]
     adt_pred = output[:, gex_dim:]
-    adt_loss = mse(adt_pred, adt_true)
+    adt_loss = adt_mse(adt_pred, adt_true)
     
     # Combine both and return
     loss = gex_loss*gex_weight + adt_loss*adt_weight

@@ -1,18 +1,17 @@
 import torch
 import random
 from torch.utils.data import DataLoader
-import scanpy as sc
 
 from datasets.anndatadataset import AnnDataDataset 
-#from anndatadataset import AnnDataDataset
 
 
 class BaseDataLoader(DataLoader):
     """
     Base class for all data loaders
     """
-    def __init__(self, dataset, batch_size=1):
-        super().__init__(dataset=dataset, batch_size=batch_size)
+    def __init__(self, dataset, batch_size=1, shuffle=True, num_workers=4, drop_last=True):
+        super().__init__(dataset=dataset, batch_size=batch_size, shuffle=shuffle,
+            num_workers=num_workers, drop_last=drop_last)
         if isinstance(dataset, AnnDataDataset):
             self.batch_counts = dataset.get_batch_counts()
             self.batch_indices = dataset.get_batch_indices()
@@ -53,14 +52,3 @@ class BaseDataLoader(DataLoader):
 
     def __len__(self):
         return sum(count for _, count in self.batch_counts)
-
-if __name__ == '__main__':
-    cite = sc.read_h5ad("data/multimodal/GSE194122_openproblems_neurips2021_cite_BMMC_processed.h5ad")
-    ds = AnnDataDataset(cite)
-    ds_loader = BaseDataLoader(ds, batch_size=10)
-    i = 0
-    for batch in ds_loader:
-        print(batch)
-        i += 1
-        if i == 5:
-            break
