@@ -7,7 +7,10 @@ from datasets.anndatadataset import AnnDataDataset
 from models.loss import gex_atac_loss
 
 class GexAtacTrainer:
-    def __init__(self, gex_atac_adata, latent_dim, gex_dim, atac_dim) -> None:
+    def __init__(self, gex_atac_adata, batches, latent_dim, gex_dim, atac_dim) -> None:
+
+        self.gex_dim = gex_dim
+        self.atac_dim = atac_dim
         # Initialize autoencoder
         self.autoencoder = MultiModalAutoencoder(
             latent_dim = latent_dim,
@@ -16,7 +19,8 @@ class GexAtacTrainer:
         )
 
         # Init dataset
-        self.gex_atac_ds = AnnDataDataset(gex_atac_adata, gex_dim, atac_dim)
+        print("Initializing dataset and dataloader...")
+        self.gex_atac_ds = AnnDataDataset(gex_atac_adata, batches, gex_dim, atac_dim)
 
         # Create dataloader for concatenated data
         self.gex_atac_loader = WrapperDataLoader(
@@ -57,10 +61,11 @@ class GexAtacTrainer:
             running_recon_loss = 0.0
             steps = 0
             for index, batch in enumerate(self.gex_atac_loader):
+                data_tensor, batch_tensor = batch
                 self.optimizer.zero_grad()
-                inputs = batch.double().to(self.device)
+                inputs = data_tensor.double().to(self.device)
                 outs = self.autoencoder.forward(inputs)
-                loss = gex_atac_loss(outs, inputs)
+                loss = gex_atac_loss(outs, inputs, self.gex_dim, self.atac_dim)
                 running_recon_loss += loss.cpu().detach().item()
                 steps += 1
                 loss.backward()

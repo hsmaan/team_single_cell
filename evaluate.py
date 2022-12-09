@@ -27,5 +27,7 @@ class GexAtacEvaluation:
 
     def evaluate(self):
         eval_obj = EvalEmbeddings(adata=self.adata) # Initialize the class
-        eval_obj.evaluate(self.latent_repr) # Evaluate
+        total_score, res_df = eval_obj.evaluate(self.latent_repr) # Evaluate
+        print(total_score)
+        print(res_df)
         eval_obj.plot()

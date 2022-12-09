@@ -6,9 +6,9 @@ from sklearn import preprocessing
 from base.base_dataset import BaseDataset
 
 class AnnDataDataset(BaseDataset):
-    def __init__(self, dataset:AnnData, fmod_dim, smod_dim) -> None:
+    def __init__(self, dataset:AnnData, batches, fmod_dim, smod_dim) -> None:
         self.X = torch.from_numpy(dataset.X.todense())
-        self.y = torch.from_numpy(self._get_nparr_of_batches(dataset.obs["batch"]))
+        self.y = torch.from_numpy(self._get_nparr_of_batches(batches))
         # Think about some other data that we need to save from AnnData object
         self.fmod_dim = fmod_dim
         self.smod_dim = smod_dim
