@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#SBATCH --job-name=hello_world
+#SBATCH --partition=cpu
+#SBATCH --qos=nopreemption
+#SBATCH --mem=8G
+#SBATCH --cores=4
+#SBATCH --ntasks=1
+#SBATCH --time=5-00:00:00
+#SBATCH --mail-user=hurmaan99@gmail.com
+#SBATCH --mail-type=END,FAIL
+#SBATCH --output=hello_world.log
+
+pwd; hostname; date
+
+source /pkgs/anaconda3/etc/profile.d/conda.sh
+conda activate single_cell_env
+
+cd ../scripts 
+python hello_world.py
+
+date 

@@ -1,0 +1,13 @@
+/h/hmaan/Documents/team_single_cell/experiments/jobs
+cpu011
+Fri Dec  9 10:48:46 EST 2022
+Could not find conda environment: single_cell_env
+You can list all discoverable environments with `conda info --envs`.
+
+Traceback (most recent call last):
+  File "hello_world.py", line 5, in <module>
+    from models import MultiModelAutoEncoder
+  File "../../models/__init__.py", line 1, in <module>
+    from multimodal_autoencoder import MultimodalAutoencoder
+ModuleNotFoundError: No module named 'multimodal_autoencoder'
+Fri Dec  9 10:48:47 EST 2022
