@@ -80,8 +80,8 @@ class MultiModalAutoencoder(nn.Module):
         
     def forward(self, gex_atac_X):
         # Extract the data
-        gex_X = gex_atac_X[:, 0:2500]
-        atac_X = gex_atac_X[:, 2500:]
+        gex_X = gex_atac_X[:, 0:self.gex_dim]
+        atac_X = gex_atac_X[:, self.gex_dim:]
         # Encode both the GEX and ATAC data 
         gex_Z = self.gex_encode(gex_X)
         atac_Z = self.atac_encode(atac_X)
