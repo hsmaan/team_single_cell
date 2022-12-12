@@ -1,4 +1,3 @@
-import pandas as pd
 import scanpy as sc 
 import anndata as ann
 import episcanpy as esc
@@ -44,9 +43,11 @@ class GexAdtPreprocess:
         gex_dim - Number of GEX features to select and pass to the model
         absolute_path - absolute path to the directory with the GEX-ADT dataset
         """
+        print("Reading dataset...")
         cite = sc.read_h5ad(absolute_path)
         self.obs= cite.obs
 
+        print("Feature selecting GEX...")
         gex = cite[:, cite.var["feature_types"] == "GEX"] # Subset all data, not just the counts 
         sc.pp.highly_variable_genes(gex, n_top_genes=gex_dim, flavor="seurat_v3") # Feature selection
 

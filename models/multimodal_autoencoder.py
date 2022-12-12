@@ -14,9 +14,9 @@ def weights_init(m):
         torch.nn.init.xavier_uniform_(m.weight)
 
 # This is the class for our multimodal autoencoder
-class MultiModalAutoencoder(nn.Module):
+class GexAtacMultiModalAutoencoder(nn.Module):
     def __init__(self, latent_dim, gex_dim, atac_dim):
-        super(MultiModalAutoencoder, self).__init__()
+        super(GexAtacMultiModalAutoencoder, self).__init__()
         self.latent_dim = latent_dim
         self.gex_dim = gex_dim
         self.atac_dim = atac_dim
@@ -92,3 +92,77 @@ class MultiModalAutoencoder(nn.Module):
         atac_X_decoded = self.atac_decode(gex_atac_c)
         gex_atac_X_decoded = torch.cat([gex_X_decoded, atac_X_decoded], axis=1)
         return gex_atac_X_decoded 
+
+class GexAdtMultiModalAutoencoder(nn.Module):
+    def __init__(self, latent_dim, gex_dim, adt_dim):
+        super(GexAdtMultiModalAutoencoder, self).__init__()
+        self.latent_dim = latent_dim
+        self.gex_dim = gex_dim
+        self.adt_dim = adt_dim
+        self.gex_encoder = nn.Sequential(
+            nn.Linear(self.gex_dim, 250),
+            nn.BatchNorm1d(250),
+            nn.ReLU(),
+            nn.Linear(250, int(self.latent_dim/2)),
+            nn.BatchNorm1d(int(self.latent_dim/2)),
+            nn.ReLU()
+        )
+        self.adt_encoder = nn.Sequential(
+            nn.Linear(self.adt_dim, 50),
+            nn.BatchNorm1d(50),
+            nn.ReLU(),
+            nn.Linear(50, int(self.latent_dim/2)),
+            nn.BatchNorm1d(int(self.latent_dim/2)),
+            nn.ReLU()
+        )
+        self.gex_decoder = nn.Sequential(
+            nn.Linear(self.latent_dim, 250),
+            nn.BatchNorm1d(250),
+            nn.ReLU(),
+            nn.Linear(250, self.gex_dim),
+            nn.ReLU()
+        )
+        self.adt_decoder = nn.Sequential(
+            nn.Linear(self.latent_dim, 50),
+            nn.BatchNorm1d(50),
+            nn.ReLU(),
+            nn.Linear(50, self.adt_dim),
+            nn.Sigmoid()
+        )
+        
+        # Weight initialization 
+        self.gex_encoder.apply(weights_init)
+        self.adt_encoder.apply(weights_init)
+        self.gex_decoder.apply(weights_init)
+        self.adt_decoder.apply(weights_init)
+        
+    def gex_encode(self, gex_X):
+        gex_Z = self.gex_encoder(gex_X)
+        return gex_Z
+    
+    def gex_decode(self, gex_adt_c):
+        gex_X_decoded = self.gex_decoder(gex_adt_c)
+        return gex_X_decoded
+        
+    def adt_encode(self, adt_X):
+        adt_Z = self.adt_encoder(adt_X)
+        return adt_Z
+        
+    def adt_decode(self, gex_adt_c):
+        adt_X_decoded = self.adt_decoder(gex_adt_c)
+        return adt_X_decoded
+        
+    def forward(self, gex_adt_X):
+        # Extract the data
+        gex_X = gex_adt_X[:, 0:self.gex_dim]
+        adt_X = gex_adt_X[:, self.gex_dim:]
+        # Encode both the GEX and ATAC data 
+        gex_Z = self.gex_encode(gex_X)
+        adt_Z = self.adt_encode(adt_X)
+        # Concatenate the two encoded modalities 
+        gex_adt_c = torch.cat([gex_Z, adt_Z], axis =1) # This is our latent we'll use later
+        # Use the concatenated representation to recover both GEx and ATAC
+        gex_X_decoded = self.gex_decode(gex_adt_c)
+        adt_X_decoded = self.adt_decode(gex_adt_c)
+        gex_adt_X_decoded = torch.cat([gex_X_decoded, adt_X_decoded], axis=1)
+        return gex_adt_X_decoded 
