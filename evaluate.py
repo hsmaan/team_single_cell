@@ -2,11 +2,17 @@ import torch
 
 from helpers.eval_embeddings import EvalEmbeddings
 from datasets.anndatadataset import AnnDataDataset
+from helpers.preprocessing import GexAdtPreprocess, GexAtacPreprocess
+from train import GexAtacTrainer, GexAdtTrainer
 
 class GexAtacEvaluation:
-    def __init__(self, autoencoder, dataset:AnnDataDataset, adata, device) -> None:
+    def __init__(self, train_obj:GexAtacTrainer, preprocess_obj:GexAtacPreprocess) -> None:
         # Put the model in eval mode and turn off torch gradients to get 
         # the model embeddings 
+        autoencoder = train_obj.autoencoder
+        dataset = train_obj.gex_atac_ds
+        device = train_obj.device
+        adata = preprocess_obj.dataset
         autoencoder.eval()
         with torch.no_grad():
             # Have to move tensors to device and put them in the same dtype or else
@@ -35,9 +41,13 @@ class GexAtacEvaluation:
         eval_obj.plot()
 
 class GexAdtEvaluation:
-    def __init__(self, autoencoder, dataset:AnnDataDataset, adata, device) -> None:
+    def __init__(self, train_obj:GexAdtTrainer, preprocess_obj:GexAdtPreprocess) -> None:
         # Put the model in eval mode and turn off torch gradients to get 
         # the model embeddings 
+        autoencoder = train_obj.autoencoder
+        dataset = train_obj.gex_adt_ds
+        device = train_obj.device
+        adata = preprocess_obj.dataset
         autoencoder.eval()
         with torch.no_grad():
             # Have to move tensors to device and put them in the same dtype or else

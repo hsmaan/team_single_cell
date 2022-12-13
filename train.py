@@ -1,26 +1,38 @@
 import torch
 import torch.optim as optim
 
-from models.multimodal_autoencoder import GexAtacMultiModalAutoencoder, GexAdtMultiModalAutoencoder
+from models.multimodal_autoencoder import GexAtacMultiModalAutoencoder, GexAdtMultiModalAutoencoder, DeepGexAdtMultiModalAutoencoder, DeepGexAtacMultiModalAutoencoder
 from data_loader.data_loaders import WrapperDataLoader
 from datasets.anndatadataset import AnnDataDataset
 from models.loss import gex_atac_loss, gex_adt_loss
+from helpers.preprocessing import GexAdtPreprocess, GexAtacPreprocess
 
 class GexAtacTrainer:
-    def __init__(self, gex_atac_adata, batches, latent_dim, gex_dim, atac_dim) -> None:
+    def __init__(self, preprocess_object: GexAtacPreprocess, latent_dim, model="deep",
+    init="xavier", lr=0.001, weight_decay=0.001) -> None:
 
-        self.gex_dim = gex_dim
-        self.atac_dim = atac_dim
+        self.gex_dim = preprocess_object.gex_dim
+        self.atac_dim = preprocess_object.atac_dim
+        gex_atac_adata = preprocess_object.dataset
+        batches = preprocess_object.obs["batch"]
         # Initialize autoencoder
-        self.autoencoder = GexAtacMultiModalAutoencoder(
-            latent_dim = latent_dim,
-            gex_dim = gex_dim,
-            atac_dim = atac_dim
-        )
+        if model == "deep":
+            self.autoencoder = DeepGexAtacMultiModalAutoencoder(
+                latent_dim = latent_dim,
+                gex_dim = self.gex_dim,
+                atac_dim = self.atac_dim,
+                init = init
+            )
+        else:
+            self.autoencoder = GexAtacMultiModalAutoencoder(
+                latent_dim = latent_dim,
+                gex_dim = self.gex_dim,
+                atac_dim = self.atac_dim
+            )
 
         # Init dataset
         print("Initializing dataset and dataloader...")
-        self.gex_atac_ds = AnnDataDataset(gex_atac_adata, batches, gex_dim, atac_dim)
+        self.gex_atac_ds = AnnDataDataset(gex_atac_adata, batches, self.gex_dim, self.atac_dim)
 
         # Create dataloader for concatenated data
         self.gex_atac_loader = WrapperDataLoader(
@@ -41,10 +53,9 @@ class GexAtacTrainer:
         # Adam optimizer 
         self.optimizer = optim.Adam(
             self.autoencoder.parameters(),
-            lr = 0.001,
-            weight_decay = 0.001
+            lr = lr,
+            weight_decay = weight_decay
         )
-
 
         # Loggers
         print()
@@ -53,11 +64,9 @@ class GexAtacTrainer:
         print("The optimizer: {};".format(self.optimizer))
         print()
 
-    def train(self):
-
-        # Train the model for 20 epochs 
+    def train(self, epochs, gex_loss_w=5, atac_loss_w=5):
         self.autoencoder.train()
-        for epoch in range(20):
+        for epoch in range(epochs):
             running_recon_loss = 0.0
             steps = 0
             for index, batch in enumerate(self.gex_atac_loader):
@@ -65,7 +74,7 @@ class GexAtacTrainer:
                 self.optimizer.zero_grad()
                 inputs = data_tensor.double().to(self.device)
                 outs = self.autoencoder.forward(inputs)
-                loss = gex_atac_loss(outs, inputs, self.gex_dim, self.atac_dim)
+                loss = gex_atac_loss(outs, inputs, self.gex_dim, self.atac_dim, gex_loss_w, atac_loss_w)
                 running_recon_loss += loss.cpu().detach().item()
                 steps += 1
                 loss.backward()
@@ -79,20 +88,31 @@ class GexAtacTrainer:
             )
 
 class GexAdtTrainer:
-    def __init__(self, gex_adt_adata, batches, latent_dim, gex_dim, adt_dim) -> None:
+    def __init__(self, preprocess_object: GexAdtPreprocess, latent_dim, model="deep",
+    init="xavier", lr=0.001, weight_decay=0.001) -> None:
 
-        self.gex_dim = gex_dim
-        self.adt_dim = adt_dim
+        self.gex_dim = preprocess_object.gex_dim
+        self.adt_dim = preprocess_object.adt_dim
+        gex_adt_adata = preprocess_object.dataset
+        batches = preprocess_object.obs["batch"]
         # Initialize autoencoder
-        self.autoencoder = GexAdtMultiModalAutoencoder(
-            latent_dim = latent_dim,
-            gex_dim = gex_dim,
-            adt_dim = adt_dim
-        )
+        if model == "deep":
+            self.autoencoder = DeepGexAdtMultiModalAutoencoder(
+                latent_dim = latent_dim,
+                gex_dim = self.gex_dim,
+                adt_dim = self.adt_dim,
+                init = init
+            )
+        else:
+            self.autoencoder = GexAdtMultiModalAutoencoder(
+                latent_dim = latent_dim,
+                gex_dim = self.gex_dim,
+                adt_dim = self.adt_dim
+            )
 
         # Init dataset
         print("Initializing dataset and dataloader...")
-        self.gex_adt_ds = AnnDataDataset(gex_adt_adata, batches, gex_dim, adt_dim)
+        self.gex_adt_ds = AnnDataDataset(gex_adt_adata, batches, self.gex_dim, self.adt_dim)
 
         # Create dataloader for concatenated data
         self.gex_atac_loader = WrapperDataLoader(
@@ -113,10 +133,9 @@ class GexAdtTrainer:
         # Adam optimizer 
         self.optimizer = optim.Adam(
             self.autoencoder.parameters(),
-            lr = 0.001,
-            weight_decay = 0.001
+            lr = lr,
+            weight_decay = weight_decay
         )
-
 
         # Loggers
         print()
@@ -125,11 +144,10 @@ class GexAdtTrainer:
         print("The optimizer: {};".format(self.optimizer))
         print()
 
-    def train(self):
+    def train(self, epochs, gex_loss_w=5, adt_loss_w=5):
 
-        # Train the model for 5 epochs 
         self.autoencoder.train()
-        for epoch in range(5):
+        for epoch in range(epochs):
             running_recon_loss = 0.0
             steps = 0
             for index, batch in enumerate(self.gex_atac_loader):
@@ -137,7 +155,7 @@ class GexAdtTrainer:
                 self.optimizer.zero_grad()
                 inputs = data_tensor.double().to(self.device)
                 outs = self.autoencoder.forward(inputs)
-                loss = gex_adt_loss(outs, inputs, self.gex_dim, self.adt_dim)
+                loss = gex_adt_loss(outs, inputs, self.gex_dim, self.adt_dim, gex_loss_w, adt_loss_w)
                 running_recon_loss += loss.cpu().detach().item()
                 steps += 1
                 loss.backward()
