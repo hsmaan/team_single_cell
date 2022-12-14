@@ -13,8 +13,8 @@
 
 pwd; hostname; date
 
-source /pkgs/anaconda3/etc/profile.d/conda.sh
-conda activate single_cell_env
+source ~/miniconda3/etc/profile.d/conda.sh
+conda activate /ssd003/home/angelo/mambaforge/envs/single_cell_env
 
 cd ../scripts 
 python hello.py

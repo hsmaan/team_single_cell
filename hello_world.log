@@ -1,8 +1,0 @@
-/h/angelo/single-cell-proj/repo/team_single_cell
-cpu011
-Wed Dec 14 10:08:20 EST 2022
-usage: conda [-h] [-V] command ...
-conda: error: argument command: invalid choice: '/pkgs/anaconda3/bin/conda' (choose from 'info', 'help', 'list', 'search', 'create', 'install', 'update', 'upgrade', 'remove', 'uninstall', 'config', 'clean', 'package')
-/var/spool/slurmd/job8865646/slurm_script: line 19: cd: ../scripts: No such file or directory
-python: can't open file 'hello.py': [Errno 2] No such file or directory
-Wed Dec 14 10:08:22 EST 2022
