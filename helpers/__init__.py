@@ -1,2 +1,2 @@
 from .eval_embeddings import EvalEmbeddings
-from preprocessing import GexAdtPreprocess, GexAtacPreprocess
+from .preprocessing import GexAdtPreprocess, GexAtacPreprocess

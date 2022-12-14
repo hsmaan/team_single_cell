@@ -1,1 +1,1 @@
-from data_loaders import GexAdtDataLoader
+from .data_loaders import GexAdtDataLoader
