@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#SBATCH --job-name=test_sweep
+#SBATCH --array=1-500 # 500 jobs
+#SBATCH --gres=gpu:1
+#SBATCH --cores=8
+#SBATCH --partition=t4v1,t4v2,rtx6000
+#SBATCH --mem=32G
+#SBATCH --time=10-00:00:00
+#SBATCH --output=sweep_array_%A-%a.log
+
+pwd; hostname; date
+
+source /pkgs/anaconda3/etc/profile.d/conda.sh
+conda activate /h/hmaan/miniconda3/envs/test_env # Replace with correct env 
+poetry run wandb agent --entity test_entity --project test_project kxdub45j # Replace with correct API key
+
+date

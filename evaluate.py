@@ -39,6 +39,7 @@ class GexAtacEvaluation:
         print(total_score)
         print(res_df)
         eval_obj.plot()
+        return (total_score, res_df)
 
 class GexAdtEvaluation:
     def __init__(self, train_obj:GexAdtTrainer, preprocess_obj:GexAdtPreprocess) -> None:
@@ -74,3 +75,4 @@ class GexAdtEvaluation:
         print(total_score)
         print(res_df)
         eval_obj.plot()
+        return (total_score, res_df)

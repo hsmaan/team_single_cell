@@ -19,134 +19,100 @@ def he_init(m):
 
 # This is the class for our multimodal autoencoder
 class DeepGexAtacMultiModalAutoencoder(nn.Module):
-    def __init__(self, latent_dim, gex_dim, atac_dim, init="xavier"):
+    def __init__(self, latent_dim, gex_dim, atac_dim, model, init="xavier"):
         super(DeepGexAtacMultiModalAutoencoder, self).__init__()
         self.latent_dim = latent_dim
         self.gex_dim = gex_dim
         self.atac_dim = atac_dim
+        try:
+            gexenc_layers, gexdec_layers, atacenc_layers, atacdec_layers = model
+        except:
+            print("Uncorrectly specified hidden layers: {}".format(model))
+            raise RuntimeError
         # We have two encoders and decoder - for each modality
         # We divide latent dim by two because we are going to 
         # concatenate the two modalities in latent space and
         # then use that concatenated representation to reconstruct
         # each modality 
-        self.gex_encoder = nn.Sequential(
-            nn.Linear(self.gex_dim, 1200),
-            nn.BatchNorm1d(1200),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(1200, 900),
-            nn.BatchNorm1d(900),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(900, 600),
-            nn.BatchNorm1d(600),
-            nn.ReLU(),
-            nn.Linear(600, 480),
-            nn.BatchNorm1d(480),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(480, 120),
-            nn.BatchNorm1d(120),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(120, 80),
-            nn.BatchNorm1d(80),
-            nn.ReLU(),
-            nn.Linear(80, int(self.latent_dim/2)),
-            nn.BatchNorm1d(int(self.latent_dim/2)),
-            nn.ReLU()
-        )
-        self.atac_encoder = nn.Sequential(
-            nn.Linear(self.atac_dim, 3200),
-            nn.BatchNorm1d(3200),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(3200, 1600),
-            nn.BatchNorm1d(1600),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(1600, 1280),
-            nn.BatchNorm1d(1280),
-            nn.ReLU(),
-            nn.Linear(1280, 920),
-            nn.BatchNorm1d(920),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(920, 440),
-            nn.BatchNorm1d(440),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(440, 240),
-            nn.BatchNorm1d(240),
-            nn.ReLU(),
-            nn.Linear(240, 120),
-            nn.BatchNorm1d(120),
-            nn.ReLU(),
-            nn.Linear(120, 80),
-            nn.BatchNorm1d(80),
-            nn.ReLU(),
-            nn.Linear(80, int(self.latent_dim/2)),
-            nn.BatchNorm1d(int(self.latent_dim/2)),
-            nn.ReLU()
-        )
-        self.gex_decoder = nn.Sequential(
-            nn.Linear(self.latent_dim, 80),
-            nn.BatchNorm1d(80),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(80, 120),
-            nn.BatchNorm1d(120),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(120, 240),
-            nn.BatchNorm1d(240),
-            nn.ReLU(),
-            nn.Linear(240, 600),
-            nn.BatchNorm1d(600),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(600, 900),
-            nn.BatchNorm1d(900),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(900, 1200),
-            nn.BatchNorm1d(1200),
-            nn.ReLU(),
-            nn.Linear(1200, self.gex_dim),
-            nn.ReLU()
-        )
-        self.atac_decoder = nn.Sequential(
-            nn.Linear(self.latent_dim, 80),
-            nn.BatchNorm1d(80),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(80, 240),
-            nn.BatchNorm1d(240),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(240, 480),
-            nn.BatchNorm1d(480),
-            nn.ReLU(),
-            nn.Linear(480, 900),
-            nn.BatchNorm1d(900),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(900, 1280),
-            nn.BatchNorm1d(1280),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(1280, 1600),
-            nn.BatchNorm1d(1600),
-            nn.ReLU(),
-            nn.Linear(1600, 2400),
-            nn.BatchNorm1d(2400),
-            nn.ReLU(),
-            nn.Linear(2400, 3200),
-            nn.BatchNorm1d(3200),
-            nn.ReLU(),
-            nn.Linear(3200, self.atac_dim),
-            nn.Sigmoid()
-        )
+        gexenc_modules = []
+        for index, value in enumerate(gexenc_layers):
+            if index == 0:
+                gexenc_modules.append(nn.Linear(self.gex_dim, value))
+                gexenc_modules.append(nn.BatchNorm1d(value))
+                gexenc_modules.append(nn.ReLU())
+                gexenc_modules.append(nn.Dropout(p=0.1))
+            elif index % 2 == 0:
+                gexenc_modules.append(nn.Linear(gexenc_layers[index-1], value))
+                gexenc_modules.append(nn.BatchNorm1d(value))
+                gexenc_modules.append(nn.ReLU())
+                gexenc_modules.append(nn.Dropout(p=0.1))
+            else:
+                gexenc_modules.append(nn.Linear(gexenc_layers[index-1], value))
+                gexenc_modules.append(nn.BatchNorm1d(value))
+                gexenc_modules.append(nn.ReLU())
+        gexenc_modules.append(nn.Linear(gexenc_layers[-1], int(latent_dim/2)))
+        gexenc_modules.append(nn.ReLU())
+        self.gex_encoder = nn.Sequential(*gexenc_modules)
+
+        atacenc_modules = []
+        for index, value in enumerate(atacenc_layers):
+            if index == 0:
+                atacenc_modules.append(nn.Linear(self.atac_dim, value))
+                atacenc_modules.append(nn.BatchNorm1d(value))
+                atacenc_modules.append(nn.ReLU())
+                atacenc_modules.append(nn.Dropout(p=0.1))
+            elif index % 2 == 0:
+                atacenc_modules.append(nn.Linear(atacenc_layers[index-1], value))
+                atacenc_modules.append(nn.BatchNorm1d(value))
+                atacenc_modules.append(nn.ReLU())
+                atacenc_modules.append(nn.Dropout(p=0.1))
+            else:
+                atacenc_modules.append(nn.Linear(atacenc_layers[index-1], value))
+                atacenc_modules.append(nn.BatchNorm1d(value))
+                atacenc_modules.append(nn.ReLU())
+        atacenc_modules.append(nn.Linear(atacenc_layers[-1], int(latent_dim/2)))
+        atacenc_modules.append(nn.ReLU())
+        self.atac_encoder = nn.Sequential(*atacenc_modules)
+
+        gexdec_modules = []
+        for index, value in enumerate(gexdec_layers):
+            if index == 0:
+                gexdec_modules.append(nn.Linear(self.latent_dim, value))
+                gexdec_modules.append(nn.BatchNorm1d(value))
+                gexdec_modules.append(nn.ReLU())
+                gexdec_modules.append(nn.Dropout(p=0.1))
+            elif index % 2 == 0:
+                gexdec_modules.append(nn.Linear(gexdec_layers[index-1], value))
+                gexdec_modules.append(nn.BatchNorm1d(value))
+                gexdec_modules.append(nn.ReLU())
+                gexdec_modules.append(nn.Dropout(p=0.1))
+            else:
+                gexdec_modules.append(nn.Linear(gexdec_layers[index-1], value))
+                gexdec_modules.append(nn.BatchNorm1d(value))
+                gexdec_modules.append(nn.ReLU())
+        gexdec_modules.append(nn.Linear(gexdec_layers[-1], self.gex_dim))
+        gexdec_modules.append(nn.ReLU())
+        self.gex_decoder = nn.Sequential(*gexdec_modules)
+
+        atacdec_modules = []
+        for index, value in enumerate(atacdec_layers):
+            if index == 0:
+                atacdec_modules.append(nn.Linear(self.latent_dim, value))
+                atacdec_modules.append(nn.BatchNorm1d(value))
+                atacdec_modules.append(nn.ReLU())
+                atacdec_modules.append(nn.Dropout(p=0.1))
+            elif index % 2 == 0:
+                atacdec_modules.append(nn.Linear(atacdec_layers[index-1], value))
+                atacdec_modules.append(nn.BatchNorm1d(value))
+                atacdec_modules.append(nn.ReLU())
+                atacdec_modules.append(nn.Dropout(p=0.1))
+            else:
+                atacdec_modules.append(nn.Linear(atacdec_layers[index-1], value))
+                atacdec_modules.append(nn.BatchNorm1d(value))
+                atacdec_modules.append(nn.ReLU())
+        atacdec_modules.append(nn.Linear(atacdec_layers[-1], self.atac_dim))
+        atacdec_modules.append(nn.Sigmoid())
+        self.atac_decoder = nn.Sequential(*atacdec_modules)
         
         # Weight initialization 
         if init == "xavier":
@@ -192,115 +158,108 @@ class DeepGexAtacMultiModalAutoencoder(nn.Module):
         return gex_atac_X_decoded 
 
 class DeepGexAdtMultiModalAutoencoder(nn.Module):
-    def __init__(self, latent_dim, gex_dim, adt_dim, init="xavier"):
+    def __init__(self, latent_dim, gex_dim, adt_dim, model, init="xavier"):
         super(DeepGexAdtMultiModalAutoencoder, self).__init__()
         self.latent_dim = latent_dim
         self.gex_dim = gex_dim
         self.adt_dim = adt_dim
-        self.gex_encoder = nn.Sequential(
-            nn.Linear(self.gex_dim, 1200),
-            nn.BatchNorm1d(1200),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(1200, 900),
-            nn.BatchNorm1d(900),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(900, 600),
-            nn.BatchNorm1d(600),
-            nn.ReLU(),
-            nn.Linear(600, 480),
-            nn.BatchNorm1d(480),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(480, 120),
-            nn.BatchNorm1d(120),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(120, 80),
-            nn.BatchNorm1d(80),
-            nn.ReLU(),
-            nn.Linear(80, int(self.latent_dim/2)),
-            nn.BatchNorm1d(int(self.latent_dim/2)),
-            nn.ReLU()
-        )
-        self.adt_encoder = nn.Sequential(
-            nn.Linear(self.adt_dim, 100),
-            nn.BatchNorm1d(100),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(100, 80),
-            nn.BatchNorm1d(80),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(80, 64),
-            nn.BatchNorm1d(64),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(64, 32),
-            nn.BatchNorm1d(32),
-            nn.ReLU(),
-            nn.Linear(32, int(self.latent_dim/2)),
-            nn.BatchNorm1d(int(self.latent_dim/2)),
-            nn.ReLU()
-        )
-        self.gex_decoder = nn.Sequential(
-            nn.Linear(self.latent_dim, 80),
-            nn.BatchNorm1d(80),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(80, 120),
-            nn.BatchNorm1d(120),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(120, 240),
-            nn.BatchNorm1d(240),
-            nn.ReLU(),
-            nn.Linear(240, 600),
-            nn.BatchNorm1d(600),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(600, 900),
-            nn.BatchNorm1d(900),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(900, 1200),
-            nn.BatchNorm1d(1200),
-            nn.ReLU(),
-            nn.Linear(1200, self.gex_dim),
-            nn.ReLU()
-        )
-        self.adt_decoder = nn.Sequential(
-            nn.Linear(self.latent_dim, 16),
-            nn.BatchNorm1d(16),
-            nn.ReLU(),
-            nn.Linear(16, 48),
-            nn.BatchNorm1d(48),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(48, 64),
-            nn.BatchNorm1d(64),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(64, 96),
-            nn.BatchNorm1d(96),
-            nn.ReLU(),
-            nn.Dropout(p=0.1),
-            nn.Linear(96, self.adt_dim),
-            nn.ReLU()
-        )
+        try:
+            gexenc_layers, gexdec_layers, adtenc_layers, adtdec_layers = model
+        except:
+            print("Uncorrectly specified hidden layers: {}".format(model))
+            raise RuntimeError
+        
+        gexenc_modules = []
+        for index, value in enumerate(gexenc_layers):
+            if index == 0:
+                gexenc_modules.append(nn.Linear(self.gex_dim, value))
+                gexenc_modules.append(nn.BatchNorm1d(value))
+                gexenc_modules.append(nn.ReLU())
+                gexenc_modules.append(nn.Dropout(p=0.1))
+            elif index % 2 == 0:
+                gexenc_modules.append(nn.Linear(gexenc_layers[index-1], value))
+                gexenc_modules.append(nn.BatchNorm1d(value))
+                gexenc_modules.append(nn.ReLU())
+                gexenc_modules.append(nn.Dropout(p=0.1))
+            else:
+                gexenc_modules.append(nn.Linear(gexenc_layers[index-1], value))
+                gexenc_modules.append(nn.BatchNorm1d(value))
+                gexenc_modules.append(nn.ReLU())
+        gexenc_modules.append(nn.Linear(gexenc_layers[-1], int(latent_dim/2)))
+        gexenc_modules.append(nn.ReLU())
+        self.gex_encoder = nn.Sequential(*gexenc_modules)
+
+        adtenc_modules = []
+        for index, value in enumerate(adtenc_layers):
+            if index == 0:
+                adtenc_modules.append(nn.Linear(self.adt_dim, value))
+                adtenc_modules.append(nn.BatchNorm1d(value))
+                adtenc_modules.append(nn.ReLU())
+                adtenc_modules.append(nn.Dropout(p=0.1))
+            elif index % 2 == 0:
+                adtenc_modules.append(nn.Linear(adtenc_layers[index-1], value))
+                adtenc_modules.append(nn.BatchNorm1d(value))
+                adtenc_modules.append(nn.ReLU())
+                adtenc_modules.append(nn.Dropout(p=0.1))
+            else:
+                adtenc_modules.append(nn.Linear(adtenc_layers[index-1], value))
+                adtenc_modules.append(nn.BatchNorm1d(value))
+                adtenc_modules.append(nn.ReLU())
+        adtenc_modules.append(nn.Linear(adtenc_layers[-1], int(latent_dim/2)))
+        adtenc_modules.append(nn.ReLU())
+        self.adt_encoder = nn.Sequential(*adtenc_modules)
+
+        gexdec_modules = []
+        for index, value in enumerate(gexdec_layers):
+            if index == 0:
+                gexdec_modules.append(nn.Linear(self.latent_dim, value))
+                gexdec_modules.append(nn.BatchNorm1d(value))
+                gexdec_modules.append(nn.ReLU())
+                gexdec_modules.append(nn.Dropout(p=0.1))
+            elif index % 2 == 0:
+                gexdec_modules.append(nn.Linear(gexdec_layers[index-1], value))
+                gexdec_modules.append(nn.BatchNorm1d(value))
+                gexdec_modules.append(nn.ReLU())
+                gexdec_modules.append(nn.Dropout(p=0.1))
+            else:
+                gexdec_modules.append(nn.Linear(gexdec_layers[index-1], value))
+                gexdec_modules.append(nn.BatchNorm1d(value))
+                gexdec_modules.append(nn.ReLU())
+        gexdec_modules.append(nn.Linear(gexdec_layers[-1], self.gex_dim))
+        gexdec_modules.append(nn.ReLU())
+        self.gex_decoder = nn.Sequential(*gexdec_modules)
+
+        adtdec_modules = []
+        for index, value in enumerate(adtdec_layers):
+            if index == 0:
+                adtdec_modules.append(nn.Linear(self.latent_dim, value))
+                adtdec_modules.append(nn.BatchNorm1d(value))
+                adtdec_modules.append(nn.ReLU())
+                adtdec_modules.append(nn.Dropout(p=0.1))
+            elif index % 2 == 0:
+                adtdec_modules.append(nn.Linear(adtdec_layers[index-1], value))
+                adtdec_modules.append(nn.BatchNorm1d(value))
+                adtdec_modules.append(nn.ReLU())
+                adtdec_modules.append(nn.Dropout(p=0.1))
+            else:
+                adtdec_modules.append(nn.Linear(adtdec_layers[index-1], value))
+                adtdec_modules.append(nn.BatchNorm1d(value))
+                adtdec_modules.append(nn.ReLU())
+        adtdec_modules.append(nn.Linear(adtdec_layers[-1], self.adt_dim))
+        adtdec_modules.append(nn.ReLU())
+        self.adt_decoder = nn.Sequential(*adtdec_modules)
         
         # Weight initialization 
         if init == "xavier":
             self.gex_encoder.apply(xavier_init)
-            self.atac_encoder.apply(xavier_init)
+            self.adt_encoder.apply(xavier_init)
             self.gex_decoder.apply(xavier_init)
-            self.atac_decoder.apply(xavier_init)
+            self.adt_decoder.apply(xavier_init)
         else:
             self.gex_encoder.apply(he_init)
-            self.atac_encoder.apply(he_init)
+            self.adt_encoder.apply(he_init)
             self.gex_decoder.apply(he_init)
-            self.atac_decoder.apply(he_init)
+            self.adt_decoder.apply(he_init)
         
     def gex_encode(self, gex_X):
         gex_Z = self.gex_encoder(gex_X)

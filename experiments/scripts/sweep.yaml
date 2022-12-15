@@ -1,0 +1,12 @@
+program: sweep.py
+method: random
+name: sweep_test
+project: test_project
+run_cap: 1000 
+parameters:
+  a:
+    values: [1, 2, 3, 4, 5]
+  b:
+    values: [1, 2, 3, 4, 5]
+  c:
+    values: [1, 2, 3, 4, 5]
