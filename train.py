@@ -1,5 +1,6 @@
 import torch
 import torch.optim as optim
+import wandb
 
 from models.multimodal_autoencoder import GexAtacMultiModalAutoencoder, GexAdtMultiModalAutoencoder, DeepGexAdtMultiModalAutoencoder, DeepGexAtacMultiModalAutoencoder
 from data_loader.data_loaders import WrapperDataLoader
@@ -8,26 +9,33 @@ from models.loss import gex_atac_loss, gex_adt_loss
 from helpers.preprocessing import GexAdtPreprocess, GexAtacPreprocess
 
 class GexAtacTrainer:
-    def __init__(self, preprocess_object: GexAtacPreprocess, latent_dim, model="deep",
+    def __init__(self, preprocess_object: GexAtacPreprocess, latent_dim, model=[],
     init="xavier", lr=0.001, weight_decay=0.001) -> None:
+        """
+        model - list of 4 lists of number of features in HIDDEN layers (the first number is NOT
+        the first modality dim and the last number is NOT the latent dim - for encoder).
+        Each list for each modality encoder and decoder: [[1stmodality_encoder], [1stmodality_decoder],
+        [2ndmodality_encoder], [2ndmodality_decoder]].
+        """
 
         self.gex_dim = preprocess_object.gex_dim
         self.atac_dim = preprocess_object.atac_dim
         gex_atac_adata = preprocess_object.dataset
         batches = preprocess_object.obs["batch"]
         # Initialize autoencoder
-        if model == "deep":
-            self.autoencoder = DeepGexAtacMultiModalAutoencoder(
-                latent_dim = latent_dim,
-                gex_dim = self.gex_dim,
-                atac_dim = self.atac_dim,
-                init = init
+        if model == []:
+            self.autoencoder = GexAtacMultiModalAutoencoder(
+                latent_dim=latent_dim,
+                gex_dim=self.gex_dim,
+                atac_dim=self.atac_dim
             )
         else:
-            self.autoencoder = GexAtacMultiModalAutoencoder(
-                latent_dim = latent_dim,
-                gex_dim = self.gex_dim,
-                atac_dim = self.atac_dim
+            self.autoencoder = DeepGexAtacMultiModalAutoencoder(
+                latent_dim=latent_dim,
+                gex_dim=self.gex_dim,
+                atac_dim=self.atac_dim,
+                model=model,
+                init=init
             )
 
         # Init dataset
@@ -64,7 +72,7 @@ class GexAtacTrainer:
         print("The optimizer: {};".format(self.optimizer))
         print()
 
-    def train(self, epochs, gex_loss_w=5, atac_loss_w=5):
+    def train(self, epochs, gex_loss_w=5, atac_loss_w=5, wandb_log=False):
         self.autoencoder.train()
         for epoch in range(epochs):
             running_recon_loss = 0.0
@@ -86,28 +94,37 @@ class GexAtacTrainer:
                 " recon loss: " +
                 str(round(epoch_recon_loss, 10))
             )
+            if wandb_log:
+                wandb.log({"recon loss": epoch_recon_loss})
 
 class GexAdtTrainer:
-    def __init__(self, preprocess_object: GexAdtPreprocess, latent_dim, model="deep",
+    def __init__(self, preprocess_object: GexAdtPreprocess, latent_dim, model=[],
     init="xavier", lr=0.001, weight_decay=0.001) -> None:
+        """
+        model - list of 4 lists of number of features in HIDDEN layers (the first number is NOT
+        the first modality dim and the last number is NOT the latent dim - for encoder).
+        Each list for each modality encoder and decoder: [[1stmodality_encoder], [1stmodality_decoder],
+        [2ndmodality_encoder], [2ndmodality_decoder]].
+        """
 
         self.gex_dim = preprocess_object.gex_dim
         self.adt_dim = preprocess_object.adt_dim
         gex_adt_adata = preprocess_object.dataset
         batches = preprocess_object.obs["batch"]
         # Initialize autoencoder
-        if model == "deep":
-            self.autoencoder = DeepGexAdtMultiModalAutoencoder(
-                latent_dim = latent_dim,
-                gex_dim = self.gex_dim,
-                adt_dim = self.adt_dim,
-                init = init
+        if model == []:
+            self.autoencoder = GexAdtMultiModalAutoencoder(
+                latent_dim=latent_dim,
+                gex_dim=self.gex_dim,
+                adt_dim=self.adt_dim
             )
         else:
-            self.autoencoder = GexAdtMultiModalAutoencoder(
-                latent_dim = latent_dim,
-                gex_dim = self.gex_dim,
-                adt_dim = self.adt_dim
+            self.autoencoder = DeepGexAdtMultiModalAutoencoder(
+                latent_dim=latent_dim,
+                gex_dim=self.gex_dim,
+                adt_dim=self.adt_dim,
+                model=model,
+                init=init
             )
 
         # Init dataset
@@ -144,7 +161,7 @@ class GexAdtTrainer:
         print("The optimizer: {};".format(self.optimizer))
         print()
 
-    def train(self, epochs, gex_loss_w=5, adt_loss_w=5):
+    def train(self, epochs, gex_loss_w=5, adt_loss_w=5, wandb_log=False):
 
         self.autoencoder.train()
         for epoch in range(epochs):
@@ -167,3 +184,5 @@ class GexAdtTrainer:
                 " recon loss: " +
                 str(round(epoch_recon_loss, 10))
             )
+            if wandb_log:
+                wandb.log({"recon loss": epoch_recon_loss})
