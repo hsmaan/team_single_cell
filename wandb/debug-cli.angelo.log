@@ -1,0 +1,47 @@
+2022-12-17 12:35:19 INFO Running runs: []
+2022-12-17 12:35:36 INFO Agent received command: run
+2022-12-17 12:35:36 INFO Agent starting run with config:
+	atac_dim: 7500
+	atac_weight: 92.25694455848604
+	epochs: 120
+	gex_dim: 1000
+	gex_weight: 67.31231665495476
+	init: he
+	latent_dim: 10
+	lr: 0.1
+	model: [[1600, 400, 100], [100, 400, 1600], [2400, 600, 120], [120, 600, 2400]]
+	weight_decay: 0.05667504960670897
+2022-12-17 12:35:36 INFO About to run command: /usr/bin/env python gex_atac_sweep.py --atac_dim=7500 --atac_weight=92.25694455848604 --epochs=120 --gex_dim=1000 --gex_weight=67.31231665495476 --init=he --latent_dim=10 --lr=0.1 "--model=[[1600, 400, 100], [100, 400, 1600], [2400, 600, 120], [120, 600, 2400]]" --weight_decay=0.05667504960670897
+2022-12-17 12:35:41 INFO Running runs: ['fidnjckp']
+2022-12-17 12:35:41 INFO Cleaning up finished run: fidnjckp
+2022-12-17 12:35:45 INFO Agent received command: run
+2022-12-17 12:35:45 INFO Agent starting run with config:
+	atac_dim: 5000
+	atac_weight: 32.537312326722365
+	epochs: 40
+	gex_dim: 2500
+	gex_weight: 60.76950451164136
+	init: he
+	latent_dim: 20
+	lr: 0.1
+	model: [[1600, 400, 100], [100, 400, 1600], [2400, 600, 120], [120, 600, 2400]]
+	weight_decay: 0.06865869509437537
+2022-12-17 12:35:45 INFO About to run command: /usr/bin/env python gex_atac_sweep.py --atac_dim=5000 --atac_weight=32.537312326722365 --epochs=40 --gex_dim=2500 --gex_weight=60.76950451164136 --init=he --latent_dim=20 --lr=0.1 "--model=[[1600, 400, 100], [100, 400, 1600], [2400, 600, 120], [120, 600, 2400]]" --weight_decay=0.06865869509437537
+2022-12-17 12:35:50 INFO Running runs: ['aa81armh']
+2022-12-17 12:35:50 INFO Cleaning up finished run: aa81armh
+2022-12-17 12:35:50 INFO Agent received command: run
+2022-12-17 12:35:50 INFO Agent starting run with config:
+	atac_dim: 5000
+	atac_weight: 13.84315727146446
+	epochs: 100
+	gex_dim: 5000
+	gex_weight: 74.78299468745709
+	init: he
+	latent_dim: 10
+	lr: 0.001
+	model: [[1600, 1200, 800, 400, 200, 100, 50], [80, 160, 240, 640, 960, 1200], [2400, 1200, 800, 400, 200, 100, 50], [80, 160, 240, 640, 960, 1200, 1600]]
+	weight_decay: 0.005960642680253082
+2022-12-17 12:35:50 INFO About to run command: /usr/bin/env python gex_atac_sweep.py --atac_dim=5000 --atac_weight=13.84315727146446 --epochs=100 --gex_dim=5000 --gex_weight=74.78299468745709 --init=he --latent_dim=10 --lr=0.001 "--model=[[1600, 1200, 800, 400, 200, 100, 50], [80, 160, 240, 640, 960, 1200], [2400, 1200, 800, 400, 200, 100, 50], [80, 160, 240, 640, 960, 1200, 1600]]" --weight_decay=0.005960642680253082
+2022-12-17 12:35:55 INFO Running runs: ['utp3h7ar']
+2022-12-17 12:35:55 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2022-12-17 12:35:55 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true

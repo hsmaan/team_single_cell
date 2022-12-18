@@ -1,0 +1,628 @@
+2022-12-18 14:05:13,537 INFO    StreamThr :24507 [internal.py:wandb_internal():90] W&B internal server running at pid: 24507, started at: 2022-12-18 14:05:13.535195
+2022-12-18 14:05:13,539 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: status
+2022-12-18 14:05:13,542 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: status
+2022-12-18 14:05:13,550 DEBUG   SenderThread:24507 [sender.py:send():303] send: header
+2022-12-18 14:05:13,550 INFO    WriterThread:24507 [datastore.py:open_for_write():75] open: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/run-fnov8wxt.wandb
+2022-12-18 14:05:13,580 DEBUG   SenderThread:24507 [sender.py:send():303] send: run
+2022-12-18 14:05:13,759 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: check_version
+2022-12-18 14:05:13,761 INFO    SenderThread:24507 [dir_watcher.py:__init__():216] watching files in: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files
+2022-12-18 14:05:13,761 INFO    SenderThread:24507 [sender.py:_start_run_threads():931] run started: fnov8wxt with start time 1671390313.539196
+2022-12-18 14:05:13,761 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:05:13,763 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:05:13,763 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: check_version
+2022-12-18 14:05:13,854 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: run_start
+2022-12-18 14:05:13,865 DEBUG   HandlerThread:24507 [system_info.py:__init__():31] System info init
+2022-12-18 14:05:13,865 DEBUG   HandlerThread:24507 [system_info.py:__init__():46] System info init done
+2022-12-18 14:05:13,865 INFO    HandlerThread:24507 [system_monitor.py:start():150] Starting system monitor
+2022-12-18 14:05:13,865 INFO    SystemMonitor:24507 [system_monitor.py:_start():116] Starting system asset monitoring threads
+2022-12-18 14:05:13,866 INFO    HandlerThread:24507 [system_monitor.py:probe():171] Collecting system info
+2022-12-18 14:05:13,869 INFO    SystemMonitor:24507 [interfaces.py:start():168] Started cpu
+2022-12-18 14:05:13,871 INFO    SystemMonitor:24507 [interfaces.py:start():168] Started disk
+2022-12-18 14:05:13,871 INFO    SystemMonitor:24507 [interfaces.py:start():168] Started gpu
+2022-12-18 14:05:13,872 INFO    SystemMonitor:24507 [interfaces.py:start():168] Started memory
+2022-12-18 14:05:13,873 INFO    SystemMonitor:24507 [interfaces.py:start():168] Started network
+2022-12-18 14:05:13,894 DEBUG   HandlerThread:24507 [system_info.py:probe():195] Probing system
+2022-12-18 14:05:13,906 DEBUG   HandlerThread:24507 [system_info.py:_probe_git():180] Probing git
+2022-12-18 14:05:13,932 DEBUG   HandlerThread:24507 [system_info.py:_probe_git():188] Probing git done
+2022-12-18 14:05:13,932 DEBUG   HandlerThread:24507 [system_info.py:probe():241] Probing system done
+2022-12-18 14:05:13,932 DEBUG   HandlerThread:24507 [system_monitor.py:probe():180] {'os': 'Linux-5.4.0-131-generic-x86_64-with-debian-buster-sid', 'python': '3.7.12', 'heartbeatAt': '2022-12-18T19:05:13.894825', 'startedAt': '2022-12-18T19:05:13.471384', 'docker': None, 'cuda': None, 'args': ('--atac_dim=2500', '--atac_weight=12.092692643786323', '--epochs=40', '--gex_dim=5000', '--gex_weight=72.67617647534313', '--init=xavier', '--latent_dim=128', '--lr=0.0001', '--model=[[1000, 200], [50, 100], [2000, 400], [100, 300]]', '--weight_decay=0.07864618520041733'), 'state': 'running', 'program': 'gex_atac_sweep.py', 'codePath': 'experiments/scripts/gex_atac_sweep.py', 'git': {'remote': 'https://github.com/hsmaan/team_single_cell', 'commit': '76b435f2121c654f0ef1f23e7da9f14450464c91'}, 'email': 'dimon.ka2002@gmail.com', 'root': '/ssd003/home/angelo/single-cell-proj/repo/team_single_cell', 'host': 'gpu109', 'username': 'angelo', 'executable': '/h/angelo/miniconda3/envs/single_cell_env/bin/python3.7', 'cpu_count': 16, 'cpu_count_logical': 32, 'cpu_freq': {'current': 1379.4223437500002, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2400.002, 'min': 0.0, 'max': 0.0}, {'current': 2400.0, 'min': 0.0, 'max': 0.0}, {'current': 2400.0, 'min': 0.0, 'max': 0.0}, {'current': 2399.998, 'min': 0.0, 'max': 0.0}, {'current': 2399.999, 'min': 0.0, 'max': 0.0}, {'current': 799.974, 'min': 0.0, 'max': 0.0}, {'current': 800.05, 'min': 0.0, 'max': 0.0}, {'current': 800.022, 'min': 0.0, 'max': 0.0}, {'current': 1910.481, 'min': 0.0, 'max': 0.0}, {'current': 800.041, 'min': 0.0, 'max': 0.0}, {'current': 800.005, 'min': 0.0, 'max': 0.0}, {'current': 800.373, 'min': 0.0, 'max': 0.0}, {'current': 800.035, 'min': 0.0, 'max': 0.0}, {'current': 800.026, 'min': 0.0, 'max': 0.0}, {'current': 800.143, 'min': 0.0, 'max': 0.0}, {'current': 800.225, 'min': 0.0, 'max': 0.0}, {'current': 2400.0, 'min': 0.0, 'max': 0.0}, {'current': 2399.761, 'min': 0.0, 'max': 0.0}, {'current': 2400.014, 'min': 0.0, 'max': 0.0}, {'current': 2400.002, 'min': 0.0, 'max': 0.0}, {'current': 2399.999, 'min': 0.0, 'max': 0.0}, {'current': 800.012, 'min': 0.0, 'max': 0.0}, {'current': 800.341, 'min': 0.0, 'max': 0.0}, {'current': 800.139, 'min': 0.0, 'max': 0.0}, {'current': 2227.923, 'min': 0.0, 'max': 0.0}, {'current': 800.186, 'min': 0.0, 'max': 0.0}, {'current': 799.987, 'min': 0.0, 'max': 0.0}, {'current': 800.02, 'min': 0.0, 'max': 0.0}, {'current': 800.883, 'min': 0.0, 'max': 0.0}, {'current': 800.548, 'min': 0.0, 'max': 0.0}, {'current': 800.223, 'min': 0.0, 'max': 0.0}, {'current': 800.103, 'min': 0.0, 'max': 0.0}], 'disk': {'total': 819.2018508911133, 'used': 43.910457611083984}, 'gpu': 'Tesla T4', 'gpu_count': 1, 'gpu_devices': [{'name': 'Tesla T4', 'memory_total': 15843721216}], 'memory': {'total': 188.59144973754883}}
+2022-12-18 14:05:13,932 INFO    HandlerThread:24507 [system_monitor.py:probe():181] Finished collecting system info
+2022-12-18 14:05:13,932 INFO    HandlerThread:24507 [system_monitor.py:probe():184] Publishing system info
+2022-12-18 14:05:13,932 DEBUG   HandlerThread:24507 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2022-12-18 14:05:13,935 DEBUG   HandlerThread:24507 [system_info.py:_save_pip():67] Saving pip packages done
+2022-12-18 14:05:13,935 DEBUG   HandlerThread:24507 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2022-12-18 14:05:14,766 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_created():275] file/dir created: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/conda-environment.yaml
+2022-12-18 14:05:14,766 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_created():275] file/dir created: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/requirements.txt
+2022-12-18 14:05:14,767 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_created():275] file/dir created: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:05:19,214 DEBUG   HandlerThread:24507 [system_info.py:_save_conda():86] Saving conda packages done
+2022-12-18 14:05:19,218 INFO    HandlerThread:24507 [system_monitor.py:probe():186] Finished publishing system info
+2022-12-18 14:05:19,367 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:05:19,367 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:05:19,434 DEBUG   SenderThread:24507 [sender.py:send():303] send: telemetry
+2022-12-18 14:05:19,438 DEBUG   SenderThread:24507 [sender.py:send():303] send: files
+2022-12-18 14:05:19,438 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-metadata.json with policy now
+2022-12-18 14:05:19,770 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/conda-environment.yaml
+2022-12-18 14:05:19,771 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_created():275] file/dir created: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:05:19,771 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_created():275] file/dir created: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-metadata.json
+2022-12-18 14:05:19,825 INFO    Thread-17 :24507 [upload_job.py:push():143] Uploaded file /tmp/tmp43fmc5pvwandb/240s0lyp-wandb-metadata.json
+2022-12-18 14:05:21,773 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:05:34,436 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:05:34,437 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:05:44,790 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/config.yaml
+2022-12-18 14:05:49,505 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:05:49,505 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:06:04,572 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:06:04,572 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:06:13,873 DEBUG   SystemMonitor:24507 [system_monitor.py:_start():130] Starting system metrics aggregation loop
+2022-12-18 14:06:13,875 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:06:19,634 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:06:19,635 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:06:23,818 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:06:31,825 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:06:34,700 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:06:34,700 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:06:43,835 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:06:43,877 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:06:49,773 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:06:49,773 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:07:04,841 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:07:04,841 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:07:07,855 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:07:13,861 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:07:13,879 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:07:19,910 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:07:19,911 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:07:34,988 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:07:34,988 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:07:43,880 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:07:50,056 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:07:50,057 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:08:05,122 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:08:05,122 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:08:13,882 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:08:20,184 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:08:20,184 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:08:21,920 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:08:23,928 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:08:25,931 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:08:31,937 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:08:35,254 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:08:35,254 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:08:43,884 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:08:49,006 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:08:49,007 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:08:49,007 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:08:49,010 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:08:49,951 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:08:49,952 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:08:50,327 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:08:50,328 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:09:05,393 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:09:05,394 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:09:08,062 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:09:08,064 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:09:08,064 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:09:08,066 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:09:08,965 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:09:09,967 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:09:13,885 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:09:20,471 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:09:20,472 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:09:27,162 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:09:27,163 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:09:27,164 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:09:27,166 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:09:27,981 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:09:27,981 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:09:35,547 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:09:35,547 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:09:43,887 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:09:46,373 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:09:46,374 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:09:46,374 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:09:46,376 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:09:46,994 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:09:47,996 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:09:50,625 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:09:50,625 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:10:05,512 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:10:05,513 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:10:05,513 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:10:05,519 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:10:05,694 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:10:05,695 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:10:06,010 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:10:08,012 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:10:13,889 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:10:20,760 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:10:20,761 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:10:24,718 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:10:24,719 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:10:24,719 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:10:24,721 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:10:25,027 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:10:26,029 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:10:35,826 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:10:35,826 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:10:43,891 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:10:43,954 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:10:43,955 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:10:43,955 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:10:43,960 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:10:44,042 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:10:46,045 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:10:50,891 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:10:50,891 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:11:03,173 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:11:03,174 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:11:03,174 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:11:03,177 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:11:04,060 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:11:04,061 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:11:05,955 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:11:05,955 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:11:13,892 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:11:21,016 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:11:21,016 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:11:22,349 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:11:22,350 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:11:22,350 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:11:22,354 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:11:23,073 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:11:24,075 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:11:36,090 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:11:36,091 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:11:41,518 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:11:41,519 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:11:41,519 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:11:41,521 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:11:42,087 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:11:43,894 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:11:44,090 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:11:51,156 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:11:51,156 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:12:00,698 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:12:00,699 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:12:00,699 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:12:00,702 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:12:01,102 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:12:02,104 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:12:06,231 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:12:06,232 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:12:13,896 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:12:19,882 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:12:19,882 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:12:19,882 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:12:19,885 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:12:20,116 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:12:21,304 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:12:21,305 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:12:22,118 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:12:36,373 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:12:36,373 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:12:39,039 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:12:39,040 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:12:39,040 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:12:39,046 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:12:39,132 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:12:40,134 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:12:43,898 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:12:51,442 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:12:51,442 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:12:58,230 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:12:58,231 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:12:58,232 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:12:58,234 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:12:59,147 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:13:00,148 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:13:06,514 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:13:06,515 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:13:13,900 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:13:17,529 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:13:17,530 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:13:17,530 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:13:17,532 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:13:18,160 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:13:20,163 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:13:21,580 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:13:21,580 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:13:36,654 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:13:36,655 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:13:36,758 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:13:36,759 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:13:36,759 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:13:36,762 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:13:37,175 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:13:38,177 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:13:43,902 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:13:51,731 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:13:51,731 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:13:55,956 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:13:55,957 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:13:55,957 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:13:55,959 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:13:56,189 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:13:58,191 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:14:06,802 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:14:06,803 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:14:13,904 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:14:15,191 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:14:15,192 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:14:15,192 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:14:15,194 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:14:15,202 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:14:16,226 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:14:21,863 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:14:21,864 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:14:34,493 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:14:34,494 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:14:34,494 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:14:34,496 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:14:35,239 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:14:36,241 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:14:36,927 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:14:36,928 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:14:43,905 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:14:51,991 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:14:51,991 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:14:53,700 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:14:53,701 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:14:53,701 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:14:53,704 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:14:54,253 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:14:56,255 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:15:07,054 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:15:07,054 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:15:12,914 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:15:12,914 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:15:12,914 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:15:12,917 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:15:13,267 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:15:13,908 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:15:14,269 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:15:22,120 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:15:22,121 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:15:32,148 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:15:32,149 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:15:32,150 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:15:32,152 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:15:32,281 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:15:34,283 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:15:37,195 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:15:37,195 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:15:43,910 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:15:51,375 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:15:51,376 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:15:51,376 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:15:51,378 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:15:52,297 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:15:52,297 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:15:52,304 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:15:52,304 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:16:07,364 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:16:07,364 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:16:10,605 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:16:10,606 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:16:10,606 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:16:10,608 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:16:11,314 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:16:12,316 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:16:13,912 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:16:22,430 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:16:22,431 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:16:29,817 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:16:29,818 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:16:29,818 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:16:29,821 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:16:30,329 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:16:32,331 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:16:37,538 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:16:37,538 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:16:43,913 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:16:49,053 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:16:49,054 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:16:49,054 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:16:49,057 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:16:49,343 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:16:50,345 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:16:52,607 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:16:52,608 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:17:07,682 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:17:07,683 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:17:08,192 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:17:08,193 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:17:08,193 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:17:08,196 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:17:08,357 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:17:10,361 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:17:13,915 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:17:22,743 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:17:22,743 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:17:27,433 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:17:27,434 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:17:27,434 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:17:27,437 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:17:28,374 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:17:28,375 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:17:37,806 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:17:37,806 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:17:43,917 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:17:46,608 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:17:46,609 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:17:46,609 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:17:46,611 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:17:47,388 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:17:48,390 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:17:52,871 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:17:52,872 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:18:05,753 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:18:05,754 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:18:05,754 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:18:05,757 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:18:06,404 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:18:06,404 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:18:07,939 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:18:07,939 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:18:13,919 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:18:23,008 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:18:23,009 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:18:24,812 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:18:24,813 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:18:24,813 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:18:24,816 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:18:25,422 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:18:26,425 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:18:38,076 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:18:38,076 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:18:43,906 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:18:43,906 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:18:43,906 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:18:43,909 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:18:43,921 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:18:44,437 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:18:46,440 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:18:53,139 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:18:53,140 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:19:03,001 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:19:03,002 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:19:03,002 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:19:03,006 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:19:03,452 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:19:04,454 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:19:08,209 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:19:08,209 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:19:13,923 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:19:22,182 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:19:22,183 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:19:22,183 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:19:22,186 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:19:22,467 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:19:23,281 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:19:23,281 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:19:24,470 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:19:38,344 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:19:38,344 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:19:41,276 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:19:41,277 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:19:41,277 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:19:41,280 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:19:41,482 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:19:42,484 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:19:43,924 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:19:53,416 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:19:53,416 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:20:00,382 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:20:00,383 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:20:00,383 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:20:00,387 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:20:00,497 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:20:02,499 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:20:08,491 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:20:08,491 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:20:13,926 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:20:19,529 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:20:19,530 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:20:19,530 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:20:19,533 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:20:20,513 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:20:20,513 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:20:23,562 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:20:23,562 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:20:38,637 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:20:38,638 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:20:38,647 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:20:39,145 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:20:39,146 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:20:39,149 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:20:39,526 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:20:40,528 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:20:43,927 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:20:54,147 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:20:54,148 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:20:57,822 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:20:57,823 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:20:57,823 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:20:57,825 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:20:58,543 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:20:58,543 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:21:09,217 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:21:09,217 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:21:13,929 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:21:16,882 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:21:16,883 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:21:16,884 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:21:16,886 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:21:17,556 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:21:18,558 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:21:24,284 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:21:24,284 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:21:28,566 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:21:36,076 DEBUG   SenderThread:24507 [sender.py:send():303] send: telemetry
+2022-12-18 14:21:36,467 DEBUG   SenderThread:24507 [sender.py:send():303] send: telemetry
+2022-12-18 14:21:39,349 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:21:39,350 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:21:43,930 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:21:49,580 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/config.yaml
+2022-12-18 14:21:54,446 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:21:54,446 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:22:09,528 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:22:09,528 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:22:13,932 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:22:25,855 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:22:25,855 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:22:43,636 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:22:43,637 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:22:43,936 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:22:58,716 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:22:58,717 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:23:13,937 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:23:15,383 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:23:15,383 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:23:31,862 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:23:31,863 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:23:43,938 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:23:48,227 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:23:48,227 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:23:57,035 INFO    FileStreamThread:24507 [file_stream.py:request_with_retry():664] Filestream rate limit exceeded, retrying in 2.433560731391999 seconds
+2022-12-18 14:24:06,583 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:24:06,583 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:24:06,684 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:24:13,940 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:24:23,775 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:24:23,775 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:24:28,534 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: log_artifact
+2022-12-18 14:24:28,534 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: log_artifact
+2022-12-18 14:24:28,684 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:24:28,699 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:24:28,700 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_created():275] file/dir created: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/media/table/res_df_40_8183c97da74609e8b175.table.json
+2022-12-18 14:24:28,700 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_created():275] file/dir created: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/media
+2022-12-18 14:24:28,700 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_created():275] file/dir created: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/media/table
+2022-12-18 14:24:29,054 INFO    Thread-18 :24507 [upload_job.py:push():143] Uploaded file /tmp/tmp43fmc5pvwandb/3bi70xam-media/table/res_df_40_8183c97da74609e8b175.table.json
+2022-12-18 14:24:29,248 INFO    Thread-20 :24507 [upload_job.py:push():101] Uploaded file /h/angelo/.cache/wandb/artifacts/obj/md5/e8/7c8c2253b191adcf0accdd1915d1c4
+2022-12-18 14:24:29,909 INFO    SenderThread:24507 [sender.py:send_request_log_artifact():1222] logged artifact run-fnov8wxt-res_df - {'id': 'QXJ0aWZhY3Q6Mjk5NTk1Njcx', 'digest': '6a2bad74ba5e53415b5165375d98d8b7', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjQ3ODAxMjY3', 'latestArtifact': None}, 'version': 'latest'}
+2022-12-18 14:24:29,909 DEBUG   SenderThread:24507 [sender.py:send():303] send: files
+2022-12-18 14:24:29,909 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file media/table/res_df_40_8183c97da74609e8b175.table.json with policy now
+2022-12-18 14:24:29,910 DEBUG   SenderThread:24507 [sender.py:send():303] send: history
+2022-12-18 14:24:29,910 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:24:29,918 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:24:30,275 INFO    Thread-21 :24507 [upload_job.py:push():143] Uploaded file /tmp/tmp43fmc5pvwandb/1oiojxlc-media/table/res_df_40_8183c97da74609e8b175.table.json
+2022-12-18 14:24:30,733 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:24:30,733 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:24:33,738 DEBUG   SenderThread:24507 [sender.py:send():303] send: exit
+2022-12-18 14:24:33,738 INFO    SenderThread:24507 [sender.py:send_exit():442] handling exit code: 0
+2022-12-18 14:24:33,740 INFO    SenderThread:24507 [sender.py:send_exit():444] handling runtime: 1159
+2022-12-18 14:24:33,742 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:24:33,742 INFO    SenderThread:24507 [sender.py:send_exit():450] send defer
+2022-12-18 14:24:33,743 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:24:33,743 INFO    HandlerThread:24507 [handler.py:handle_request_defer():162] handle defer: 0
+2022-12-18 14:24:33,743 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:24:33,744 INFO    SenderThread:24507 [sender.py:send_request_defer():459] handle sender defer: 0
+2022-12-18 14:24:33,744 INFO    SenderThread:24507 [sender.py:transition_state():463] send defer: 1
+2022-12-18 14:24:33,744 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:24:33,744 INFO    HandlerThread:24507 [handler.py:handle_request_defer():162] handle defer: 1
+2022-12-18 14:24:33,744 INFO    HandlerThread:24507 [system_monitor.py:finish():160] Stopping system monitor
+2022-12-18 14:24:33,746 DEBUG   SystemMonitor:24507 [system_monitor.py:_start():137] Finished system metrics aggregation loop
+2022-12-18 14:24:33,747 DEBUG   SystemMonitor:24507 [system_monitor.py:_start():141] Publishing last batch of metrics
+2022-12-18 14:24:33,749 INFO    HandlerThread:24507 [interfaces.py:finish():175] Joined cpu
+2022-12-18 14:24:33,749 INFO    HandlerThread:24507 [interfaces.py:finish():175] Joined disk
+2022-12-18 14:24:33,750 INFO    HandlerThread:24507 [interfaces.py:finish():175] Joined gpu
+2022-12-18 14:24:33,750 INFO    HandlerThread:24507 [interfaces.py:finish():175] Joined memory
+2022-12-18 14:24:33,750 INFO    HandlerThread:24507 [interfaces.py:finish():175] Joined network
+2022-12-18 14:24:33,750 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:24:33,750 INFO    SenderThread:24507 [sender.py:send_request_defer():459] handle sender defer: 1
+2022-12-18 14:24:33,750 INFO    SenderThread:24507 [sender.py:transition_state():463] send defer: 2
+2022-12-18 14:24:33,751 DEBUG   SenderThread:24507 [sender.py:send():303] send: stats
+2022-12-18 14:24:33,752 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:24:33,752 INFO    HandlerThread:24507 [handler.py:handle_request_defer():162] handle defer: 2
+2022-12-18 14:24:33,752 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:24:33,752 INFO    SenderThread:24507 [sender.py:send_request_defer():459] handle sender defer: 2
+2022-12-18 14:24:33,752 INFO    SenderThread:24507 [sender.py:transition_state():463] send defer: 3
+2022-12-18 14:24:33,752 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:24:33,752 INFO    HandlerThread:24507 [handler.py:handle_request_defer():162] handle defer: 3
+2022-12-18 14:24:33,753 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:24:33,753 INFO    SenderThread:24507 [sender.py:send_request_defer():459] handle sender defer: 3
+2022-12-18 14:24:33,753 INFO    SenderThread:24507 [sender.py:transition_state():463] send defer: 4
+2022-12-18 14:24:33,753 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:24:33,753 INFO    HandlerThread:24507 [handler.py:handle_request_defer():162] handle defer: 4
+2022-12-18 14:24:33,753 DEBUG   SenderThread:24507 [sender.py:send():303] send: summary
+2022-12-18 14:24:33,756 INFO    SenderThread:24507 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:24:33,756 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:24:33,757 INFO    SenderThread:24507 [sender.py:send_request_defer():459] handle sender defer: 4
+2022-12-18 14:24:33,757 INFO    SenderThread:24507 [sender.py:transition_state():463] send defer: 5
+2022-12-18 14:24:33,757 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:24:33,757 INFO    HandlerThread:24507 [handler.py:handle_request_defer():162] handle defer: 5
+2022-12-18 14:24:33,757 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:24:33,757 INFO    SenderThread:24507 [sender.py:send_request_defer():459] handle sender defer: 5
+2022-12-18 14:24:33,757 INFO    SenderThread:24507 [sender.py:transition_state():463] send defer: 6
+2022-12-18 14:24:33,757 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:24:33,757 INFO    HandlerThread:24507 [handler.py:handle_request_defer():162] handle defer: 6
+2022-12-18 14:24:33,757 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:24:33,757 INFO    SenderThread:24507 [sender.py:send_request_defer():459] handle sender defer: 6
+2022-12-18 14:24:34,739 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: poll_exit
+2022-12-18 14:24:34,742 INFO    Thread-14 :24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:24:36,088 INFO    SenderThread:24507 [sender.py:transition_state():463] send defer: 7
+2022-12-18 14:24:36,089 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: poll_exit
+2022-12-18 14:24:36,091 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:24:36,091 INFO    HandlerThread:24507 [handler.py:handle_request_defer():162] handle defer: 7
+2022-12-18 14:24:36,091 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:24:36,091 INFO    SenderThread:24507 [sender.py:send_request_defer():459] handle sender defer: 7
+2022-12-18 14:24:36,092 INFO    SenderThread:24507 [dir_watcher.py:finish():362] shutting down directory watcher
+2022-12-18 14:24:36,745 INFO    SenderThread:24507 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:24:36,746 INFO    SenderThread:24507 [dir_watcher.py:finish():392] scan: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files
+2022-12-18 14:24:36,747 INFO    SenderThread:24507 [dir_watcher.py:finish():406] scan save: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/requirements.txt requirements.txt
+2022-12-18 14:24:36,748 INFO    SenderThread:24507 [dir_watcher.py:finish():406] scan save: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json wandb-summary.json
+2022-12-18 14:24:36,754 INFO    SenderThread:24507 [dir_watcher.py:finish():406] scan save: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log output.log
+2022-12-18 14:24:36,763 INFO    SenderThread:24507 [dir_watcher.py:finish():406] scan save: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/conda-environment.yaml conda-environment.yaml
+2022-12-18 14:24:36,764 INFO    SenderThread:24507 [dir_watcher.py:finish():406] scan save: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/config.yaml config.yaml
+2022-12-18 14:24:36,764 INFO    SenderThread:24507 [dir_watcher.py:finish():406] scan save: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-metadata.json wandb-metadata.json
+2022-12-18 14:24:36,773 INFO    SenderThread:24507 [dir_watcher.py:finish():406] scan save: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/media/table/res_df_40_8183c97da74609e8b175.table.json media/table/res_df_40_8183c97da74609e8b175.table.json
+2022-12-18 14:24:36,774 INFO    SenderThread:24507 [sender.py:transition_state():463] send defer: 8
+2022-12-18 14:24:36,774 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:24:36,774 INFO    HandlerThread:24507 [handler.py:handle_request_defer():162] handle defer: 8
+2022-12-18 14:24:36,774 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:24:36,774 INFO    SenderThread:24507 [sender.py:send_request_defer():459] handle sender defer: 8
+2022-12-18 14:24:36,774 INFO    SenderThread:24507 [file_pusher.py:finish():168] shutting down file pusher
+2022-12-18 14:24:37,126 INFO    Thread-22 :24507 [upload_job.py:push():143] Uploaded file /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/requirements.txt
+2022-12-18 14:24:37,129 INFO    Thread-25 :24507 [upload_job.py:push():143] Uploaded file /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/conda-environment.yaml
+2022-12-18 14:24:37,134 INFO    Thread-26 :24507 [upload_job.py:push():143] Uploaded file /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/config.yaml
+2022-12-18 14:24:37,141 INFO    Thread-24 :24507 [upload_job.py:push():143] Uploaded file /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/output.log
+2022-12-18 14:24:37,161 INFO    Thread-23 :24507 [upload_job.py:push():143] Uploaded file /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/files/wandb-summary.json
+2022-12-18 14:24:37,362 INFO    Thread-13 :24507 [sender.py:transition_state():463] send defer: 9
+2022-12-18 14:24:37,363 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:24:37,363 INFO    HandlerThread:24507 [handler.py:handle_request_defer():162] handle defer: 9
+2022-12-18 14:24:37,363 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:24:37,364 INFO    SenderThread:24507 [sender.py:send_request_defer():459] handle sender defer: 9
+2022-12-18 14:24:37,364 INFO    SenderThread:24507 [file_pusher.py:join():173] waiting for file pusher
+2022-12-18 14:24:37,364 INFO    SenderThread:24507 [sender.py:transition_state():463] send defer: 10
+2022-12-18 14:24:37,365 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:24:37,365 INFO    HandlerThread:24507 [handler.py:handle_request_defer():162] handle defer: 10
+2022-12-18 14:24:37,365 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:24:37,365 INFO    SenderThread:24507 [sender.py:send_request_defer():459] handle sender defer: 10
+2022-12-18 14:24:37,556 INFO    SenderThread:24507 [sender.py:transition_state():463] send defer: 11
+2022-12-18 14:24:37,557 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:24:37,557 INFO    HandlerThread:24507 [handler.py:handle_request_defer():162] handle defer: 11
+2022-12-18 14:24:37,558 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:24:37,558 INFO    SenderThread:24507 [sender.py:send_request_defer():459] handle sender defer: 11
+2022-12-18 14:24:37,558 INFO    SenderThread:24507 [sender.py:transition_state():463] send defer: 12
+2022-12-18 14:24:37,560 DEBUG   SenderThread:24507 [sender.py:send():303] send: final
+2022-12-18 14:24:37,560 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:24:37,560 DEBUG   SenderThread:24507 [sender.py:send():303] send: footer
+2022-12-18 14:24:37,560 INFO    HandlerThread:24507 [handler.py:handle_request_defer():162] handle defer: 12
+2022-12-18 14:24:37,561 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:24:37,561 INFO    SenderThread:24507 [sender.py:send_request_defer():459] handle sender defer: 12
+2022-12-18 14:24:37,563 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: poll_exit
+2022-12-18 14:24:37,564 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: poll_exit
+2022-12-18 14:24:37,566 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: server_info
+2022-12-18 14:24:37,566 DEBUG   SenderThread:24507 [sender.py:send_request():317] send_request: server_info
+2022-12-18 14:24:37,571 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: get_summary
+2022-12-18 14:24:37,572 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: sampled_history
+2022-12-18 14:24:37,628 INFO    MainThread:24507 [wandb_run.py:_footer_history_summary_info():3408] rendering history
+2022-12-18 14:24:37,629 INFO    MainThread:24507 [wandb_run.py:_footer_history_summary_info():3440] rendering summary
+2022-12-18 14:24:37,629 INFO    MainThread:24507 [wandb_run.py:_footer_sync_info():3364] logging synced files
+2022-12-18 14:24:37,631 DEBUG   HandlerThread:24507 [handler.py:handle_request():139] handle_request: shutdown
+2022-12-18 14:24:37,631 INFO    HandlerThread:24507 [handler.py:finish():814] shutting down handler
+2022-12-18 14:24:38,560 INFO    WriterThread:24507 [datastore.py:close():279] close: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140513-fnov8wxt/run-fnov8wxt.wandb
+2022-12-18 14:24:38,627 INFO    SenderThread:24507 [sender.py:finish():1331] shutting down sender
+2022-12-18 14:24:38,627 INFO    SenderThread:24507 [file_pusher.py:finish():168] shutting down file pusher
+2022-12-18 14:24:38,627 INFO    SenderThread:24507 [file_pusher.py:join():173] waiting for file pusher
+2022-12-18 14:24:38,637 INFO    MainThread:24507 [internal.py:handle_exit():77] Internal process exited

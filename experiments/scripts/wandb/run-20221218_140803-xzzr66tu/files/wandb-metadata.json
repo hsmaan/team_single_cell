@@ -1,0 +1,256 @@
+{
+    "os": "Linux-5.4.0-131-generic-x86_64-with-debian-buster-sid",
+    "python": "3.7.12",
+    "heartbeatAt": "2022-12-18T19:08:03.676729",
+    "startedAt": "2022-12-18T19:08:03.290070",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--atac_dim=10000",
+        "--atac_weight=90.94218678129036",
+        "--epochs=60",
+        "--gex_dim=2500",
+        "--gex_weight=70.1382881989892",
+        "--init=xavier",
+        "--latent_dim=128",
+        "--lr=1e-05",
+        "--model=[[1000, 800, 600, 400, 200], [10, 30, 50, 100, 160], [1200, 900, 600, 400, 150], [15, 40, 60, 100, 180]]",
+        "--weight_decay=0.06274797069974031"
+    ],
+    "state": "running",
+    "program": "gex_atac_sweep.py",
+    "codePath": "experiments/scripts/gex_atac_sweep.py",
+    "git": {
+        "remote": "https://github.com/hsmaan/team_single_cell",
+        "commit": "76b435f2121c654f0ef1f23e7da9f14450464c91"
+    },
+    "email": "dimon.ka2002@gmail.com",
+    "root": "/ssd003/home/angelo/single-cell-proj/repo/team_single_cell",
+    "host": "gpu122",
+    "username": "angelo",
+    "executable": "/h/angelo/miniconda3/envs/single_cell_env/bin/python3.7",
+    "cpu_count": 20,
+    "cpu_count_logical": 40,
+    "cpu_freq": {
+        "current": 1272.6728749999997,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2261.261,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2538.736,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2242.13,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.037,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.262,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.054,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.149,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.086,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.042,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.175,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2267.95,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.093,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.161,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.078,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.113,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.074,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.127,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.124,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.139,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.102,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2508.917,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2205.455,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2469.292,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.112,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.015,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.043,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.003,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.011,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.081,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.043,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2410.148,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.111,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.191,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.11,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.066,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.076,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.075,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.094,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.071,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1000.108,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "total": 819.2013664245605,
+        "used": 33.86907958984375
+    },
+    "gpu": "Quadro RTX 6000",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "Quadro RTX 6000",
+            "memory_total": 23801430016
+        }
+    ],
+    "memory": {
+        "total": 172.8389663696289
+    }
+}

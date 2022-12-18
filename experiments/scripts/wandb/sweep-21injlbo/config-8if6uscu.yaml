@@ -1,0 +1,40 @@
+wandb_version: 1
+
+adt_weight:
+  value: 33.57925905910826
+epochs:
+  value: 20
+gex_dim:
+  value: 1000
+gex_weight:
+  value: 96.72694248515393
+init:
+  value: he
+latent_dim:
+  value: 128
+lr:
+  value: 0.001
+model:
+  value:
+  - - 1000
+    - 800
+    - 600
+    - 400
+    - 200
+  - - 10
+    - 30
+    - 50
+    - 100
+    - 160
+  - - 100
+    - 90
+    - 60
+    - 40
+    - 15
+  - - 20
+    - 30
+    - 40
+    - 50
+    - 60
+weight_decay:
+  value: 0.048619326063409955

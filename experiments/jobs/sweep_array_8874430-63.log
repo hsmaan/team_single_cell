@@ -1,0 +1,33 @@
+/h/angelo/single-cell-proj/repo/team_single_cell/experiments/jobs
+gpu065
+Sun Dec 18 14:04:55 EST 2022
+wandb: Starting wandb agent 🕵️
+2022-12-18 14:05:05,510 - wandb.wandb_agent - INFO - Running runs: []
+2022-12-18 14:05:07,364 - wandb.wandb_agent - INFO - Agent received command: run
+2022-12-18 14:05:07,364 - wandb.wandb_agent - INFO - Agent starting run with config:
+	atac_dim: 5000
+	atac_weight: 33.118896319513205
+	epochs: 80
+	gex_dim: 5000
+	gex_weight: 53.51474376964299
+	init: xavier
+	latent_dim: 64
+	lr: 1e-05
+	model: [[1000, 800, 600, 400, 200], [10, 30, 50, 100, 160], [1200, 900, 600, 400, 150], [15, 40, 60, 100, 180]]
+	weight_decay: 0.06111408717654752
+2022-12-18 14:05:07,373 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python gex_atac_sweep.py --atac_dim=5000 --atac_weight=33.118896319513205 --epochs=80 --gex_dim=5000 --gex_weight=53.51474376964299 --init=xavier --latent_dim=64 --lr=1e-05 "--model=[[1000, 800, 600, 400, 200], [10, 30, 50, 100, 160], [1200, 900, 600, 400, 150], [15, 40, 60, 100, 180]]" --weight_decay=0.06111408717654752
+2022-12-18 14:05:12,387 - wandb.wandb_agent - INFO - Running runs: ['dxlw2yd1']
+wandb: Currently logged in as: ange1o5 (team-single-cell). Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+wandb: Tracking run with wandb version 0.13.7
+wandb: Run data is saved locally in /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140515-dxlw2yd1
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run soft-sweep-63
+wandb: ⭐️ View project at https://wandb.ai/team-single-cell/gex_atac_sweep
+wandb: 🧹 View sweep at https://wandb.ai/team-single-cell/gex_atac_sweep/sweeps/j1snhit4
+wandb: 🚀 View run at https://wandb.ai/team-single-cell/gex_atac_sweep/runs/dxlw2yd1
+ UserWarning:/h/angelo/miniconda3/envs/single_cell_env/lib/python3.7/site-packages/scanpy/preprocessing/_highly_variable_genes.py:64: `flavor='seurat_v3'` expects raw count data, but non-integers were found.
+Trying to set attribute `._uns` of view, copying.
+Trying to set attribute `.var` of view, copying.
+slurmstepd: error: *** JOB 8874493 ON gpu065 CANCELLED AT 2022-12-18T14:32:15 ***

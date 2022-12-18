@@ -1,0 +1,33 @@
+/h/angelo/single-cell-proj/repo/team_single_cell/experiments/jobs
+gpu068
+Sun Dec 18 14:05:10 EST 2022
+wandb: Starting wandb agent 🕵️
+2022-12-18 14:05:20,156 - wandb.wandb_agent - INFO - Running runs: []
+2022-12-18 14:05:20,393 - wandb.wandb_agent - INFO - Agent received command: run
+2022-12-18 14:05:20,393 - wandb.wandb_agent - INFO - Agent starting run with config:
+	atac_dim: 10000
+	atac_weight: 67.22261016032647
+	epochs: 40
+	gex_dim: 1000
+	gex_weight: 16.83381246830369
+	init: xavier
+	latent_dim: 128
+	lr: 0.01
+	model: [[1000, 200], [50, 100], [2000, 400], [100, 300]]
+	weight_decay: 0.09600484382959056
+2022-12-18 14:05:20,403 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python gex_atac_sweep.py --atac_dim=10000 --atac_weight=67.22261016032647 --epochs=40 --gex_dim=1000 --gex_weight=16.83381246830369 --init=xavier --latent_dim=128 --lr=0.01 "--model=[[1000, 200], [50, 100], [2000, 400], [100, 300]]" --weight_decay=0.09600484382959056
+2022-12-18 14:05:25,417 - wandb.wandb_agent - INFO - Running runs: ['fd950bti']
+wandb: Currently logged in as: ange1o5 (team-single-cell). Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+wandb: Tracking run with wandb version 0.13.7
+wandb: Run data is saved locally in /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140528-fd950bti
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run happy-sweep-105
+wandb: ⭐️ View project at https://wandb.ai/team-single-cell/gex_atac_sweep
+wandb: 🧹 View sweep at https://wandb.ai/team-single-cell/gex_atac_sweep/sweeps/j1snhit4
+wandb: 🚀 View run at https://wandb.ai/team-single-cell/gex_atac_sweep/runs/fd950bti
+ UserWarning:/h/angelo/miniconda3/envs/single_cell_env/lib/python3.7/site-packages/scanpy/preprocessing/_highly_variable_genes.py:64: `flavor='seurat_v3'` expects raw count data, but non-integers were found.
+Trying to set attribute `._uns` of view, copying.
+Trying to set attribute `.var` of view, copying.
+slurmstepd: error: *** JOB 8874533 ON gpu068 CANCELLED AT 2022-12-18T14:32:15 ***

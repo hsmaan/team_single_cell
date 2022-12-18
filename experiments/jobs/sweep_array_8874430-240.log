@@ -1,0 +1,33 @@
+/h/angelo/single-cell-proj/repo/team_single_cell/experiments/jobs
+gpu152.cluster.local
+Sun Dec 18 14:07:32 EST 2022
+wandb: Starting wandb agent 🕵️
+2022-12-18 14:07:43,093 - wandb.wandb_agent - INFO - Running runs: []
+2022-12-18 14:07:43,385 - wandb.wandb_agent - INFO - Agent received command: run
+2022-12-18 14:07:43,385 - wandb.wandb_agent - INFO - Agent starting run with config:
+	atac_dim: 7500
+	atac_weight: 40.52088992458141
+	epochs: 80
+	gex_dim: 1000
+	gex_weight: 32.931293452032065
+	init: xavier
+	latent_dim: 10
+	lr: 1e-05
+	model: [[1600, 800, 400, 100], [40, 60, 100, 150], [1800, 800, 400, 100], [40, 60, 120, 200]]
+	weight_decay: 0.08409246863396769
+2022-12-18 14:07:43,393 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python gex_atac_sweep.py --atac_dim=7500 --atac_weight=40.52088992458141 --epochs=80 --gex_dim=1000 --gex_weight=32.931293452032065 --init=xavier --latent_dim=10 --lr=1e-05 "--model=[[1600, 800, 400, 100], [40, 60, 100, 150], [1800, 800, 400, 100], [40, 60, 120, 200]]" --weight_decay=0.08409246863396769
+2022-12-18 14:07:48,406 - wandb.wandb_agent - INFO - Running runs: ['91hda1us']
+wandb: Currently logged in as: ange1o5 (team-single-cell). Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+wandb: Tracking run with wandb version 0.13.7
+wandb: Run data is saved locally in /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140751-91hda1us
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ethereal-sweep-241
+wandb: ⭐️ View project at https://wandb.ai/team-single-cell/gex_atac_sweep
+wandb: 🧹 View sweep at https://wandb.ai/team-single-cell/gex_atac_sweep/sweeps/j1snhit4
+wandb: 🚀 View run at https://wandb.ai/team-single-cell/gex_atac_sweep/runs/91hda1us
+ UserWarning:/h/angelo/miniconda3/envs/single_cell_env/lib/python3.7/site-packages/scanpy/preprocessing/_highly_variable_genes.py:64: `flavor='seurat_v3'` expects raw count data, but non-integers were found.
+Trying to set attribute `._uns` of view, copying.
+Trying to set attribute `.var` of view, copying.
+slurmstepd: error: *** JOB 8874670 ON gpu152 CANCELLED AT 2022-12-18T14:32:15 ***

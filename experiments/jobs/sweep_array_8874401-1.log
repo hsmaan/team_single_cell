@@ -1,0 +1,9 @@
+/h/angelo/single-cell-proj/repo/team_single_cell/experiments/jobs
+gpu056
+Sun Dec 18 12:49:49 EST 2022
+wandb: Starting wandb agent 🕵️
+2022-12-18 12:49:57,890 - wandb.wandb_agent - INFO - Running runs: []
+2022-12-18 12:49:58,085 - wandb.wandb_agent - INFO - Agent received command: exit
+2022-12-18 12:49:58,085 - wandb.wandb_agent - INFO - Received exit command. Killing runs and quitting.
+wandb: Terminating and syncing runs. Press ctrl-c to kill.
+Sun Dec 18 12:49:58 EST 2022

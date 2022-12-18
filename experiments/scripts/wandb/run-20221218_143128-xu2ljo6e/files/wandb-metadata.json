@@ -1,0 +1,216 @@
+{
+    "os": "Linux-5.4.0-131-generic-x86_64-with-debian-buster-sid",
+    "python": "3.7.12",
+    "heartbeatAt": "2022-12-18T19:31:28.680858",
+    "startedAt": "2022-12-18T19:31:28.257647",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--atac_dim=2500",
+        "--atac_weight=67.09899290227128",
+        "--epochs=40",
+        "--gex_dim=2500",
+        "--gex_weight=48.24332455674692",
+        "--init=he",
+        "--latent_dim=10",
+        "--lr=0.01",
+        "--model=[[1200, 400, 100], [50, 100, 200], [1600, 600, 120], [60, 100, 150]]",
+        "--weight_decay=0.08824839474465704"
+    ],
+    "state": "running",
+    "program": "gex_atac_sweep.py",
+    "codePath": "experiments/scripts/gex_atac_sweep.py",
+    "git": {
+        "remote": "https://github.com/hsmaan/team_single_cell",
+        "commit": "76b435f2121c654f0ef1f23e7da9f14450464c91"
+    },
+    "email": "dimon.ka2002@gmail.com",
+    "root": "/ssd003/home/angelo/single-cell-proj/repo/team_single_cell",
+    "host": "gpu092",
+    "username": "angelo",
+    "executable": "/h/angelo/miniconda3/envs/single_cell_env/bin/python",
+    "cpu_count": 16,
+    "cpu_count_logical": 32,
+    "cpu_freq": {
+        "current": 978.7268125000003,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2168.193,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.063,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.42,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.088,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.307,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.203,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.344,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.133,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2394.643,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 801.206,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.203,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.307,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.415,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.689,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.006,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.039,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2112.66,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.02,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.341,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.237,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.517,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 801.511,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.123,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.526,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2234.898,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.037,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.147,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.146,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.216,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.078,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.163,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 800.379,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "total": 819.2018508911133,
+        "used": 43.20094680786133
+    },
+    "gpu": "Tesla T4",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "Tesla T4",
+            "memory_total": 15843721216
+        }
+    ],
+    "memory": {
+        "total": 188.59144973754883
+    }
+}

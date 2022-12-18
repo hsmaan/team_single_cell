@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #SBATCH --job-name=gex_adt_sweep
-#SBATCH --array=1-500 # 500 jobs
+#SBATCH --array=1 # 500 jobs
 #SBATCH --gres=gpu:1
 #SBATCH --cores=8
-#SBATCH --partition=t4v1,t4v2,rtx6000
+#SBATCH --partition=a40,t4v2,rtx6000
 #SBATCH --mem=32G
 #SBATCH --time=10-00:00:00
 #SBATCH --output=sweep_array_%A-%a.log
@@ -12,7 +12,8 @@
 pwd; hostname; date
 
 source ~/miniconda3/etc/profile.d/conda.sh
-conda activate /ssd003/home/angelo/mambaforge/envs/single_cell_env
-poetry run wandb agent --entity team-single-cell --project test-project kxdub45j # Replace with correct API key
+conda activate single_cell_env
+cd ../scripts
+wandb agent --entity team-single-cell --project gex_adt_sweep zwctbvrx # Replace with correct API key
 
 date

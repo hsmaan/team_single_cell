@@ -1,6 +1,8 @@
 import torch
 import torch.optim as optim
 import wandb
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "0, 1"
 
 from models.multimodal_autoencoder import GexAtacMultiModalAutoencoder, GexAdtMultiModalAutoencoder, DeepGexAdtMultiModalAutoencoder, DeepGexAtacMultiModalAutoencoder
 from data_loader.data_loaders import WrapperDataLoader
@@ -45,7 +47,7 @@ class GexAtacTrainer:
         # Create dataloader for concatenated data
         self.gex_atac_loader = WrapperDataLoader(
             dataset = self.gex_atac_ds,
-            batch_size = 512,
+            batch_size = 964,
             shuffle = True,
             num_workers = 4,
             drop_last = True
@@ -56,6 +58,7 @@ class GexAtacTrainer:
             self.device = torch.device("cuda")
         else:
             self.device = torch.device("cpu")
+        print("The device: {};".format(self.device))
         self.autoencoder.double().to(self.device)
 
         # Adam optimizer 
@@ -134,7 +137,7 @@ class GexAdtTrainer:
         # Create dataloader for concatenated data
         self.gex_atac_loader = WrapperDataLoader(
             dataset = self.gex_adt_ds,
-            batch_size = 512,
+            batch_size = 964,
             shuffle = True,
             num_workers = 4,
             drop_last = True
@@ -145,6 +148,7 @@ class GexAdtTrainer:
             self.device = torch.device("cuda")
         else:
             self.device = torch.device("cpu")
+        print("The device: {};".format(self.device))
         self.autoencoder.double().to(self.device)
 
         # Adam optimizer 

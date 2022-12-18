@@ -1,0 +1,36 @@
+/h/angelo/single-cell-proj/repo/team_single_cell/experiments/jobs
+gpu162.cluster.local
+Sun Dec 18 14:05:00 EST 2022
+wandb: Starting wandb agent 🕵️
+2022-12-18 14:05:14,185 - wandb.wandb_agent - INFO - Running runs: []
+2022-12-18 14:05:14,589 - wandb.wandb_agent - INFO - Agent received command: run
+2022-12-18 14:05:14,589 - wandb.wandb_agent - INFO - Agent starting run with config:
+	atac_dim: 10000
+	atac_weight: 69.83271674727595
+	epochs: 40
+	gex_dim: 1000
+	gex_weight: 84.26330026341775
+	init: he
+	latent_dim: 128
+	lr: 0.1
+	model: [[1200, 400, 100], [50, 100, 200], [1600, 600, 120], [60, 100, 150]]
+	weight_decay: 0.04850060266614148
+2022-12-18 14:05:14,597 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python gex_atac_sweep.py --atac_dim=10000 --atac_weight=69.83271674727595 --epochs=40 --gex_dim=1000 --gex_weight=84.26330026341775 --init=he --latent_dim=128 --lr=0.1 "--model=[[1200, 400, 100], [50, 100, 200], [1600, 600, 120], [60, 100, 150]]" --weight_decay=0.04850060266614148
+wandb: Currently logged in as: ange1o5 (team-single-cell). Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+2022-12-18 14:05:19,611 - wandb.wandb_agent - INFO - Running runs: ['yh26d549']
+wandb: Tracking run with wandb version 0.13.7
+wandb: Run data is saved locally in /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140518-yh26d549
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run true-sweep-90
+wandb: ⭐️ View project at https://wandb.ai/team-single-cell/gex_atac_sweep
+wandb: 🧹 View sweep at https://wandb.ai/team-single-cell/gex_atac_sweep/sweeps/j1snhit4
+wandb: 🚀 View run at https://wandb.ai/team-single-cell/gex_atac_sweep/runs/yh26d549
+ UserWarning:/h/angelo/miniconda3/envs/single_cell_env/lib/python3.7/site-packages/scanpy/preprocessing/_highly_variable_genes.py:64: `flavor='seurat_v3'` expects raw count data, but non-integers were found.
+Trying to set attribute `._uns` of view, copying.
+Trying to set attribute `.var` of view, copying.
+2022-12-18 14:21:28.264645: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F AVX512_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-12-18 14:21:28.473311: I tensorflow/core/util/util.cc:169] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+slurmstepd: error: *** JOB 8874502 ON gpu162 CANCELLED AT 2022-12-18T14:32:15 ***

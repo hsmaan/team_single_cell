@@ -1,0 +1,186 @@
+
+Reading dataset...
+Feature selecting GEX...
+ UserWarning:/h/angelo/miniconda3/envs/single_cell_env/lib/python3.7/site-packages/scanpy/preprocessing/_highly_variable_genes.py:64: `flavor='seurat_v3'` expects raw count data, but non-integers were found.
+Trying to set attribute `._uns` of view, copying.
+Feature selecting ATAC...
+Trying to set attribute `.var` of view, copying.
+New GEX dim: 5000;
+New ATAC dim: 7502;
+AnnData dataset's shape: (69249, 12502)
+Initializing dataset and dataloader...
+The order of labels: ['s1d1', 's1d1', 's1d1', 's1d1', 's1d1', ..., 's4d9', 's4d9', 's4d9', 's4d9', 's4d9']
+Length: 69249
+Categories (13, object): ['s1d1', 's1d2', 's1d3', 's2d1', ..., 's3d10', 's4d1', 's4d8', 's4d9']
+The device: cuda;
+The model: DeepGexAtacMultiModalAutoencoder(
+  (gex_encoder): Sequential(
+    (0): Linear(in_features=5000, out_features=1000, bias=True)
+    (1): BatchNorm1d(1000, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.1, inplace=False)
+    (4): Linear(in_features=1000, out_features=800, bias=True)
+    (5): BatchNorm1d(800, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Linear(in_features=800, out_features=600, bias=True)
+    (8): BatchNorm1d(600, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): ReLU()
+    (10): Dropout(p=0.1, inplace=False)
+    (11): Linear(in_features=600, out_features=400, bias=True)
+    (12): BatchNorm1d(400, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): ReLU()
+    (14): Linear(in_features=400, out_features=200, bias=True)
+    (15): BatchNorm1d(200, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (16): ReLU()
+    (17): Dropout(p=0.1, inplace=False)
+    (18): Linear(in_features=200, out_features=64, bias=True)
+    (19): ReLU()
+  )
+  (atac_encoder): Sequential(
+    (0): Linear(in_features=7502, out_features=1200, bias=True)
+    (1): BatchNorm1d(1200, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.1, inplace=False)
+    (4): Linear(in_features=1200, out_features=900, bias=True)
+    (5): BatchNorm1d(900, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Linear(in_features=900, out_features=600, bias=True)
+    (8): BatchNorm1d(600, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): ReLU()
+    (10): Dropout(p=0.1, inplace=False)
+    (11): Linear(in_features=600, out_features=400, bias=True)
+    (12): BatchNorm1d(400, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): ReLU()
+    (14): Linear(in_features=400, out_features=150, bias=True)
+    (15): BatchNorm1d(150, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (16): ReLU()
+    (17): Dropout(p=0.1, inplace=False)
+    (18): Linear(in_features=150, out_features=64, bias=True)
+    (19): ReLU()
+  )
+  (gex_decoder): Sequential(
+    (0): Linear(in_features=128, out_features=10, bias=True)
+    (1): BatchNorm1d(10, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.1, inplace=False)
+    (4): Linear(in_features=10, out_features=30, bias=True)
+    (5): BatchNorm1d(30, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Linear(in_features=30, out_features=50, bias=True)
+    (8): BatchNorm1d(50, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): ReLU()
+    (10): Dropout(p=0.1, inplace=False)
+    (11): Linear(in_features=50, out_features=100, bias=True)
+    (12): BatchNorm1d(100, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): ReLU()
+    (14): Linear(in_features=100, out_features=160, bias=True)
+    (15): BatchNorm1d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (16): ReLU()
+    (17): Dropout(p=0.1, inplace=False)
+    (18): Linear(in_features=160, out_features=5000, bias=True)
+    (19): ReLU()
+  )
+  (atac_decoder): Sequential(
+    (0): Linear(in_features=128, out_features=15, bias=True)
+    (1): BatchNorm1d(15, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.1, inplace=False)
+    (4): Linear(in_features=15, out_features=40, bias=True)
+    (5): BatchNorm1d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Linear(in_features=40, out_features=60, bias=True)
+    (8): BatchNorm1d(60, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): ReLU()
+    (10): Dropout(p=0.1, inplace=False)
+    (11): Linear(in_features=60, out_features=100, bias=True)
+    (12): BatchNorm1d(100, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): ReLU()
+    (14): Linear(in_features=100, out_features=180, bias=True)
+    (15): BatchNorm1d(180, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (16): ReLU()
+    (17): Dropout(p=0.1, inplace=False)
+    (18): Linear(in_features=180, out_features=7502, bias=True)
+    (19): Sigmoid()
+  )
+);
+The dataset: <datasets.anndatadataset.AnnDataDataset object at 0x7f3c4c0d5fd0>;
+The optimizer: Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.0001
+    weight_decay: 0.08637120441841861
+);
+Epoch 0 recon loss: 2633.5019114087
+Epoch 1 recon loss: 2691.4046120375
+Epoch 2 recon loss: 2710.4647408453
+Epoch 3 recon loss: 2543.5862495036
+Epoch 4 recon loss: 2607.5008502682
+Epoch 5 recon loss: 2669.6044468318
+Epoch 6 recon loss: 2686.6941664924
+Epoch 7 recon loss: 2630.0166430792
+Epoch 8 recon loss: 2669.4198489099
+Epoch 9 recon loss: 2645.1673617617
+Epoch 10 recon loss: 2594.9250659673
+Epoch 11 recon loss: 2528.7865293648
+Epoch 12 recon loss: 2560.3715453366
+Epoch 13 recon loss: 2627.8828081295
+Epoch 14 recon loss: 2551.7592649762
+Epoch 15 recon loss: 2607.2988106883
+Epoch 16 recon loss: 2559.069366014
+Epoch 17 recon loss: 2567.7957669632
+Epoch 18 recon loss: 2549.1905548513
+Epoch 19 recon loss: 2538.5718629169
+Epoch 20 recon loss: 2553.0971068046
+Epoch 21 recon loss: 2585.3361087346
+Epoch 22 recon loss: 2596.6345547175
+Epoch 23 recon loss: 2566.1297430422
+Epoch 24 recon loss: 2556.6368590095
+Epoch 25 recon loss: 2584.9534259753
+Epoch 26 recon loss: 2576.9478336667
+Epoch 27 recon loss: 2540.5830375806
+Epoch 28 recon loss: 2462.7738794971
+Epoch 29 recon loss: 2476.9552943775
+Epoch 30 recon loss: 2472.5636192739
+Epoch 31 recon loss: 2489.4162163684
+Epoch 32 recon loss: 2447.323489481
+Epoch 33 recon loss: 2424.5033870469
+Epoch 34 recon loss: 2436.7032346503
+Epoch 35 recon loss: 2457.2674200155
+Epoch 36 recon loss: 2475.4947624756
+Epoch 37 recon loss: 2511.9576611508
+Epoch 38 recon loss: 2407.9264236538
+Epoch 39 recon loss: 2468.9422486783
+Epoch 40 recon loss: 2408.5522550393
+Epoch 41 recon loss: 2469.721106925
+Epoch 42 recon loss: 2443.0100398481
+Epoch 43 recon loss: 2423.6973057374
+Epoch 44 recon loss: 2289.8036411012
+Epoch 45 recon loss: 2407.5497009596
+Epoch 46 recon loss: 2345.581272615
+Epoch 47 recon loss: 2383.2830019911
+Epoch 48 recon loss: 2303.7830830604
+Epoch 49 recon loss: 2406.9463365606
+Epoch 50 recon loss: 2438.8560703529
+Epoch 51 recon loss: 2295.7606110073
+Epoch 52 recon loss: 2407.7094660012
+Epoch 53 recon loss: 2320.8969458012
+Epoch 54 recon loss: 2318.3156196143
+Epoch 55 recon loss: 2329.939551782
+Epoch 56 recon loss: 2389.5656176393
+Epoch 57 recon loss: 2266.4426484744
+Epoch 58 recon loss: 2276.2776471029
+Epoch 59 recon loss: 2347.7222315164
+Latent space type: <class 'numpy.ndarray'>;
+GEX encoded shape: torch.Size([69249, 64]);
+ATAC encoded shape: torch.Size([69249, 64]);
+Latent space shape: (69249, 128);
+ FutureWarning:/h/angelo/miniconda3/envs/single_cell_env/lib/python3.7/site-packages/anndata/_core/anndata.py:1228: The `inplace` parameter in pandas.Categorical.reorder_categories is deprecated and will be removed in a future version. Reordering categories will always return a new Categorical object.
+... storing 'feature_types' as categorical
+ FutureWarning:/h/angelo/miniconda3/envs/single_cell_env/lib/python3.7/site-packages/anndata/_core/anndata.py:1228: The `inplace` parameter in pandas.Categorical.reorder_categories is deprecated and will be removed in a future version. Reordering categories will always return a new Categorical object.
+... storing 'gene_id' as categorical
+0.42840662435076743
+   celltype_ari  celltype_ami  ...  batch_homogeneity  batch_complete
+0      0.018056       0.09399  ...           0.923093        0.954014
+[1 rows x 8 columns]

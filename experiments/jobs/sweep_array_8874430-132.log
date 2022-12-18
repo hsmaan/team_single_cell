@@ -1,0 +1,33 @@
+/h/angelo/single-cell-proj/repo/team_single_cell/experiments/jobs
+gpu079
+Sun Dec 18 14:05:32 EST 2022
+wandb: Starting wandb agent 🕵️
+2022-12-18 14:05:41,157 - wandb.wandb_agent - INFO - Running runs: []
+2022-12-18 14:05:42,462 - wandb.wandb_agent - INFO - Agent received command: run
+2022-12-18 14:05:42,463 - wandb.wandb_agent - INFO - Agent starting run with config:
+	atac_dim: 7500
+	atac_weight: 63.52389941123917
+	epochs: 80
+	gex_dim: 5000
+	gex_weight: 8.513632960879864
+	init: xavier
+	latent_dim: 10
+	lr: 0.001
+	model: [[1600, 800, 400, 100], [40, 60, 100, 150], [1800, 800, 400, 100], [40, 60, 120, 200]]
+	weight_decay: 0.08724957657330791
+2022-12-18 14:05:42,473 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python gex_atac_sweep.py --atac_dim=7500 --atac_weight=63.52389941123917 --epochs=80 --gex_dim=5000 --gex_weight=8.513632960879864 --init=xavier --latent_dim=10 --lr=0.001 "--model=[[1600, 800, 400, 100], [40, 60, 100, 150], [1800, 800, 400, 100], [40, 60, 120, 200]]" --weight_decay=0.08724957657330791
+wandb: Currently logged in as: ange1o5 (team-single-cell). Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+2022-12-18 14:05:47,490 - wandb.wandb_agent - INFO - Running runs: ['p0qszd8b']
+wandb: Tracking run with wandb version 0.13.7
+wandb: Run data is saved locally in /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140547-p0qszd8b
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run classic-sweep-132
+wandb: ⭐️ View project at https://wandb.ai/team-single-cell/gex_atac_sweep
+wandb: 🧹 View sweep at https://wandb.ai/team-single-cell/gex_atac_sweep/sweeps/j1snhit4
+wandb: 🚀 View run at https://wandb.ai/team-single-cell/gex_atac_sweep/runs/p0qszd8b
+ UserWarning:/h/angelo/miniconda3/envs/single_cell_env/lib/python3.7/site-packages/scanpy/preprocessing/_highly_variable_genes.py:64: `flavor='seurat_v3'` expects raw count data, but non-integers were found.
+Trying to set attribute `._uns` of view, copying.
+Trying to set attribute `.var` of view, copying.
+slurmstepd: error: *** JOB 8874562 ON gpu079 CANCELLED AT 2022-12-18T14:32:15 ***

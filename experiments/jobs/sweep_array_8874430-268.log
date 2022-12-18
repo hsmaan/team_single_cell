@@ -1,0 +1,182 @@
+/h/angelo/single-cell-proj/repo/team_single_cell/experiments/jobs
+gpu122
+Sun Dec 18 14:07:45 EST 2022
+wandb: Starting wandb agent 🕵️
+2022-12-18 14:07:55,176 - wandb.wandb_agent - INFO - Running runs: []
+2022-12-18 14:07:55,478 - wandb.wandb_agent - INFO - Agent received command: run
+2022-12-18 14:07:55,478 - wandb.wandb_agent - INFO - Agent starting run with config:
+	atac_dim: 2500
+	atac_weight: 94.26278840887964
+	epochs: 20
+	gex_dim: 5000
+	gex_weight: 13.18693441266381
+	init: he
+	latent_dim: 64
+	lr: 1e-05
+	model: [[1000, 200], [50, 100], [2000, 400], [100, 300]]
+	weight_decay: 0.06442210737366003
+2022-12-18 14:07:55,486 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python gex_atac_sweep.py --atac_dim=2500 --atac_weight=94.26278840887964 --epochs=20 --gex_dim=5000 --gex_weight=13.18693441266381 --init=he --latent_dim=64 --lr=1e-05 "--model=[[1000, 200], [50, 100], [2000, 400], [100, 300]]" --weight_decay=0.06442210737366003
+2022-12-18 14:08:00,498 - wandb.wandb_agent - INFO - Running runs: ['7rlr374p']
+wandb: Currently logged in as: ange1o5 (team-single-cell). Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+wandb: Tracking run with wandb version 0.13.7
+wandb: Run data is saved locally in /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140803-7rlr374p
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run gentle-sweep-269
+wandb: ⭐️ View project at https://wandb.ai/team-single-cell/gex_atac_sweep
+wandb: 🧹 View sweep at https://wandb.ai/team-single-cell/gex_atac_sweep/sweeps/j1snhit4
+wandb: 🚀 View run at https://wandb.ai/team-single-cell/gex_atac_sweep/runs/7rlr374p
+ UserWarning:/h/angelo/miniconda3/envs/single_cell_env/lib/python3.7/site-packages/scanpy/preprocessing/_highly_variable_genes.py:64: `flavor='seurat_v3'` expects raw count data, but non-integers were found.
+Trying to set attribute `._uns` of view, copying.
+Trying to set attribute `.var` of view, copying.
+2022-12-18 14:15:03.119559: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F AVX512_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-12-18 14:15:03.599528: I tensorflow/core/util/util.cc:169] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+ FutureWarning:/h/angelo/miniconda3/envs/single_cell_env/lib/python3.7/site-packages/anndata/_core/anndata.py:1228: The `inplace` parameter in pandas.Categorical.reorder_categories is deprecated and will be removed in a future version. Reordering categories will always return a new Categorical object.
+... storing 'feature_types' as categorical
+ FutureWarning:/h/angelo/miniconda3/envs/single_cell_env/lib/python3.7/site-packages/anndata/_core/anndata.py:1228: The `inplace` parameter in pandas.Categorical.reorder_categories is deprecated and will be removed in a future version. Reordering categories will always return a new Categorical object.
+... storing 'gene_id' as categorical
+Reading dataset...
+Feature selecting GEX...
+Feature selecting ATAC...
+
+New GEX dim: 5000;
+New ATAC dim: 2501;
+AnnData dataset's shape: (69249, 7501)
+
+Initializing dataset and dataloader...
+The order of labels: ['s1d1', 's1d1', 's1d1', 's1d1', 's1d1', ..., 's4d9', 's4d9', 's4d9', 's4d9', 's4d9']
+Length: 69249
+Categories (13, object): ['s1d1', 's1d2', 's1d3', 's2d1', ..., 's3d10', 's4d1', 's4d8', 's4d9']
+The device: cuda;
+
+The model: DeepGexAtacMultiModalAutoencoder(
+  (gex_encoder): Sequential(
+    (0): Linear(in_features=5000, out_features=1000, bias=True)
+    (1): BatchNorm1d(1000, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.1, inplace=False)
+    (4): Linear(in_features=1000, out_features=200, bias=True)
+    (5): BatchNorm1d(200, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Linear(in_features=200, out_features=32, bias=True)
+    (8): ReLU()
+  )
+  (atac_encoder): Sequential(
+    (0): Linear(in_features=2501, out_features=2000, bias=True)
+    (1): BatchNorm1d(2000, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.1, inplace=False)
+    (4): Linear(in_features=2000, out_features=400, bias=True)
+    (5): BatchNorm1d(400, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Linear(in_features=400, out_features=32, bias=True)
+    (8): ReLU()
+  )
+  (gex_decoder): Sequential(
+    (0): Linear(in_features=64, out_features=50, bias=True)
+    (1): BatchNorm1d(50, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.1, inplace=False)
+    (4): Linear(in_features=50, out_features=100, bias=True)
+    (5): BatchNorm1d(100, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Linear(in_features=100, out_features=5000, bias=True)
+    (8): ReLU()
+  )
+  (atac_decoder): Sequential(
+    (0): Linear(in_features=64, out_features=100, bias=True)
+    (1): BatchNorm1d(100, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.1, inplace=False)
+    (4): Linear(in_features=100, out_features=300, bias=True)
+    (5): BatchNorm1d(300, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Linear(in_features=300, out_features=2501, bias=True)
+    (8): Sigmoid()
+  )
+);
+The dataset: <datasets.anndatadataset.AnnDataDataset object at 0x7fdcf7671110>;
+The optimizer: Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 1e-05
+    weight_decay: 0.06442210737366003
+);
+
+Epoch 0 recon loss: 1164.1089716731
+Epoch 1 recon loss: 1157.3801236474
+Epoch 2 recon loss: 1166.1763806554
+Epoch 3 recon loss: 1170.2293376831
+Epoch 4 recon loss: 1147.7183582204
+Epoch 5 recon loss: 1155.8127903479
+Epoch 6 recon loss: 1133.264606466
+Epoch 7 recon loss: 1146.8388030955
+Epoch 8 recon loss: 1170.26538375
+Epoch 9 recon loss: 1170.383376724
+Epoch 10 recon loss: 1143.1113309182
+Epoch 11 recon loss: 1131.6632909564
+Epoch 12 recon loss: 1170.9961187986
+Epoch 13 recon loss: 1176.3309688011
+Epoch 14 recon loss: 1162.0018258956
+Epoch 15 recon loss: 1136.6884325367
+Epoch 16 recon loss: 1137.9941491265
+Epoch 17 recon loss: 1165.9189824989
+Epoch 18 recon loss: 1132.4483787611
+Epoch 19 recon loss: 1172.840619811
+
+Latent space type: <class 'numpy.ndarray'>;
+GEX encoded shape: torch.Size([69249, 32]);
+ATAC encoded shape: torch.Size([69249, 32]);
+Latent space shape: (69249, 64);
+
+0.4264626923208851
+   celltype_ari  celltype_ami  ...  batch_homogeneity  batch_complete
+0      0.026825      0.089276  ...           0.940991        0.948281
+
+[1 rows x 8 columns]
+2022-12-18 14:17:40,425 - wandb.wandb_agent - INFO - Cleaning up finished run: 7rlr374p
+wandb: Waiting for W&B process to finish... (success).
+wandb: - 0.007 MB of 0.025 MB uploaded (0.000 MB deduped)wandb: 
+wandb: Run history:
+wandb:  recon loss ▆▅▆▇▄▅▁▃▇▇▃▁▇█▆▂▂▆▁▇
+wandb: total_score ▁
+wandb: 
+wandb: Run summary:
+wandb:  recon loss 1172.84062
+wandb: total_score 0.42646
+wandb: 
+wandb: Synced gentle-sweep-269: https://wandb.ai/team-single-cell/gex_atac_sweep/runs/7rlr374p
+wandb: Synced 6 W&B file(s), 1 media file(s), 1 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20221218_140803-7rlr374p/logs
+2022-12-18 14:17:44,502 - wandb.wandb_agent - INFO - Agent received command: run
+2022-12-18 14:17:44,515 - wandb.wandb_agent - INFO - Agent starting run with config:
+	atac_dim: 2500
+	atac_weight: 94.92478680934454
+	epochs: 80
+	gex_dim: 5000
+	gex_weight: 88.58850599877445
+	init: xavier
+	latent_dim: 20
+	lr: 0.0001
+	model: [[1200, 400, 100], [50, 100, 200], [1600, 600, 120], [60, 100, 150]]
+	weight_decay: 0.044575044418795784
+2022-12-18 14:17:44,773 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python gex_atac_sweep.py --atac_dim=2500 --atac_weight=94.92478680934454 --epochs=80 --gex_dim=5000 --gex_weight=88.58850599877445 --init=xavier --latent_dim=20 --lr=0.0001 "--model=[[1200, 400, 100], [50, 100, 200], [1600, 600, 120], [60, 100, 150]]" --weight_decay=0.044575044418795784
+2022-12-18 14:17:49,930 - wandb.wandb_agent - INFO - Running runs: ['flqlskpb']
+wandb: Currently logged in as: ange1o5 (team-single-cell). Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+wandb: Tracking run with wandb version 0.13.7
+wandb: Run data is saved locally in /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141754-flqlskpb
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run clean-sweep-340
+wandb: ⭐️ View project at https://wandb.ai/team-single-cell/gex_atac_sweep
+wandb: 🧹 View sweep at https://wandb.ai/team-single-cell/gex_atac_sweep/sweeps/j1snhit4
+wandb: 🚀 View run at https://wandb.ai/team-single-cell/gex_atac_sweep/runs/flqlskpb
+ UserWarning:/h/angelo/miniconda3/envs/single_cell_env/lib/python3.7/site-packages/scanpy/preprocessing/_highly_variable_genes.py:64: `flavor='seurat_v3'` expects raw count data, but non-integers were found.
+Trying to set attribute `._uns` of view, copying.
+Trying to set attribute `.var` of view, copying.
+slurmstepd: error: *** JOB 8874698 ON gpu122 CANCELLED AT 2022-12-18T14:32:15 ***

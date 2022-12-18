@@ -1,0 +1,26 @@
+2022-12-16 12:41:06,850 INFO    MainThread:14166 [wandb_setup.py:_flush():68] Configure stats pid to 14166
+2022-12-16 12:41:06,850 INFO    MainThread:14166 [wandb_setup.py:_flush():68] Loading settings from /h/angelo/.config/wandb/settings
+2022-12-16 12:41:06,850 INFO    MainThread:14166 [wandb_setup.py:_flush():68] Loading settings from /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/settings
+2022-12-16 12:41:06,850 INFO    MainThread:14166 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True', 'entity': 'team-single-cell', 'project': 'gex_atac_sweep', 'sweep_id': 'po9e7l6i', 'root_dir': '/ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts', 'run_id': 'qes6qvso', 'sweep_param_path': '/ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/sweep-po9e7l6i/config-qes6qvso.yaml'}
+2022-12-16 12:41:06,850 INFO    MainThread:14166 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'experiments/scripts/gex_atac_sweep.py', 'program': 'gex_atac_sweep.py'}
+2022-12-16 12:41:06,850 INFO    MainThread:14166 [wandb_init.py:_log_setup():476] Logging user logs to /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221216_124106-qes6qvso/logs/debug.log
+2022-12-16 12:41:06,850 INFO    MainThread:14166 [wandb_init.py:_log_setup():477] Logging internal logs to /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221216_124106-qes6qvso/logs/debug-internal.log
+2022-12-16 12:41:06,850 INFO    MainThread:14166 [wandb_init.py:init():516] calling init triggers
+2022-12-16 12:41:06,851 INFO    MainThread:14166 [wandb_init.py:init():520] wandb.init called with sweep_config: {'atac_dim': 5000, 'atac_weight': 29.01380500733389, 'epochs': 80, 'gex_dim': 5000, 'gex_weight': 90.53631159781877, 'init': 'xavier', 'latent_dim': 64, 'lr': 0.0001, 'model': [[1600, 400, 100], [100, 400, 1600], [2400, 600, 120], [120, 600, 2400]], 'weight_decay': 0.07119353260368268}
+config: {'gex_dim': 2500, 'atac_dim': 7000, 'latent_dim': 20, 'model': [[1600, 1200, 800, 400, 200, 100, 50], [80, 160, 240, 640, 960, 1200], [2400, 1200, 800, 400, 200, 100, 50], [80, 160, 240, 640, 960, 1200, 1600]], 'init': 'he', 'lr': 0.001, 'weight_decay': 0.001, 'epochs': 20, 'gex_weight': 5, 'atac_weight': 5}
+2022-12-16 12:41:06,851 INFO    MainThread:14166 [wandb_init.py:init():569] starting backend
+2022-12-16 12:41:06,851 INFO    MainThread:14166 [wandb_init.py:init():573] setting up manager
+2022-12-16 12:41:06,857 INFO    MainThread:14166 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2022-12-16 12:41:06,865 INFO    MainThread:14166 [wandb_init.py:init():580] backend started and connected
+2022-12-16 12:41:06,873 INFO    MainThread:14166 [wandb_run.py:_config_callback():1163] config_cb None None {'atac_dim': 5000, 'atac_weight': 29.01380500733389, 'epochs': 80, 'gex_dim': 5000, 'gex_weight': 90.53631159781877, 'init': 'xavier', 'latent_dim': 64, 'lr': 0.0001, 'model': [[1600, 400, 100], [100, 400, 1600], [2400, 600, 120], [120, 600, 2400]], 'weight_decay': 0.07119353260368268}
+2022-12-16 12:41:06,876 INFO    MainThread:14166 [wandb_init.py:init():658] updated telemetry
+2022-12-16 12:41:06,898 INFO    MainThread:14166 [wandb_init.py:init():694] communicating run to backend with 60 second timeout
+2022-12-16 12:41:07,141 INFO    MainThread:14166 [wandb_run.py:_on_init():2006] communicating current version
+2022-12-16 12:41:07,174 INFO    MainThread:14166 [wandb_run.py:_on_init():2010] got version response 
+2022-12-16 12:41:07,174 INFO    MainThread:14166 [wandb_init.py:init():728] starting run threads in backend
+2022-12-16 12:41:12,123 INFO    MainThread:14166 [wandb_run.py:_console_start():1986] atexit reg
+2022-12-16 12:41:12,123 INFO    MainThread:14166 [wandb_run.py:_redirect():1844] redirect: SettingsConsole.WRAP_RAW
+2022-12-16 12:41:12,124 INFO    MainThread:14166 [wandb_run.py:_redirect():1909] Wrapping output streams.
+2022-12-16 12:41:12,124 INFO    MainThread:14166 [wandb_run.py:_redirect():1931] Redirects installed.
+2022-12-16 12:41:12,125 INFO    MainThread:14166 [wandb_init.py:init():765] run started, returning control to user process
+2022-12-16 12:41:19,119 WARNING MsgRouterThr:14166 [router.py:message_loop():77] message_loop has been closed

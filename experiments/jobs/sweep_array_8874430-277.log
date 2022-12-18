@@ -1,0 +1,33 @@
+/h/angelo/single-cell-proj/repo/team_single_cell/experiments/jobs
+gpu124.cluster.local
+Sun Dec 18 14:07:50 EST 2022
+wandb: Starting wandb agent 🕵️
+2022-12-18 14:08:00,496 - wandb.wandb_agent - INFO - Running runs: []
+2022-12-18 14:08:00,749 - wandb.wandb_agent - INFO - Agent received command: run
+2022-12-18 14:08:00,750 - wandb.wandb_agent - INFO - Agent starting run with config:
+	atac_dim: 10000
+	atac_weight: 88.42161215694954
+	epochs: 80
+	gex_dim: 2500
+	gex_weight: 33.357288385814506
+	init: he
+	latent_dim: 20
+	lr: 0.1
+	model: [[1200, 400, 100], [50, 100, 200], [1600, 600, 120], [60, 100, 150]]
+	weight_decay: 0.07176496755350475
+2022-12-18 14:08:00,758 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python gex_atac_sweep.py --atac_dim=10000 --atac_weight=88.42161215694954 --epochs=80 --gex_dim=2500 --gex_weight=33.357288385814506 --init=he --latent_dim=20 --lr=0.1 "--model=[[1200, 400, 100], [50, 100, 200], [1600, 600, 120], [60, 100, 150]]" --weight_decay=0.07176496755350475
+2022-12-18 14:08:05,768 - wandb.wandb_agent - INFO - Running runs: ['qg3w5pti']
+wandb: Currently logged in as: ange1o5 (team-single-cell). Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+wandb: Tracking run with wandb version 0.13.7
+wandb: Run data is saved locally in /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140807-qg3w5pti
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run upbeat-sweep-280
+wandb: ⭐️ View project at https://wandb.ai/team-single-cell/gex_atac_sweep
+wandb: 🧹 View sweep at https://wandb.ai/team-single-cell/gex_atac_sweep/sweeps/j1snhit4
+wandb: 🚀 View run at https://wandb.ai/team-single-cell/gex_atac_sweep/runs/qg3w5pti
+ UserWarning:/h/angelo/miniconda3/envs/single_cell_env/lib/python3.7/site-packages/scanpy/preprocessing/_highly_variable_genes.py:64: `flavor='seurat_v3'` expects raw count data, but non-integers were found.
+Trying to set attribute `._uns` of view, copying.
+Trying to set attribute `.var` of view, copying.
+slurmstepd: error: *** JOB 8874708 ON gpu124 CANCELLED AT 2022-12-18T14:32:15 ***

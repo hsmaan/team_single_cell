@@ -1,0 +1,36 @@
+/h/angelo/single-cell-proj/repo/team_single_cell/experiments/jobs
+gpu145.cluster.local
+Sun Dec 18 14:05:04 EST 2022
+wandb: Starting wandb agent 🕵️
+2022-12-18 14:05:14,173 - wandb.wandb_agent - INFO - Running runs: []
+2022-12-18 14:05:14,681 - wandb.wandb_agent - INFO - Agent received command: run
+2022-12-18 14:05:14,682 - wandb.wandb_agent - INFO - Agent starting run with config:
+	atac_dim: 2500
+	atac_weight: 17.52607478190389
+	epochs: 80
+	gex_dim: 1000
+	gex_weight: 18.99610417815851
+	init: xavier
+	latent_dim: 10
+	lr: 0.01
+	model: [[1000, 200], [50, 100], [2000, 400], [100, 300]]
+	weight_decay: 0.0536208603650704
+2022-12-18 14:05:14,689 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python gex_atac_sweep.py --atac_dim=2500 --atac_weight=17.52607478190389 --epochs=80 --gex_dim=1000 --gex_weight=18.99610417815851 --init=xavier --latent_dim=10 --lr=0.01 "--model=[[1000, 200], [50, 100], [2000, 400], [100, 300]]" --weight_decay=0.0536208603650704
+2022-12-18 14:05:19,701 - wandb.wandb_agent - INFO - Running runs: ['5ylc4kkg']
+wandb: Currently logged in as: ange1o5 (team-single-cell). Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+wandb: Tracking run with wandb version 0.13.7
+wandb: Run data is saved locally in /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140521-5ylc4kkg
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run splendid-sweep-92
+wandb: ⭐️ View project at https://wandb.ai/team-single-cell/gex_atac_sweep
+wandb: 🧹 View sweep at https://wandb.ai/team-single-cell/gex_atac_sweep/sweeps/j1snhit4
+wandb: 🚀 View run at https://wandb.ai/team-single-cell/gex_atac_sweep/runs/5ylc4kkg
+ UserWarning:/h/angelo/miniconda3/envs/single_cell_env/lib/python3.7/site-packages/scanpy/preprocessing/_highly_variable_genes.py:64: `flavor='seurat_v3'` expects raw count data, but non-integers were found.
+Trying to set attribute `._uns` of view, copying.
+Trying to set attribute `.var` of view, copying.
+2022-12-18 14:18:18.115216: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F AVX512_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-12-18 14:18:18.453318: I tensorflow/core/util/util.cc:169] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+slurmstepd: error: *** JOB 8874524 ON gpu145 CANCELLED AT 2022-12-18T14:32:15 ***

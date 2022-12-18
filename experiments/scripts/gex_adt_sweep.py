@@ -1,5 +1,7 @@
+import sys
+sys.path.append("../..")
 import os
-os.chdir("../..")
+os.environ["CUDA_VISIBLE_DEVICES"] = "0, 1"
 
 import wandb
 
@@ -10,10 +12,10 @@ from evaluate import GexAdtEvaluation
 hyperparameter_defaults = dict(
     gex_dim = 2500,
     latent_dim = 20,
-    model = [[1600, 1200, 800, 400, 200, 100, 50],
-    [80, 160, 240, 640, 960, 1200],
-    [2400, 1200, 800, 400, 200, 100, 50],
-    [80, 160, 240, 640, 960, 1200, 1600]],
+    model = [[1000, 800, 600, 400, 200],
+      [10, 30, 50, 100, 160],
+      [100, 90, 60, 40, 15],
+      [20, 30, 40, 50, 60]],
     init = "he",
     lr = 0.001,
     weight_decay = 0.001,
@@ -25,7 +27,7 @@ hyperparameter_defaults = dict(
 run = wandb.init(
     entity="team-single-cell",
     config=hyperparameter_defaults,
-    project="test-project",
+    project="gex_adt_sweep",
     reinit=True,
 )
 wargs = wandb.config
@@ -41,7 +43,7 @@ epochs = wargs.epochs
 gex_weight = wargs.gex_weight
 adt_weight = wargs.adt_weight
 
-gex_adt_preprocess = GexAdtPreprocess("data/multimodal/GSE194122_openproblems_neurips2021_multiome_BMMC_processed.h5ad",
+gex_adt_preprocess = GexAdtPreprocess("../../data/multimodal/GSE194122_openproblems_neurips2021_cite_BMMC_processed.h5ad",
     gex_dim=gex_dim
 )
 
@@ -59,4 +61,5 @@ gex_adt_eval = GexAdtEvaluation(
 
 total_score, res_df = gex_adt_eval.evaluate()
 
-wandb.log({"total_score": total_score, "res_df": res_df})
+wandb_resdf = wandb.Table(dataframe=res_df)
+wandb.log({"total_score": total_score, "res_df": wandb_resdf})

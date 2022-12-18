@@ -1,0 +1,283 @@
+2022-12-18 14:19:01,774 INFO    StreamThr :29929 [internal.py:wandb_internal():90] W&B internal server running at pid: 29929, started at: 2022-12-18 14:19:01.773055
+2022-12-18 14:19:01,777 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: status
+2022-12-18 14:19:01,778 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: status
+2022-12-18 14:19:01,787 DEBUG   SenderThread:29929 [sender.py:send():303] send: header
+2022-12-18 14:19:01,787 INFO    WriterThread:29929 [datastore.py:open_for_write():75] open: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/run-p71px7dm.wandb
+2022-12-18 14:19:01,811 DEBUG   SenderThread:29929 [sender.py:send():303] send: run
+2022-12-18 14:19:01,974 INFO    SenderThread:29929 [dir_watcher.py:__init__():216] watching files in: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files
+2022-12-18 14:19:01,974 INFO    SenderThread:29929 [sender.py:_start_run_threads():931] run started: p71px7dm with start time 1671391141.776121
+2022-12-18 14:19:01,974 DEBUG   SenderThread:29929 [sender.py:send():303] send: summary
+2022-12-18 14:19:01,977 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: check_version
+2022-12-18 14:19:01,979 INFO    SenderThread:29929 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:19:01,980 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: check_version
+2022-12-18 14:19:02,063 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: run_start
+2022-12-18 14:19:02,067 DEBUG   HandlerThread:29929 [system_info.py:__init__():31] System info init
+2022-12-18 14:19:02,067 DEBUG   HandlerThread:29929 [system_info.py:__init__():46] System info init done
+2022-12-18 14:19:02,067 INFO    HandlerThread:29929 [system_monitor.py:start():150] Starting system monitor
+2022-12-18 14:19:02,067 INFO    SystemMonitor:29929 [system_monitor.py:_start():116] Starting system asset monitoring threads
+2022-12-18 14:19:02,068 INFO    HandlerThread:29929 [system_monitor.py:probe():171] Collecting system info
+2022-12-18 14:19:02,069 INFO    SystemMonitor:29929 [interfaces.py:start():168] Started cpu
+2022-12-18 14:19:02,071 INFO    SystemMonitor:29929 [interfaces.py:start():168] Started disk
+2022-12-18 14:19:02,071 INFO    SystemMonitor:29929 [interfaces.py:start():168] Started gpu
+2022-12-18 14:19:02,071 INFO    SystemMonitor:29929 [interfaces.py:start():168] Started memory
+2022-12-18 14:19:02,072 INFO    SystemMonitor:29929 [interfaces.py:start():168] Started network
+2022-12-18 14:19:02,101 DEBUG   HandlerThread:29929 [system_info.py:probe():195] Probing system
+2022-12-18 14:19:02,109 DEBUG   HandlerThread:29929 [system_info.py:_probe_git():180] Probing git
+2022-12-18 14:19:02,129 DEBUG   HandlerThread:29929 [system_info.py:_probe_git():188] Probing git done
+2022-12-18 14:19:02,129 DEBUG   HandlerThread:29929 [system_info.py:probe():241] Probing system done
+2022-12-18 14:19:02,129 DEBUG   HandlerThread:29929 [system_monitor.py:probe():180] {'os': 'Linux-5.4.0-131-generic-x86_64-with-debian-buster-sid', 'python': '3.7.12', 'heartbeatAt': '2022-12-18T19:19:02.101350', 'startedAt': '2022-12-18T19:19:01.743509', 'docker': None, 'cuda': None, 'args': ('--atac_dim=10000', '--atac_weight=99.84135848812736', '--epochs=60', '--gex_dim=5000', '--gex_weight=1.3914351954475754', '--init=xavier', '--latent_dim=64', '--lr=0.01', '--model=[[1600, 800, 400, 100], [40, 60, 100, 150], [1800, 800, 400, 100], [40, 60, 120, 200]]', '--weight_decay=0.08194997562239403'), 'state': 'running', 'program': 'gex_atac_sweep.py', 'codePath': 'experiments/scripts/gex_atac_sweep.py', 'git': {'remote': 'https://github.com/hsmaan/team_single_cell', 'commit': '76b435f2121c654f0ef1f23e7da9f14450464c91'}, 'email': 'dimon.ka2002@gmail.com', 'root': '/ssd003/home/angelo/single-cell-proj/repo/team_single_cell', 'host': 'gpu032', 'username': 'angelo', 'executable': '/h/angelo/miniconda3/envs/single_cell_env/bin/python', 'cpu_count': 16, 'cpu_count_logical': 32, 'cpu_freq': {'current': 2401.18465625, 'min': 800.0, 'max': 3000.0}, 'cpu_freq_per_core': [{'current': 2400.001, 'min': 800.0, 'max': 3000.0}, {'current': 2400.276, 'min': 800.0, 'max': 3000.0}, {'current': 2400.349, 'min': 800.0, 'max': 3000.0}, {'current': 2405.263, 'min': 800.0, 'max': 3000.0}, {'current': 2400.382, 'min': 800.0, 'max': 3000.0}, {'current': 2400.104, 'min': 800.0, 'max': 3000.0}, {'current': 2400.247, 'min': 800.0, 'max': 3000.0}, {'current': 2400.596, 'min': 800.0, 'max': 3000.0}, {'current': 2400.0, 'min': 800.0, 'max': 3000.0}, {'current': 2400.543, 'min': 800.0, 'max': 3000.0}, {'current': 2399.951, 'min': 800.0, 'max': 3000.0}, {'current': 2402.169, 'min': 800.0, 'max': 3000.0}, {'current': 2400.043, 'min': 800.0, 'max': 3000.0}, {'current': 2403.333, 'min': 800.0, 'max': 3000.0}, {'current': 2400.051, 'min': 800.0, 'max': 3000.0}, {'current': 2401.954, 'min': 800.0, 'max': 3000.0}, {'current': 2400.025, 'min': 800.0, 'max': 3000.0}, {'current': 2406.427, 'min': 800.0, 'max': 3000.0}, {'current': 2400.169, 'min': 800.0, 'max': 3000.0}, {'current': 2401.237, 'min': 800.0, 'max': 3000.0}, {'current': 2402.648, 'min': 800.0, 'max': 3000.0}, {'current': 2400.499, 'min': 800.0, 'max': 3000.0}, {'current': 2401.466, 'min': 800.0, 'max': 3000.0}, {'current': 2400.039, 'min': 800.0, 'max': 3000.0}, {'current': 2401.323, 'min': 800.0, 'max': 3000.0}, {'current': 2400.265, 'min': 800.0, 'max': 3000.0}, {'current': 2402.326, 'min': 800.0, 'max': 3000.0}, {'current': 2399.943, 'min': 800.0, 'max': 3000.0}, {'current': 2400.66, 'min': 800.0, 'max': 3000.0}, {'current': 2400.279, 'min': 800.0, 'max': 3000.0}, {'current': 2404.922, 'min': 800.0, 'max': 3000.0}, {'current': 2400.419, 'min': 800.0, 'max': 3000.0}], 'disk': {'total': 819.2042961120605, 'used': 28.376266479492188}, 'gpu': 'NVIDIA A40', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA A40', 'memory_total': 47850782720}], 'memory': {'total': 188.59260940551758}}
+2022-12-18 14:19:02,129 INFO    HandlerThread:29929 [system_monitor.py:probe():181] Finished collecting system info
+2022-12-18 14:19:02,130 INFO    HandlerThread:29929 [system_monitor.py:probe():184] Publishing system info
+2022-12-18 14:19:02,130 DEBUG   HandlerThread:29929 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2022-12-18 14:19:02,132 DEBUG   HandlerThread:29929 [system_info.py:_save_pip():67] Saving pip packages done
+2022-12-18 14:19:02,132 DEBUG   HandlerThread:29929 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2022-12-18 14:19:02,978 INFO    Thread-13 :29929 [dir_watcher.py:_on_file_created():275] file/dir created: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/conda-environment.yaml
+2022-12-18 14:19:02,979 INFO    Thread-13 :29929 [dir_watcher.py:_on_file_created():275] file/dir created: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/wandb-summary.json
+2022-12-18 14:19:02,979 INFO    Thread-13 :29929 [dir_watcher.py:_on_file_created():275] file/dir created: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/requirements.txt
+2022-12-18 14:19:06,879 DEBUG   HandlerThread:29929 [system_info.py:_save_conda():86] Saving conda packages done
+2022-12-18 14:19:06,882 INFO    HandlerThread:29929 [system_monitor.py:probe():186] Finished publishing system info
+2022-12-18 14:19:06,954 DEBUG   SenderThread:29929 [sender.py:send():303] send: files
+2022-12-18 14:19:06,955 INFO    SenderThread:29929 [sender.py:_save_file():1171] saving file wandb-metadata.json with policy now
+2022-12-18 14:19:06,965 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:19:06,965 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:19:06,982 INFO    Thread-13 :29929 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/conda-environment.yaml
+2022-12-18 14:19:06,982 INFO    Thread-13 :29929 [dir_watcher.py:_on_file_created():275] file/dir created: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/wandb-metadata.json
+2022-12-18 14:19:07,038 DEBUG   SenderThread:29929 [sender.py:send():303] send: telemetry
+2022-12-18 14:19:07,311 INFO    Thread-16 :29929 [upload_job.py:push():143] Uploaded file /tmp/tmp3jqpreegwandb/4dy00ttj-wandb-metadata.json
+2022-12-18 14:19:07,982 INFO    Thread-13 :29929 [dir_watcher.py:_on_file_created():275] file/dir created: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/output.log
+2022-12-18 14:19:09,984 INFO    Thread-13 :29929 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/output.log
+2022-12-18 14:19:22,414 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:19:22,415 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:19:32,996 INFO    Thread-13 :29929 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/config.yaml
+2022-12-18 14:19:37,477 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:19:37,477 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:19:52,541 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:19:52,541 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:20:02,072 DEBUG   SystemMonitor:29929 [system_monitor.py:_start():130] Starting system metrics aggregation loop
+2022-12-18 14:20:02,074 DEBUG   SenderThread:29929 [sender.py:send():303] send: stats
+2022-12-18 14:20:07,603 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:20:07,604 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:20:12,017 INFO    Thread-13 :29929 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/output.log
+2022-12-18 14:20:17,021 INFO    Thread-13 :29929 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/output.log
+2022-12-18 14:20:19,023 INFO    Thread-13 :29929 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/output.log
+2022-12-18 14:20:22,668 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:20:22,668 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:20:28,030 INFO    Thread-13 :29929 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/output.log
+2022-12-18 14:20:32,076 DEBUG   SenderThread:29929 [sender.py:send():303] send: stats
+2022-12-18 14:20:33,034 INFO    Thread-13 :29929 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/output.log
+2022-12-18 14:20:37,736 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:20:37,736 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:20:52,805 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:20:52,806 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:21:02,077 DEBUG   SenderThread:29929 [sender.py:send():303] send: stats
+2022-12-18 14:21:07,874 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:21:07,875 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:21:20,063 INFO    Thread-13 :29929 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/output.log
+2022-12-18 14:21:22,938 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:21:22,939 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:21:24,066 INFO    Thread-13 :29929 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/output.log
+2022-12-18 14:21:26,068 INFO    Thread-13 :29929 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/output.log
+2022-12-18 14:21:32,078 DEBUG   SenderThread:29929 [sender.py:send():303] send: stats
+2022-12-18 14:21:38,008 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:21:38,008 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:21:53,077 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:21:53,077 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:22:02,079 DEBUG   SenderThread:29929 [sender.py:send():303] send: stats
+2022-12-18 14:22:08,143 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:22:08,143 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:22:23,208 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:22:23,208 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:22:32,081 DEBUG   SenderThread:29929 [sender.py:send():303] send: stats
+2022-12-18 14:22:38,272 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:22:38,273 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:22:53,341 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:22:53,341 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:23:02,082 DEBUG   SenderThread:29929 [sender.py:send():303] send: stats
+2022-12-18 14:23:08,405 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:23:08,405 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:23:23,475 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:23:23,475 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:23:32,084 DEBUG   SenderThread:29929 [sender.py:send():303] send: stats
+2022-12-18 14:23:38,540 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:23:38,540 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:23:53,606 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:23:53,606 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:24:02,086 DEBUG   SenderThread:29929 [sender.py:send():303] send: stats
+2022-12-18 14:24:08,671 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:24:08,671 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:24:23,741 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:24:23,742 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:24:32,086 DEBUG   SenderThread:29929 [sender.py:send():303] send: stats
+2022-12-18 14:24:38,808 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:24:38,809 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:24:53,872 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:24:53,873 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:25:02,088 DEBUG   SenderThread:29929 [sender.py:send():303] send: stats
+2022-12-18 14:25:08,938 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:25:08,939 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:25:24,005 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:25:24,005 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:25:32,089 DEBUG   SenderThread:29929 [sender.py:send():303] send: stats
+2022-12-18 14:25:39,076 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:25:39,077 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:25:54,153 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:25:54,154 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:26:02,091 DEBUG   SenderThread:29929 [sender.py:send():303] send: stats
+2022-12-18 14:26:09,219 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:26:09,220 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:26:24,278 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:26:24,278 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:26:32,092 DEBUG   SenderThread:29929 [sender.py:send():303] send: stats
+2022-12-18 14:26:39,345 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:26:39,345 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:26:54,410 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:26:54,410 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:27:02,094 DEBUG   SenderThread:29929 [sender.py:send():303] send: stats
+2022-12-18 14:27:09,477 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:27:09,478 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:27:24,543 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:27:24,543 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:27:32,095 DEBUG   SenderThread:29929 [sender.py:send():303] send: stats
+2022-12-18 14:27:39,608 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:27:39,608 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:27:54,678 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:27:54,678 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:28:02,097 DEBUG   SenderThread:29929 [sender.py:send():303] send: stats
+2022-12-18 14:28:09,748 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:28:09,748 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:28:24,817 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:28:24,817 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:28:32,098 DEBUG   SenderThread:29929 [sender.py:send():303] send: stats
+2022-12-18 14:28:39,881 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:28:39,882 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:28:54,948 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:28:54,948 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:29:02,100 DEBUG   SenderThread:29929 [sender.py:send():303] send: stats
+2022-12-18 14:29:10,016 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:29:10,016 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:29:25,082 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:29:25,082 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:29:32,101 DEBUG   SenderThread:29929 [sender.py:send():303] send: stats
+2022-12-18 14:29:40,147 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:29:40,147 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:29:55,212 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:29:55,212 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:30:02,103 DEBUG   SenderThread:29929 [sender.py:send():303] send: stats
+2022-12-18 14:30:06,584 DEBUG   SenderThread:29929 [sender.py:send():303] send: exit
+2022-12-18 14:30:06,584 INFO    SenderThread:29929 [sender.py:send_exit():442] handling exit code: 1
+2022-12-18 14:30:06,585 INFO    SenderThread:29929 [sender.py:send_exit():444] handling runtime: 664
+2022-12-18 14:30:06,587 INFO    SenderThread:29929 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:30:06,587 INFO    SenderThread:29929 [sender.py:send_exit():450] send defer
+2022-12-18 14:30:06,588 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:30:06,588 INFO    HandlerThread:29929 [handler.py:handle_request_defer():162] handle defer: 0
+2022-12-18 14:30:06,588 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:30:06,588 INFO    SenderThread:29929 [sender.py:send_request_defer():459] handle sender defer: 0
+2022-12-18 14:30:06,588 INFO    SenderThread:29929 [sender.py:transition_state():463] send defer: 1
+2022-12-18 14:30:06,588 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:30:06,588 INFO    HandlerThread:29929 [handler.py:handle_request_defer():162] handle defer: 1
+2022-12-18 14:30:06,588 INFO    HandlerThread:29929 [system_monitor.py:finish():160] Stopping system monitor
+2022-12-18 14:30:06,589 DEBUG   SystemMonitor:29929 [system_monitor.py:_start():137] Finished system metrics aggregation loop
+2022-12-18 14:30:06,589 DEBUG   SystemMonitor:29929 [system_monitor.py:_start():141] Publishing last batch of metrics
+2022-12-18 14:30:06,591 INFO    HandlerThread:29929 [interfaces.py:finish():175] Joined cpu
+2022-12-18 14:30:06,591 INFO    HandlerThread:29929 [interfaces.py:finish():175] Joined disk
+2022-12-18 14:30:06,666 INFO    HandlerThread:29929 [interfaces.py:finish():175] Joined gpu
+2022-12-18 14:30:06,666 INFO    HandlerThread:29929 [interfaces.py:finish():175] Joined memory
+2022-12-18 14:30:06,666 INFO    HandlerThread:29929 [interfaces.py:finish():175] Joined network
+2022-12-18 14:30:06,666 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:30:06,667 INFO    SenderThread:29929 [sender.py:send_request_defer():459] handle sender defer: 1
+2022-12-18 14:30:06,667 INFO    SenderThread:29929 [sender.py:transition_state():463] send defer: 2
+2022-12-18 14:30:06,667 DEBUG   SenderThread:29929 [sender.py:send():303] send: stats
+2022-12-18 14:30:06,668 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:30:06,668 INFO    HandlerThread:29929 [handler.py:handle_request_defer():162] handle defer: 2
+2022-12-18 14:30:06,668 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:30:06,668 INFO    SenderThread:29929 [sender.py:send_request_defer():459] handle sender defer: 2
+2022-12-18 14:30:06,668 INFO    SenderThread:29929 [sender.py:transition_state():463] send defer: 3
+2022-12-18 14:30:06,668 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:30:06,668 INFO    HandlerThread:29929 [handler.py:handle_request_defer():162] handle defer: 3
+2022-12-18 14:30:06,668 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:30:06,668 INFO    SenderThread:29929 [sender.py:send_request_defer():459] handle sender defer: 3
+2022-12-18 14:30:06,668 INFO    SenderThread:29929 [sender.py:transition_state():463] send defer: 4
+2022-12-18 14:30:06,668 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:30:06,669 INFO    HandlerThread:29929 [handler.py:handle_request_defer():162] handle defer: 4
+2022-12-18 14:30:06,669 DEBUG   SenderThread:29929 [sender.py:send():303] send: summary
+2022-12-18 14:30:06,671 INFO    SenderThread:29929 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:30:06,671 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:30:06,671 INFO    SenderThread:29929 [sender.py:send_request_defer():459] handle sender defer: 4
+2022-12-18 14:30:06,671 INFO    SenderThread:29929 [sender.py:transition_state():463] send defer: 5
+2022-12-18 14:30:06,671 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:30:06,671 INFO    HandlerThread:29929 [handler.py:handle_request_defer():162] handle defer: 5
+2022-12-18 14:30:06,671 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:30:06,671 INFO    SenderThread:29929 [sender.py:send_request_defer():459] handle sender defer: 5
+2022-12-18 14:30:06,671 INFO    SenderThread:29929 [sender.py:transition_state():463] send defer: 6
+2022-12-18 14:30:06,672 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:30:06,672 INFO    HandlerThread:29929 [handler.py:handle_request_defer():162] handle defer: 6
+2022-12-18 14:30:06,672 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:30:06,672 INFO    SenderThread:29929 [sender.py:send_request_defer():459] handle sender defer: 6
+2022-12-18 14:30:07,360 INFO    Thread-13 :29929 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/wandb-summary.json
+2022-12-18 14:30:07,585 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: poll_exit
+2022-12-18 14:30:08,362 INFO    Thread-13 :29929 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/output.log
+2022-12-18 14:30:08,802 INFO    SenderThread:29929 [sender.py:transition_state():463] send defer: 7
+2022-12-18 14:30:08,802 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: poll_exit
+2022-12-18 14:30:08,802 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:30:08,803 INFO    HandlerThread:29929 [handler.py:handle_request_defer():162] handle defer: 7
+2022-12-18 14:30:08,803 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:30:08,803 INFO    SenderThread:29929 [sender.py:send_request_defer():459] handle sender defer: 7
+2022-12-18 14:30:08,803 INFO    SenderThread:29929 [dir_watcher.py:finish():362] shutting down directory watcher
+2022-12-18 14:30:09,362 INFO    Thread-13 :29929 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/output.log
+2022-12-18 14:30:09,362 INFO    SenderThread:29929 [dir_watcher.py:finish():392] scan: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files
+2022-12-18 14:30:09,363 INFO    SenderThread:29929 [dir_watcher.py:finish():406] scan save: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/conda-environment.yaml conda-environment.yaml
+2022-12-18 14:30:09,363 INFO    SenderThread:29929 [dir_watcher.py:finish():406] scan save: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/config.yaml config.yaml
+2022-12-18 14:30:09,367 INFO    SenderThread:29929 [dir_watcher.py:finish():406] scan save: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/wandb-summary.json wandb-summary.json
+2022-12-18 14:30:09,367 INFO    SenderThread:29929 [dir_watcher.py:finish():406] scan save: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/wandb-metadata.json wandb-metadata.json
+2022-12-18 14:30:09,367 INFO    SenderThread:29929 [dir_watcher.py:finish():406] scan save: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/requirements.txt requirements.txt
+2022-12-18 14:30:09,371 INFO    SenderThread:29929 [dir_watcher.py:finish():406] scan save: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/output.log output.log
+2022-12-18 14:30:09,387 INFO    SenderThread:29929 [sender.py:transition_state():463] send defer: 8
+2022-12-18 14:30:09,391 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:30:09,391 INFO    HandlerThread:29929 [handler.py:handle_request_defer():162] handle defer: 8
+2022-12-18 14:30:09,399 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:30:09,399 INFO    SenderThread:29929 [sender.py:send_request_defer():459] handle sender defer: 8
+2022-12-18 14:30:09,399 INFO    SenderThread:29929 [file_pusher.py:finish():168] shutting down file pusher
+2022-12-18 14:30:09,721 INFO    Thread-17 :29929 [upload_job.py:push():143] Uploaded file /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/conda-environment.yaml
+2022-12-18 14:30:09,721 INFO    Thread-18 :29929 [upload_job.py:push():143] Uploaded file /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/config.yaml
+2022-12-18 14:30:09,732 INFO    Thread-19 :29929 [upload_job.py:push():143] Uploaded file /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/wandb-summary.json
+2022-12-18 14:30:09,748 INFO    Thread-20 :29929 [upload_job.py:push():143] Uploaded file /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/requirements.txt
+2022-12-18 14:30:09,755 INFO    Thread-21 :29929 [upload_job.py:push():143] Uploaded file /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/files/output.log
+2022-12-18 14:30:09,956 INFO    Thread-12 :29929 [sender.py:transition_state():463] send defer: 9
+2022-12-18 14:30:09,956 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:30:09,956 INFO    HandlerThread:29929 [handler.py:handle_request_defer():162] handle defer: 9
+2022-12-18 14:30:09,956 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:30:09,956 INFO    SenderThread:29929 [sender.py:send_request_defer():459] handle sender defer: 9
+2022-12-18 14:30:09,956 INFO    SenderThread:29929 [file_pusher.py:join():173] waiting for file pusher
+2022-12-18 14:30:09,956 INFO    SenderThread:29929 [sender.py:transition_state():463] send defer: 10
+2022-12-18 14:30:09,957 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:30:09,957 INFO    HandlerThread:29929 [handler.py:handle_request_defer():162] handle defer: 10
+2022-12-18 14:30:09,957 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:30:09,957 INFO    SenderThread:29929 [sender.py:send_request_defer():459] handle sender defer: 10
+2022-12-18 14:30:10,125 INFO    SenderThread:29929 [sender.py:transition_state():463] send defer: 11
+2022-12-18 14:30:10,126 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:30:10,126 INFO    HandlerThread:29929 [handler.py:handle_request_defer():162] handle defer: 11
+2022-12-18 14:30:10,126 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:30:10,126 INFO    SenderThread:29929 [sender.py:send_request_defer():459] handle sender defer: 11
+2022-12-18 14:30:10,126 INFO    SenderThread:29929 [sender.py:transition_state():463] send defer: 12
+2022-12-18 14:30:10,126 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: defer
+2022-12-18 14:30:10,126 DEBUG   SenderThread:29929 [sender.py:send():303] send: final
+2022-12-18 14:30:10,126 INFO    HandlerThread:29929 [handler.py:handle_request_defer():162] handle defer: 12
+2022-12-18 14:30:10,127 DEBUG   SenderThread:29929 [sender.py:send():303] send: footer
+2022-12-18 14:30:10,127 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: defer
+2022-12-18 14:30:10,127 INFO    SenderThread:29929 [sender.py:send_request_defer():459] handle sender defer: 12
+2022-12-18 14:30:10,127 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: poll_exit
+2022-12-18 14:30:10,128 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: poll_exit
+2022-12-18 14:30:10,128 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: server_info
+2022-12-18 14:30:10,128 DEBUG   SenderThread:29929 [sender.py:send_request():317] send_request: server_info
+2022-12-18 14:30:10,131 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: get_summary
+2022-12-18 14:30:10,132 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: sampled_history
+2022-12-18 14:30:10,233 INFO    MainThread:29929 [wandb_run.py:_footer_history_summary_info():3408] rendering history
+2022-12-18 14:30:10,233 INFO    MainThread:29929 [wandb_run.py:_footer_history_summary_info():3440] rendering summary
+2022-12-18 14:30:10,233 INFO    MainThread:29929 [wandb_run.py:_footer_sync_info():3364] logging synced files
+2022-12-18 14:30:10,234 DEBUG   HandlerThread:29929 [handler.py:handle_request():139] handle_request: shutdown
+2022-12-18 14:30:10,234 INFO    HandlerThread:29929 [handler.py:finish():814] shutting down handler
+2022-12-18 14:30:11,127 INFO    WriterThread:29929 [datastore.py:close():279] close: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_141901-p71px7dm/run-p71px7dm.wandb
+2022-12-18 14:30:11,233 INFO    SenderThread:29929 [sender.py:finish():1331] shutting down sender
+2022-12-18 14:30:11,233 INFO    SenderThread:29929 [file_pusher.py:finish():168] shutting down file pusher
+2022-12-18 14:30:11,233 INFO    SenderThread:29929 [file_pusher.py:join():173] waiting for file pusher
+2022-12-18 14:30:11,236 INFO    MainThread:29929 [internal.py:handle_exit():77] Internal process exited

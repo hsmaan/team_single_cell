@@ -1,0 +1,30 @@
+wandb_version: 1
+
+atac_dim:
+  value: 10000
+atac_weight:
+  value: 1.3567279198513855
+epochs:
+  value: 60
+gex_dim:
+  value: 2500
+gex_weight:
+  value: 1.525396488441165
+init:
+  value: xavier
+latent_dim:
+  value: 20
+lr:
+  value: 0.0001
+model:
+  value:
+  - - 1000
+    - 200
+  - - 50
+    - 100
+  - - 2000
+    - 400
+  - - 100
+    - 300
+weight_decay:
+  value: 0.010539970770033736

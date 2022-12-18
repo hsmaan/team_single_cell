@@ -1,0 +1,149 @@
+
+Reading dataset...
+Feature selecting GEX...
+ UserWarning:/h/angelo/miniconda3/envs/single_cell_env/lib/python3.7/site-packages/scanpy/preprocessing/_highly_variable_genes.py:64: `flavor='seurat_v3'` expects raw count data, but non-integers were found.
+Trying to set attribute `._uns` of view, copying.
+Feature selecting ATAC...
+Trying to set attribute `.var` of view, copying.
+New GEX dim: 1000;
+New ATAC dim: 2501;
+AnnData dataset's shape: (69249, 3501)
+Initializing dataset and dataloader...
+The order of labels: ['s1d1', 's1d1', 's1d1', 's1d1', 's1d1', ..., 's4d9', 's4d9', 's4d9', 's4d9', 's4d9']
+Length: 69249
+Categories (13, object): ['s1d1', 's1d2', 's1d3', 's2d1', ..., 's3d10', 's4d1', 's4d8', 's4d9']
+The device: cuda;
+The model: DeepGexAtacMultiModalAutoencoder(
+  (gex_encoder): Sequential(
+    (0): Linear(in_features=1000, out_features=1200, bias=True)
+    (1): BatchNorm1d(1200, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.1, inplace=False)
+    (4): Linear(in_features=1200, out_features=400, bias=True)
+    (5): BatchNorm1d(400, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Linear(in_features=400, out_features=100, bias=True)
+    (8): BatchNorm1d(100, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): ReLU()
+    (10): Dropout(p=0.1, inplace=False)
+    (11): Linear(in_features=100, out_features=32, bias=True)
+    (12): ReLU()
+  )
+  (atac_encoder): Sequential(
+    (0): Linear(in_features=2501, out_features=1600, bias=True)
+    (1): BatchNorm1d(1600, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.1, inplace=False)
+    (4): Linear(in_features=1600, out_features=600, bias=True)
+    (5): BatchNorm1d(600, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Linear(in_features=600, out_features=120, bias=True)
+    (8): BatchNorm1d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): ReLU()
+    (10): Dropout(p=0.1, inplace=False)
+    (11): Linear(in_features=120, out_features=32, bias=True)
+    (12): ReLU()
+  )
+  (gex_decoder): Sequential(
+    (0): Linear(in_features=64, out_features=50, bias=True)
+    (1): BatchNorm1d(50, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.1, inplace=False)
+    (4): Linear(in_features=50, out_features=100, bias=True)
+    (5): BatchNorm1d(100, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Linear(in_features=100, out_features=200, bias=True)
+    (8): BatchNorm1d(200, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): ReLU()
+    (10): Dropout(p=0.1, inplace=False)
+    (11): Linear(in_features=200, out_features=1000, bias=True)
+    (12): ReLU()
+  )
+  (atac_decoder): Sequential(
+    (0): Linear(in_features=64, out_features=60, bias=True)
+    (1): BatchNorm1d(60, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.1, inplace=False)
+    (4): Linear(in_features=60, out_features=100, bias=True)
+    (5): BatchNorm1d(100, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Linear(in_features=100, out_features=150, bias=True)
+    (8): BatchNorm1d(150, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): ReLU()
+    (10): Dropout(p=0.1, inplace=False)
+    (11): Linear(in_features=150, out_features=2501, bias=True)
+    (12): Sigmoid()
+  )
+);
+The dataset: <datasets.anndatadataset.AnnDataDataset object at 0x7fb2757c5710>;
+The optimizer: Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.1
+    weight_decay: 0.08152176864626505
+);
+Epoch 0 recon loss: 10024.9235266125
+Epoch 1 recon loss: 8300.7171548689
+Epoch 2 recon loss: 6936.1030237029
+Epoch 3 recon loss: 4650.2855861125
+Epoch 4 recon loss: 3982.3484434382
+Epoch 5 recon loss: 3307.2642762203
+Epoch 6 recon loss: 4096.1274670965
+Epoch 7 recon loss: 4288.4165697883
+Epoch 8 recon loss: 2513.1157375471
+Epoch 9 recon loss: 2151.9753299001
+Epoch 10 recon loss: 1968.4241816556
+Epoch 11 recon loss: 1624.4056658625
+Epoch 12 recon loss: 1638.120865374
+Epoch 13 recon loss: 2410.9359824958
+Epoch 14 recon loss: 1996.474605764
+Epoch 15 recon loss: 1618.2800138897
+Epoch 16 recon loss: 2080.4716794423
+Epoch 17 recon loss: 1870.2263431049
+Epoch 18 recon loss: 2072.2729382126
+Epoch 19 recon loss: 1568.7298443126
+Epoch 20 recon loss: 2572.2305568222
+Epoch 21 recon loss: 2213.7527349
+Epoch 22 recon loss: 1514.6092383693
+Epoch 23 recon loss: 1383.1719424726
+Epoch 24 recon loss: 1757.289722384
+Epoch 25 recon loss: 1574.9525449892
+Epoch 26 recon loss: 1706.0240620196
+Epoch 27 recon loss: 3828.5148692
+Epoch 28 recon loss: 1482.8840151915
+Epoch 29 recon loss: 1404.0648719069
+Epoch 30 recon loss: 1422.4592419808
+Epoch 31 recon loss: 1721.1730751954
+Epoch 32 recon loss: 1836.2784967602
+Epoch 33 recon loss: 1181.1800456754
+Epoch 34 recon loss: 1418.1499423183
+Epoch 35 recon loss: 1466.2975999016
+Epoch 36 recon loss: 1307.4783951354
+Epoch 37 recon loss: 2969.718213541
+Epoch 38 recon loss: 2160.9806828786
+Epoch 39 recon loss: 1825.7275787208
+Epoch 40 recon loss: 1787.3467654102
+Epoch 41 recon loss: 1710.113319911
+Epoch 42 recon loss: 1753.3587286445
+Epoch 43 recon loss: 1696.8956886127
+Epoch 44 recon loss: 1272.8256379548
+Epoch 45 recon loss: 1174.1476074964
+Epoch 46 recon loss: 2143.2873819595
+Epoch 47 recon loss: 1544.9959956477
+Epoch 48 recon loss: 1686.3785183809
+Epoch 49 recon loss: 1955.1497571981
+Epoch 50 recon loss: 2033.2927559268
+Epoch 51 recon loss: 1289.4390422079
+Epoch 52 recon loss: 1201.3620573666
+Epoch 53 recon loss: 1506.8721047295
+Epoch 54 recon loss: 1674.7673178062
+Epoch 55 recon loss: 1335.2827904187
+Epoch 56 recon loss: 1304.188334177
+Epoch 57 recon loss: 1733.3623452458
+Epoch 58 recon loss: 1504.0557883194
+Epoch 59 recon loss: 1456.9987663974
+Latent space type: <class 'numpy.ndarray'>;
+GEX encoded shape: torch.Size([69249, 32]);
+ATAC encoded shape: torch.Size([69249, 32]);

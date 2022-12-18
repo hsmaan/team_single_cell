@@ -1,0 +1,55 @@
+/h/angelo/single-cell-proj/repo/team_single_cell/experiments/jobs
+gpu056
+Sun Dec 18 13:13:04 EST 2022
+wandb: Starting wandb agent 🕵️
+2022-12-18 13:13:13,012 - wandb.wandb_agent - INFO - Running runs: []
+2022-12-18 13:13:13,209 - wandb.wandb_agent - INFO - Agent received command: run
+2022-12-18 13:13:13,209 - wandb.wandb_agent - INFO - Agent starting run with config:
+	adt_weight: 69.48837217132008
+	epochs: 20
+	gex_dim: 1000
+	gex_weight: 56.46882935128556
+	init: he
+	latent_dim: 20
+	lr: 0.001
+	model: [[1600, 800, 400, 100], [40, 60, 100, 150], [100, 80, 40, 10], [20, 40, 60, 80]]
+	weight_decay: 0.0029845392465137734
+2022-12-18 13:13:13,214 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python gex_adt_sweep.py --adt_weight=69.48837217132008 --epochs=20 --gex_dim=1000 --gex_weight=56.46882935128556 --init=he --latent_dim=20 --lr=0.001 "--model=[[1600, 800, 400, 100], [40, 60, 100, 150], [100, 80, 40, 10], [20, 40, 60, 80]]" --weight_decay=0.0029845392465137734
+wandb: Currently logged in as: ange1o5 (team-single-cell). Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+2022-12-18 13:13:18,226 - wandb.wandb_agent - INFO - Running runs: ['w0oeplix']
+wandb: Tracking run with wandb version 0.13.7
+wandb: Run data is saved locally in /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_131317-w0oeplix
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run easy-sweep-1
+wandb: ⭐️ View project at https://wandb.ai/team-single-cell/gex_adt_sweep
+wandb: 🧹 View sweep at https://wandb.ai/team-single-cell/gex_adt_sweep/sweeps/25phmr2j
+wandb: 🚀 View run at https://wandb.ai/team-single-cell/gex_adt_sweep/runs/w0oeplix
+Variable names are not unique. To make them unique, call `.var_names_make_unique`.
+ UserWarning:/h/angelo/miniconda3/envs/single_cell_env/lib/python3.7/site-packages/scanpy/preprocessing/_highly_variable_genes.py:64: `flavor='seurat_v3'` expects raw count data, but non-integers were found.
+Trying to set attribute `._uns` of view, copying.
+2022-12-18 13:23:38,030 - wandb.wandb_agent - INFO - Agent received command: stop
+2022-12-18 13:23:38,030 - wandb.wandb_agent - INFO - Stop: w0oeplix
+2022-12-18 13:23:43,039 - wandb.wandb_agent - INFO - Cleaning up finished run: w0oeplix
+wandb: Waiting for W&B process to finish... (failed -15). Press Control-C to abort syncing.
+wandb: Synced easy-sweep-1: https://wandb.ai/team-single-cell/gex_adt_sweep/runs/w0oeplix
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20221218_131317-w0oeplix/logs
+2022-12-18 13:23:49,202 - wandb.wandb_agent - INFO - Agent received command: run
+2022-12-18 13:23:49,203 - wandb.wandb_agent - INFO - Agent starting run with config:
+	adt_weight: 82.49799435067973
+	epochs: 80
+	gex_dim: 1000
+	gex_weight: 55.7332620678205
+	init: xavier
+	latent_dim: 10
+	lr: 0.1
+	model: [[1000, 800, 600, 400, 200], [10, 30, 50, 100, 160], [100, 90, 60, 40, 15], [20, 30, 40, 50, 60]]
+	weight_decay: 0.03357130484604214
+2022-12-18 13:23:49,207 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python gex_adt_sweep.py --adt_weight=82.49799435067973 --epochs=80 --gex_dim=1000 --gex_weight=55.7332620678205 --init=xavier --latent_dim=10 --lr=0.1 "--model=[[1000, 800, 600, 400, 200], [10, 30, 50, 100, 160], [100, 90, 60, 40, 15], [20, 30, 40, 50, 60]]" --weight_decay=0.03357130484604214
+2022-12-18 13:23:54,218 - wandb.wandb_agent - INFO - Running runs: ['i6dnjbru']
+wandb: Currently logged in as: ange1o5 (team-single-cell). Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+slurmstepd: error: *** JOB 8874409 ON gpu056 CANCELLED AT 2022-12-18T13:23:58 ***

@@ -1,0 +1,36 @@
+/h/angelo/single-cell-proj/repo/team_single_cell/experiments/jobs
+gpu174.cluster.local
+Sun Dec 18 14:05:35 EST 2022
+wandb: Starting wandb agent 🕵️
+2022-12-18 14:05:45,420 - wandb.wandb_agent - INFO - Running runs: []
+2022-12-18 14:05:45,748 - wandb.wandb_agent - INFO - Agent received command: run
+2022-12-18 14:05:45,748 - wandb.wandb_agent - INFO - Agent starting run with config:
+	atac_dim: 5000
+	atac_weight: 42.088598924916305
+	epochs: 20
+	gex_dim: 5000
+	gex_weight: 13.269522914542618
+	init: he
+	latent_dim: 64
+	lr: 0.1
+	model: [[1600, 800, 400, 100], [40, 60, 100, 150], [1800, 800, 400, 100], [40, 60, 120, 200]]
+	weight_decay: 0.012608731154343834
+2022-12-18 14:05:45,756 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python gex_atac_sweep.py --atac_dim=5000 --atac_weight=42.088598924916305 --epochs=20 --gex_dim=5000 --gex_weight=13.269522914542618 --init=he --latent_dim=64 --lr=0.1 "--model=[[1600, 800, 400, 100], [40, 60, 100, 150], [1800, 800, 400, 100], [40, 60, 120, 200]]" --weight_decay=0.012608731154343834
+2022-12-18 14:05:50,768 - wandb.wandb_agent - INFO - Running runs: ['1mbei2tg']
+wandb: Currently logged in as: ange1o5 (team-single-cell). Use `wandb login --relogin` to force relogin
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: WARNING Ignored wandb.init() arg entity when running a sweep.
+wandb: Tracking run with wandb version 0.13.7
+wandb: Run data is saved locally in /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_140553-1mbei2tg
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run whole-sweep-137
+wandb: ⭐️ View project at https://wandb.ai/team-single-cell/gex_atac_sweep
+wandb: 🧹 View sweep at https://wandb.ai/team-single-cell/gex_atac_sweep/sweeps/j1snhit4
+wandb: 🚀 View run at https://wandb.ai/team-single-cell/gex_atac_sweep/runs/1mbei2tg
+ UserWarning:/h/angelo/miniconda3/envs/single_cell_env/lib/python3.7/site-packages/scanpy/preprocessing/_highly_variable_genes.py:64: `flavor='seurat_v3'` expects raw count data, but non-integers were found.
+Trying to set attribute `._uns` of view, copying.
+Trying to set attribute `.var` of view, copying.
+2022-12-18 14:15:24.239597: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F AVX512_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-12-18 14:15:24.346382: I tensorflow/core/util/util.cc:169] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+slurmstepd: error: *** JOB 8874565 ON gpu174 CANCELLED AT 2022-12-18T14:32:15 ***

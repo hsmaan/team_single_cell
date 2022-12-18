@@ -1,0 +1,117 @@
+2022-12-18 14:29:04,945 INFO    StreamThr :1888 [internal.py:wandb_internal():90] W&B internal server running at pid: 1888, started at: 2022-12-18 14:29:04.943360
+2022-12-18 14:29:04,946 DEBUG   HandlerThread:1888 [handler.py:handle_request():139] handle_request: status
+2022-12-18 14:29:04,949 DEBUG   SenderThread:1888 [sender.py:send_request():317] send_request: status
+2022-12-18 14:29:04,955 DEBUG   SenderThread:1888 [sender.py:send():303] send: header
+2022-12-18 14:29:04,956 INFO    WriterThread:1888 [datastore.py:open_for_write():75] open: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/run-tad6yp2r.wandb
+2022-12-18 14:29:04,981 DEBUG   SenderThread:1888 [sender.py:send():303] send: run
+2022-12-18 14:29:05,176 INFO    SenderThread:1888 [dir_watcher.py:__init__():216] watching files in: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files
+2022-12-18 14:29:05,176 INFO    SenderThread:1888 [sender.py:_start_run_threads():931] run started: tad6yp2r with start time 1671391744.94553
+2022-12-18 14:29:05,176 DEBUG   SenderThread:1888 [sender.py:send():303] send: summary
+2022-12-18 14:29:05,177 DEBUG   HandlerThread:1888 [handler.py:handle_request():139] handle_request: check_version
+2022-12-18 14:29:05,179 INFO    SenderThread:1888 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:29:05,179 DEBUG   SenderThread:1888 [sender.py:send_request():317] send_request: check_version
+2022-12-18 14:29:05,260 DEBUG   HandlerThread:1888 [handler.py:handle_request():139] handle_request: run_start
+2022-12-18 14:29:05,268 DEBUG   HandlerThread:1888 [system_info.py:__init__():31] System info init
+2022-12-18 14:29:05,268 DEBUG   HandlerThread:1888 [system_info.py:__init__():46] System info init done
+2022-12-18 14:29:05,269 INFO    HandlerThread:1888 [system_monitor.py:start():150] Starting system monitor
+2022-12-18 14:29:05,269 INFO    SystemMonitor:1888 [system_monitor.py:_start():116] Starting system asset monitoring threads
+2022-12-18 14:29:05,269 INFO    HandlerThread:1888 [system_monitor.py:probe():171] Collecting system info
+2022-12-18 14:29:05,272 INFO    SystemMonitor:1888 [interfaces.py:start():168] Started cpu
+2022-12-18 14:29:05,274 INFO    SystemMonitor:1888 [interfaces.py:start():168] Started disk
+2022-12-18 14:29:05,274 INFO    SystemMonitor:1888 [interfaces.py:start():168] Started gpu
+2022-12-18 14:29:05,274 INFO    SystemMonitor:1888 [interfaces.py:start():168] Started memory
+2022-12-18 14:29:05,275 INFO    SystemMonitor:1888 [interfaces.py:start():168] Started network
+2022-12-18 14:29:05,297 DEBUG   HandlerThread:1888 [system_info.py:probe():195] Probing system
+2022-12-18 14:29:05,305 DEBUG   HandlerThread:1888 [system_info.py:_probe_git():180] Probing git
+2022-12-18 14:29:05,328 DEBUG   HandlerThread:1888 [system_info.py:_probe_git():188] Probing git done
+2022-12-18 14:29:05,328 DEBUG   HandlerThread:1888 [system_info.py:probe():241] Probing system done
+2022-12-18 14:29:05,328 DEBUG   HandlerThread:1888 [system_monitor.py:probe():180] {'os': 'Linux-5.4.0-131-generic-x86_64-with-debian-buster-sid', 'python': '3.7.12', 'heartbeatAt': '2022-12-18T19:29:05.297311', 'startedAt': '2022-12-18T19:29:04.909409', 'docker': None, 'cuda': None, 'args': ('--atac_dim=7500', '--atac_weight=55.77845528900718', '--epochs=80', '--gex_dim=1000', '--gex_weight=18.52960851513034', '--init=he', '--latent_dim=10', '--lr=0.0001', '--model=[[1200, 400, 100], [50, 100, 200], [1600, 600, 120], [60, 100, 150]]', '--weight_decay=0.06100186375857766'), 'state': 'running', 'program': 'gex_atac_sweep.py', 'codePath': 'experiments/scripts/gex_atac_sweep.py', 'git': {'remote': 'https://github.com/hsmaan/team_single_cell', 'commit': '76b435f2121c654f0ef1f23e7da9f14450464c91'}, 'email': 'dimon.ka2002@gmail.com', 'root': '/ssd003/home/angelo/single-cell-proj/repo/team_single_cell', 'host': 'gpu156.cluster.local', 'username': 'angelo', 'executable': '/h/angelo/miniconda3/envs/single_cell_env/bin/python', 'cpu_count': 20, 'cpu_count_logical': 40, 'cpu_freq': {'current': 1236.3075250000002, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 1815.959, 'min': 0.0, 'max': 0.0}, {'current': 2898.218, 'min': 0.0, 'max': 0.0}, {'current': 1944.329, 'min': 0.0, 'max': 0.0}, {'current': 1000.088, 'min': 0.0, 'max': 0.0}, {'current': 1001.008, 'min': 0.0, 'max': 0.0}, {'current': 1000.011, 'min': 0.0, 'max': 0.0}, {'current': 1000.171, 'min': 0.0, 'max': 0.0}, {'current': 1001.355, 'min': 0.0, 'max': 0.0}, {'current': 1000.181, 'min': 0.0, 'max': 0.0}, {'current': 1000.598, 'min': 0.0, 'max': 0.0}, {'current': 1713.497, 'min': 0.0, 'max': 0.0}, {'current': 1000.778, 'min': 0.0, 'max': 0.0}, {'current': 1000.524, 'min': 0.0, 'max': 0.0}, {'current': 1000.02, 'min': 0.0, 'max': 0.0}, {'current': 1001.809, 'min': 0.0, 'max': 0.0}, {'current': 1000.334, 'min': 0.0, 'max': 0.0}, {'current': 1000.29, 'min': 0.0, 'max': 0.0}, {'current': 1000.148, 'min': 0.0, 'max': 0.0}, {'current': 1000.025, 'min': 0.0, 'max': 0.0}, {'current': 1000.313, 'min': 0.0, 'max': 0.0}, {'current': 1834.383, 'min': 0.0, 'max': 0.0}, {'current': 2904.673, 'min': 0.0, 'max': 0.0}, {'current': 2619.844, 'min': 0.0, 'max': 0.0}, {'current': 1000.008, 'min': 0.0, 'max': 0.0}, {'current': 1000.195, 'min': 0.0, 'max': 0.0}, {'current': 1000.072, 'min': 0.0, 'max': 0.0}, {'current': 1000.563, 'min': 0.0, 'max': 0.0}, {'current': 1000.204, 'min': 0.0, 'max': 0.0}, {'current': 1001.771, 'min': 0.0, 'max': 0.0}, {'current': 1000.186, 'min': 0.0, 'max': 0.0}, {'current': 1708.387, 'min': 0.0, 'max': 0.0}, {'current': 1000.064, 'min': 0.0, 'max': 0.0}, {'current': 1000.095, 'min': 0.0, 'max': 0.0}, {'current': 1000.222, 'min': 0.0, 'max': 0.0}, {'current': 1000.076, 'min': 0.0, 'max': 0.0}, {'current': 1000.276, 'min': 0.0, 'max': 0.0}, {'current': 1001.231, 'min': 0.0, 'max': 0.0}, {'current': 1000.214, 'min': 0.0, 'max': 0.0}, {'current': 999.949, 'min': 0.0, 'max': 0.0}, {'current': 1000.232, 'min': 0.0, 'max': 0.0}], 'disk': {'total': 819.2013664245605, 'used': 33.895484924316406}, 'gpu': 'Quadro RTX 6000', 'gpu_count': 1, 'gpu_devices': [{'name': 'Quadro RTX 6000', 'memory_total': 23801430016}], 'memory': {'total': 188.5901870727539}}
+2022-12-18 14:29:05,328 INFO    HandlerThread:1888 [system_monitor.py:probe():181] Finished collecting system info
+2022-12-18 14:29:05,328 INFO    HandlerThread:1888 [system_monitor.py:probe():184] Publishing system info
+2022-12-18 14:29:05,328 DEBUG   HandlerThread:1888 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2022-12-18 14:29:05,330 DEBUG   HandlerThread:1888 [system_info.py:_save_pip():67] Saving pip packages done
+2022-12-18 14:29:05,331 DEBUG   HandlerThread:1888 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2022-12-18 14:29:06,182 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_created():275] file/dir created: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/wandb-summary.json
+2022-12-18 14:29:06,183 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_created():275] file/dir created: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/conda-environment.yaml
+2022-12-18 14:29:06,184 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_created():275] file/dir created: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/requirements.txt
+2022-12-18 14:29:09,827 DEBUG   HandlerThread:1888 [system_info.py:_save_conda():86] Saving conda packages done
+2022-12-18 14:29:09,829 INFO    HandlerThread:1888 [system_monitor.py:probe():186] Finished publishing system info
+2022-12-18 14:29:09,891 DEBUG   SenderThread:1888 [sender.py:send():303] send: files
+2022-12-18 14:29:09,891 INFO    SenderThread:1888 [sender.py:_save_file():1171] saving file wandb-metadata.json with policy now
+2022-12-18 14:29:09,901 DEBUG   HandlerThread:1888 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:29:09,902 DEBUG   SenderThread:1888 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:29:09,960 DEBUG   SenderThread:1888 [sender.py:send():303] send: telemetry
+2022-12-18 14:29:10,179 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/conda-environment.yaml
+2022-12-18 14:29:10,179 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_created():275] file/dir created: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/output.log
+2022-12-18 14:29:10,179 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_created():275] file/dir created: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/wandb-metadata.json
+2022-12-18 14:29:10,231 INFO    Thread-16 :1888 [upload_job.py:push():143] Uploaded file /tmp/tmpzc1h3i_5wandb/1g1dbr3n-wandb-metadata.json
+2022-12-18 14:29:12,195 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/output.log
+2022-12-18 14:29:24,962 DEBUG   HandlerThread:1888 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:29:24,963 DEBUG   SenderThread:1888 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:29:35,210 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/config.yaml
+2022-12-18 14:29:40,026 DEBUG   HandlerThread:1888 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:29:40,026 DEBUG   SenderThread:1888 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:29:52,222 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/output.log
+2022-12-18 14:29:55,089 DEBUG   HandlerThread:1888 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:29:55,090 DEBUG   SenderThread:1888 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:29:56,224 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/output.log
+2022-12-18 14:29:58,227 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/output.log
+2022-12-18 14:30:05,276 DEBUG   SystemMonitor:1888 [system_monitor.py:_start():130] Starting system metrics aggregation loop
+2022-12-18 14:30:05,278 DEBUG   SenderThread:1888 [sender.py:send():303] send: stats
+2022-12-18 14:30:06,232 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/output.log
+2022-12-18 14:30:10,156 DEBUG   HandlerThread:1888 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:30:10,157 DEBUG   SenderThread:1888 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:30:12,237 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/output.log
+2022-12-18 14:30:25,230 DEBUG   HandlerThread:1888 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:30:25,231 DEBUG   SenderThread:1888 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:30:35,279 DEBUG   SenderThread:1888 [sender.py:send():303] send: stats
+2022-12-18 14:30:40,298 DEBUG   HandlerThread:1888 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:30:40,298 DEBUG   SenderThread:1888 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:30:50,267 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/output.log
+2022-12-18 14:30:52,270 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/output.log
+2022-12-18 14:30:55,367 DEBUG   HandlerThread:1888 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:30:55,367 DEBUG   SenderThread:1888 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:30:56,273 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/output.log
+2022-12-18 14:31:05,280 DEBUG   SenderThread:1888 [sender.py:send():303] send: stats
+2022-12-18 14:31:08,303 DEBUG   HandlerThread:1888 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:31:08,304 DEBUG   SenderThread:1888 [sender.py:send():303] send: history
+2022-12-18 14:31:08,304 DEBUG   SenderThread:1888 [sender.py:send():303] send: summary
+2022-12-18 14:31:08,306 INFO    SenderThread:1888 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:31:09,281 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/wandb-summary.json
+2022-12-18 14:31:10,283 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/output.log
+2022-12-18 14:31:10,432 DEBUG   HandlerThread:1888 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:31:10,432 DEBUG   SenderThread:1888 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:31:22,420 DEBUG   HandlerThread:1888 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:31:22,420 DEBUG   SenderThread:1888 [sender.py:send():303] send: history
+2022-12-18 14:31:22,421 DEBUG   SenderThread:1888 [sender.py:send():303] send: summary
+2022-12-18 14:31:22,423 INFO    SenderThread:1888 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:31:23,290 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/wandb-summary.json
+2022-12-18 14:31:24,292 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/output.log
+2022-12-18 14:31:25,500 DEBUG   HandlerThread:1888 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:31:25,500 DEBUG   SenderThread:1888 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:31:35,281 DEBUG   SenderThread:1888 [sender.py:send():303] send: stats
+2022-12-18 14:31:36,503 DEBUG   HandlerThread:1888 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:31:36,504 DEBUG   SenderThread:1888 [sender.py:send():303] send: history
+2022-12-18 14:31:36,504 DEBUG   SenderThread:1888 [sender.py:send():303] send: summary
+2022-12-18 14:31:36,506 INFO    SenderThread:1888 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:31:37,302 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/wandb-summary.json
+2022-12-18 14:31:38,305 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/output.log
+2022-12-18 14:31:40,568 DEBUG   HandlerThread:1888 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:31:40,569 DEBUG   SenderThread:1888 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:31:50,628 DEBUG   HandlerThread:1888 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:31:50,628 DEBUG   SenderThread:1888 [sender.py:send():303] send: history
+2022-12-18 14:31:50,629 DEBUG   SenderThread:1888 [sender.py:send():303] send: summary
+2022-12-18 14:31:50,631 INFO    SenderThread:1888 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:31:51,389 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/wandb-summary.json
+2022-12-18 14:31:52,391 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/output.log
+2022-12-18 14:31:55,638 DEBUG   HandlerThread:1888 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:31:55,638 DEBUG   SenderThread:1888 [sender.py:send_request():317] send_request: stop_status
+2022-12-18 14:32:04,685 DEBUG   HandlerThread:1888 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-18 14:32:04,686 DEBUG   SenderThread:1888 [sender.py:send():303] send: history
+2022-12-18 14:32:04,686 DEBUG   SenderThread:1888 [sender.py:send():303] send: summary
+2022-12-18 14:32:04,688 INFO    SenderThread:1888 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-18 14:32:05,283 DEBUG   SenderThread:1888 [sender.py:send():303] send: stats
+2022-12-18 14:32:05,399 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/wandb-summary.json
+2022-12-18 14:32:06,401 INFO    Thread-13 :1888 [dir_watcher.py:_on_file_modified():292] file/dir modified: /ssd003/home/angelo/single-cell-proj/repo/team_single_cell/experiments/scripts/wandb/run-20221218_142904-tad6yp2r/files/output.log
+2022-12-18 14:32:10,699 DEBUG   HandlerThread:1888 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-18 14:32:10,699 DEBUG   SenderThread:1888 [sender.py:send_request():317] send_request: stop_status

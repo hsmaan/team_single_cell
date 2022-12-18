@@ -1,0 +1,161 @@
+
+Reading dataset...
+Feature selecting GEX...
+ UserWarning:/h/angelo/miniconda3/envs/single_cell_env/lib/python3.7/site-packages/scanpy/preprocessing/_highly_variable_genes.py:64: `flavor='seurat_v3'` expects raw count data, but non-integers were found.
+Trying to set attribute `._uns` of view, copying.
+Feature selecting ATAC...
+Trying to set attribute `.var` of view, copying.
+New GEX dim: 1000;
+New ATAC dim: 2501;
+AnnData dataset's shape: (69249, 3501)
+Initializing dataset and dataloader...
+The order of labels: ['s1d1', 's1d1', 's1d1', 's1d1', 's1d1', ..., 's4d9', 's4d9', 's4d9', 's4d9', 's4d9']
+Length: 69249
+Categories (13, object): ['s1d1', 's1d2', 's1d3', 's2d1', ..., 's3d10', 's4d1', 's4d8', 's4d9']
+The device: cuda;
+The model: DeepGexAtacMultiModalAutoencoder(
+  (gex_encoder): Sequential(
+    (0): Linear(in_features=1000, out_features=1600, bias=True)
+    (1): BatchNorm1d(1600, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.1, inplace=False)
+    (4): Linear(in_features=1600, out_features=800, bias=True)
+    (5): BatchNorm1d(800, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Linear(in_features=800, out_features=400, bias=True)
+    (8): BatchNorm1d(400, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): ReLU()
+    (10): Dropout(p=0.1, inplace=False)
+    (11): Linear(in_features=400, out_features=100, bias=True)
+    (12): BatchNorm1d(100, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): ReLU()
+    (14): Linear(in_features=100, out_features=64, bias=True)
+    (15): ReLU()
+  )
+  (atac_encoder): Sequential(
+    (0): Linear(in_features=2501, out_features=1800, bias=True)
+    (1): BatchNorm1d(1800, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.1, inplace=False)
+    (4): Linear(in_features=1800, out_features=800, bias=True)
+    (5): BatchNorm1d(800, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Linear(in_features=800, out_features=400, bias=True)
+    (8): BatchNorm1d(400, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): ReLU()
+    (10): Dropout(p=0.1, inplace=False)
+    (11): Linear(in_features=400, out_features=100, bias=True)
+    (12): BatchNorm1d(100, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): ReLU()
+    (14): Linear(in_features=100, out_features=64, bias=True)
+    (15): ReLU()
+  )
+  (gex_decoder): Sequential(
+    (0): Linear(in_features=128, out_features=40, bias=True)
+    (1): BatchNorm1d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.1, inplace=False)
+    (4): Linear(in_features=40, out_features=60, bias=True)
+    (5): BatchNorm1d(60, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Linear(in_features=60, out_features=100, bias=True)
+    (8): BatchNorm1d(100, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): ReLU()
+    (10): Dropout(p=0.1, inplace=False)
+    (11): Linear(in_features=100, out_features=150, bias=True)
+    (12): BatchNorm1d(150, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): ReLU()
+    (14): Linear(in_features=150, out_features=1000, bias=True)
+    (15): ReLU()
+  )
+  (atac_decoder): Sequential(
+    (0): Linear(in_features=128, out_features=40, bias=True)
+    (1): BatchNorm1d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.1, inplace=False)
+    (4): Linear(in_features=40, out_features=60, bias=True)
+    (5): BatchNorm1d(60, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Linear(in_features=60, out_features=120, bias=True)
+    (8): BatchNorm1d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): ReLU()
+    (10): Dropout(p=0.1, inplace=False)
+    (11): Linear(in_features=120, out_features=200, bias=True)
+    (12): BatchNorm1d(200, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): ReLU()
+    (14): Linear(in_features=200, out_features=2501, bias=True)
+    (15): Sigmoid()
+  )
+);
+The dataset: <datasets.anndatadataset.AnnDataDataset object at 0x7f64bc019fd0>;
+The optimizer: Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.1
+    weight_decay: 0.07340396600093184
+);
+Epoch 0 recon loss: 11131.8466122375
+Epoch 1 recon loss: 9721.0390910694
+Epoch 2 recon loss: 7316.735128328
+Epoch 3 recon loss: 6402.7163603241
+Epoch 4 recon loss: 4707.6801717112
+Epoch 5 recon loss: 6126.9530120476
+Epoch 6 recon loss: 3208.5515025753
+Epoch 7 recon loss: 4067.796400281
+Epoch 8 recon loss: 3238.9998746025
+Epoch 9 recon loss: 2732.7646871729
+Epoch 10 recon loss: 3110.9531661152
+Epoch 11 recon loss: 2875.8563578716
+Epoch 12 recon loss: 2574.0190545652
+Epoch 13 recon loss: 2201.2794516046
+Epoch 14 recon loss: 2297.667411402
+Epoch 15 recon loss: 2495.9417295404
+Epoch 16 recon loss: 2174.505454352
+Epoch 17 recon loss: 2607.6453185318
+Epoch 18 recon loss: 2511.3182596655
+Epoch 19 recon loss: 1890.2847743228
+Epoch 20 recon loss: 2765.315569338
+Epoch 21 recon loss: 1881.1973729305
+Epoch 22 recon loss: 1703.577965229
+Epoch 23 recon loss: 2027.6751565169
+Epoch 24 recon loss: 2680.7066415821
+Epoch 25 recon loss: 1757.0656003439
+Epoch 26 recon loss: 2149.0769246725
+Epoch 27 recon loss: 2880.2865610215
+Epoch 28 recon loss: 2357.3015250095
+Epoch 29 recon loss: 2363.5354075289
+Epoch 30 recon loss: 2131.3142728968
+Epoch 31 recon loss: 2348.0839221368
+Epoch 32 recon loss: 1571.4665367969
+Epoch 33 recon loss: 3432.4851770276
+Epoch 34 recon loss: 1682.2237747519
+Epoch 35 recon loss: 2313.4303572254
+Epoch 36 recon loss: 1743.2652286977
+Epoch 37 recon loss: 2119.0708824253
+Epoch 38 recon loss: 2135.1928631551
+Epoch 39 recon loss: 2257.496756976
+Epoch 40 recon loss: 1801.4104258811
+Epoch 41 recon loss: 2741.5049736532
+Epoch 42 recon loss: 1947.6424033206
+Epoch 43 recon loss: 2214.2266105699
+Epoch 44 recon loss: 1964.6971562642
+Epoch 45 recon loss: 1752.5803755744
+Epoch 46 recon loss: 1601.0372030235
+Epoch 47 recon loss: 1848.7717952988
+Epoch 48 recon loss: 1573.4804276117
+Epoch 49 recon loss: 1669.6128372403
+Epoch 50 recon loss: 2171.6836370075
+Epoch 51 recon loss: 11084.1704186057
+Epoch 52 recon loss: 3514.9707904601
+Epoch 53 recon loss: 2771.4074042569
+Epoch 54 recon loss: 1780.8143625893
+Epoch 55 recon loss: 1446.4827141924
+Epoch 56 recon loss: 1900.9449439088
+Epoch 57 recon loss: 2703.4377340027
+Epoch 58 recon loss: 1512.8392222635
+Epoch 59 recon loss: 2292.9242048041
+Latent space type: <class 'numpy.ndarray'>;
+GEX encoded shape: torch.Size([69249, 64]);
+ATAC encoded shape: torch.Size([69249, 64]);
