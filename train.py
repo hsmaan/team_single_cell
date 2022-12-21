@@ -47,7 +47,7 @@ class GexAtacTrainer:
         # Create dataloader for concatenated data
         self.gex_atac_loader = WrapperDataLoader(
             dataset = self.gex_atac_ds,
-            batch_size = 964,
+            batch_size = 512,
             shuffle = True,
             num_workers = 4,
             drop_last = True
@@ -137,7 +137,7 @@ class GexAdtTrainer:
         # Create dataloader for concatenated data
         self.gex_atac_loader = WrapperDataLoader(
             dataset = self.gex_adt_ds,
-            batch_size = 964,
+            batch_size = 512,
             shuffle = True,
             num_workers = 4,
             drop_last = True

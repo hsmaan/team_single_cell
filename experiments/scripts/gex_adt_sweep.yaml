@@ -2,7 +2,7 @@ program: gex_adt_sweep.py
 method: random
 name: gex_adt_sweep
 project: gex_adt_sweep
-run_cap: 5
+run_cap: 5000
 parameters:
   gex_dim:
     values: [1000, 2500, 5000]

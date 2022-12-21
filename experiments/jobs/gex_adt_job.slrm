@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --job-name=gex_adt_sweep
-#SBATCH --array=1 # 500 jobs
+#SBATCH --array=1-100 # 500 jobs
 #SBATCH --gres=gpu:1
 #SBATCH --cores=8
 #SBATCH --partition=a40,t4v2,rtx6000
@@ -14,6 +14,6 @@ pwd; hostname; date
 source ~/miniconda3/etc/profile.d/conda.sh
 conda activate single_cell_env
 cd ../scripts
-wandb agent --entity team-single-cell --project gex_adt_sweep zwctbvrx # Replace with correct API key
+wandb agent --entity team-single-cell --project gex_adt_sweep dfmo8632 # Replace with correct API key
 
 date

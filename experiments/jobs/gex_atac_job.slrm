@@ -14,6 +14,6 @@ pwd; hostname; date
 source ~/miniconda3/etc/profile.d/conda.sh
 conda activate single_cell_env
 cd ../scripts
-wandb agent --entity team-single-cell --project gex_atac_sweep j1snhit4 # Replace with correct API key
+wandb agent --entity team-single-cell --project gex_atac_sweep 10bj9v0k # Replace with correct API key
 
 date
