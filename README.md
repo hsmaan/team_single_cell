@@ -43,6 +43,12 @@ conda activate single_cell_env
 python -m ipykernel install --user --name "single_cell_env" --display-name "single_cell_env"
 ```
 
+We used specific versions torch and cuda to train our models which can be installed by performing the following command:
+```
+pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu114
+```
+Note that this version of torch and cuda could uncompatible with your system settings.
+
 Now you should be able to launch jupyter notebooks and use the single_cell_env kernel:
 
 ```
